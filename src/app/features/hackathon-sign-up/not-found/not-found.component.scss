@@ -1,0 +1,52 @@
+@import "../../../../styles.scss";
+
+
+video {
+  height: 80vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 0;
+  object-fit: fill;
+  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1); /* Safari and Chrome */
+  -moz-transform: scaleX(-1); /* Firefox */
+}
+
+.content {
+  text-align: center;
+  position: relative;
+}
+
+.button {
+  background: #fedb00;
+  border-radius: 10px;
+  margin: 2vh;
+}
+
+h1 {
+  font-size: 300%;
+  padding-top: 3vh;
+}
+
+p {
+  font-size: 200%;
+  text-align: center;
+  margin: 0 0 0 0;
+  padding-top: 5vh;
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+img {
+  align-content: center;
+  margin-left: 3.1vw;
+  max-height: 80vw;
+  margin-top: 45vh;
+  margin-bottom: 0;
+}

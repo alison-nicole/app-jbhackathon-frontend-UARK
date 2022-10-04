@@ -1,0 +1,25 @@
+@import "../../../../styles.scss";
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova');
+
+.content-container {
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  padding: 0 20vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .group {
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+
+    h1, h2, h3, h4, h5, h6, .wrapper {
+      flex-basis: 100%;
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@import "../../../../styles.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  transition: all 1s ease-in-out;
+}
+
+a {
+  color: $theme-black;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .card {
+    border-left: solid 2px $theme-blue;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 8px 0;
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    padding: 0 10px;
+    width: 100%;
+    height: auto;
+  
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .card-title {
+        font-size: 16px;
+        font-weight: 400;
+        color: $theme-blue;
+        max-width: 80%;
+      }
+
+      &:hover {
+        cursor: pointer;
+        .card-title {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .content-text {
+      margin: 5px 0;
+      display: none;
+      color: $theme-grey;
+    }
+
+    .carrot {
+      transition: all .35s ease-in-out;
+      width: 20px;
+    }
+  
+    .btn {
+      grid-row: 1;
+    }
+  }
+
+  .expand {
+    height: fit-content;
+
+    .content-text {
+      display: block;
+    }
+
+    .carrot {
+      -webkit-transform: rotateX(180deg);
+      -moz-transform: rotateX(180deg);
+      -o-transform: rotateX(180deg);
+      transform: rotateX(180deg);
+    }
+  }
+}

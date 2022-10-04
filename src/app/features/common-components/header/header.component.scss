@@ -1,0 +1,122 @@
+@import "../../../../styles.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.master-container {
+    display: grid;
+    grid-template-rows: auto auto;
+    box-sizing: border-box;
+    justify-content: center;
+    padding-bottom: 40px;
+    width: 100%;
+    z-index: 1;
+
+    .button-container {
+        grid-row: 1;
+        min-width: 220px;
+        width: 80vw;
+        display: flex;
+        justify-content: flex-end;
+        padding: 5px 0;
+        box-sizing: border-box;
+        
+        .btn-yellow {
+            border: none;
+            border-radius: 7px;
+            background-color: $theme-yellow;
+            color: $theme-black;
+        }
+    }
+
+    .header-container {
+        grid-row: 2;
+        width: 80vw;
+        min-width: 220px;
+        background-color: #40BFFD;
+        border: none;
+        border-radius: 7px;
+        justify-self: center;
+        padding: 20px 20px;
+        box-sizing: border-box;
+        display: grid;
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .logo {
+                height: 40px;
+            }
+
+            .brand-title {
+                color: $theme-white;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .link-container {
+            display: flex;
+            align-items: center;
+            list-style: none;
+
+            .link {
+                color: $theme-white;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .blue-banner {
+        top: -90px;
+        left: -50px;
+        position: absolute;
+        height: 150%;
+        width: 150%;
+        background: transparent linear-gradient(64deg, #40BFFD 0%, #0288CC 100%) 0% 0% no-repeat padding-box;
+        transform: rotate(-2deg);
+        z-index: -1;
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+    .header-container {
+        grid-template-columns: 300px auto;
+
+        .link-container {
+            justify-self: flex-end;
+            min-width: 250px;
+            width: 50%;
+            justify-content: space-evenly;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-container {
+        gap: 10px;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto;
+
+        .brand-container {
+            justify-self: center;
+        }
+
+        .link-container {
+            width: 100%;
+            grid-row: 2;
+            justify-content: space-evenly;
+        }
+    }
+}

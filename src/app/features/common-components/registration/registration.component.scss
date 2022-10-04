@@ -1,0 +1,316 @@
+.hidden {
+    display: none !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.master-container {
+    width: 100%;
+    min-width: 200px;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 5% 90% 5%;
+    color: white;
+
+    .head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row: 1;
+        grid-column: 2;
+        height: 75px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .title {
+        border-bottom: 0.10em solid #ffffff;
+        padding: 0.25em 2.5em;
+    }
+
+    .form {
+        display: flex;
+        grid-row: 2;
+        grid-column: 2;
+        height: 100%;
+        width: 100%;
+
+        .module {
+            display: grid;
+            grid-template-rows: auto auto;
+            width: 100%;
+
+            .content {
+                justify-self: center;
+                grid-row: 1;
+                height: fit-content;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .buttons {
+                height: 75px;
+                width: 100%;
+                grid-row: 2;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+        }
+    }
+
+    .group {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+
+        button {
+            margin-top: 20px;
+        }
+    }
+
+}
+
+.group.team-overview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-header {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 0.15em solid #ffffff;
+    border-radius: 0.5em;
+    width: 80%;
+    height: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    margin: 1em 0;
+
+
+    .color-icon-container {
+        width: 5em;
+        height: 5em;
+        border-radius: 0.5rem;
+        border: 2px solid #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .selected-icon {
+        mask-position: center;
+        height: 5em;
+        width: 5em;
+        mask-size: 4em;
+        mask-repeat: no-repeat;
+    }
+
+    .team-name {
+        font-weight: 600;
+        margin: 1rem;
+    }
+}
+
+.checkbox-single-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .checkbox {
+        appearance: none;
+        background-color: transparent;
+        margin: 0;
+        height: 1.5em;
+        width: 1.5em;
+        border: 0.15em solid #fff;
+        border-radius: 0.15em;
+        display: grid;
+        place-content: center;
+
+        &::before {
+            content: "";
+            width: 0.75em;
+            height: 0.75em;
+            border-radius: 0.15em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            background-color: #fff;
+        }
+
+        &:checked::before {
+            transform: scale(1);
+        }
+    }
+}
+
+.icon-btn {
+    box-sizing: border-box;
+    width: 100%;
+    height: 5rem;
+
+    .icon-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        width: 30%;
+
+        .icon {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+}
+
+
+.single-field {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+
+    input,
+    select,
+    textarea {
+        margin-top: 0.15em;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        border: 0.15em solid #ffffff;
+        border-radius: 0.5em;
+        color: #ffffff;
+        background-color: transparent;
+
+        &:focus {
+            background-color: #ffffff33;
+            box-shadow: 0px 0px 10px #FFFFFFA8;
+            outline: none;
+        }
+    }
+
+    input {
+        height: 2rem;
+    }
+
+    textarea {
+        height: 6rem;
+    }
+}
+
+.team-code-text {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 0px;
+    color: white;
+    opacity: 1;
+}
+
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0 0 0;
+}
+
+.loading-icon {
+    width: 4rem;
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+label {
+    margin-left: 0.5em;
+    white-space: nowrap;
+}
+
+.error {
+    white-space: unset;
+    color: #e30b00;
+    background-color: #ffbcb9;
+    border-radius: 0.5em;
+    padding: 0 0.5rem;
+}
+
+.form-control {
+    border: 0.15em solid #000000;
+    border-radius: 0.5em;
+}
+
+.separator {
+    width: 100%;
+    border: 0.15em solid black;
+    margin-top: 10px;
+    height: 0px;
+    flex-basis: 100%;
+}
+
+.info-group {
+    border-left: 2px solid #ffffff;
+    padding-left: 0.5rem;
+    width: 100%;
+    margin: 0.5rem 0;
+
+    .category {
+        font-weight: 600;
+    }
+}
+
+.message {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h3 {
+        flex-basis: 100%;
+    }
+}
+
+.iconColorComponent {
+    max-width: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 1300px) {
+    .icon {
+        display: none;
+    }
+}

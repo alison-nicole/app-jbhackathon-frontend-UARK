@@ -1,0 +1,35 @@
+<ng-container *ngFor="let element of pastWinners; let i = index;">
+  <div id="{{i}}" class="content-container card">
+    <div class="group column-group">
+      <div class="group title-group">
+        <h4 class="group-title">{{element.title | translate }}</h4>
+        <h4 class="subheader">{{element.pastMembers | translate }}</h4>
+      </div>
+      <div class="group btn-group">
+        <button class="btn btn-blue" (click)="toggleExpand(i)">Show More</button>
+        <img class="close-btn hidden" src="../../../../../assets/svg/Close-X-Icon.svg" alt="Close icon" (click)="toggleExpand(i)">
+      </div>
+    </div>
+
+    <div class="group column-group" *ngIf="element.expand">
+      <img class="card project-image" src={{element.image}} alt="project screenshot">
+      <div class="group">
+        <div class="group info-group">
+          <h4 class="expanded-title">Hackathon Topic:</h4>
+          <span class="expanded-body-txt" [innerHTML]="element.topic  | translate"></span>
+        </div>
+        <div class="group info-group">
+          <h4 class="expanded-title">Description:</h4>
+          <div class="expanded-body-txt">{{ element.description | translate }}</div>
+        </div>
+        <div class="group info-group">
+          <h4 class="expanded-title">Technologies Used:</h4>
+          <div class="expanded-body-txt">{{ element.technologiesUsed | translate }}</div>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-blue" (click)="scroll(i); toggleExpand(i); ">Show Less</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

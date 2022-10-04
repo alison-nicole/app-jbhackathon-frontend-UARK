@@ -1,0 +1,45 @@
+@import "../styles.scss";
+
+.hidden {
+  display: none;
+}
+
+.icon {
+  margin-right: 1vw;
+  float: right;
+}
+
+a {
+  color: $theme-black;
+  text-decoration: none;
+}
+
+.blurred {
+  filter: blur(4px);
+}
+
+.header-container {
+  position: relative;
+  width: 100%;
+}
+
+::ng-deep i.navigation-menu-pinned-icon.icon-Pushpin_Pinned:hover {
+  color: #c9c9c9;
+  opacity: 1;
+}
+
+::ng-deep i.navigation-menu-pinned-icon.icon-Pushpin_UnPinned:hover {
+  color: #c9c9c9;
+  opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+
+  .column2 {
+    width: 100%;
+  }
+
+  .icon {
+    margin-right: 21%;
+  }
+}

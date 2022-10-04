@@ -1,0 +1,9 @@
+<div class="container">
+  <div *ngFor="let accordion of accordionConfig; let i = index" [id]="i" class="card">
+    <div class="card-header" (click)="toggleAccordion(i)">
+      <h5 class="card-title">{{ accordion.header }}</h5>
+      <img class="carrot " src="../../../../assets/svg/carrot.svg" alt="carrot">
+    </div>
+    <p class="content-text" [innerHTML]="accordion.info | translate"></p>
+  </div>
+</div>

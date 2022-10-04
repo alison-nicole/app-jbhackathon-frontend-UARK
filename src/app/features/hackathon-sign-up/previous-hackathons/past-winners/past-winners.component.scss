@@ -1,0 +1,129 @@
+@import '../../../../../styles.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.upperheader, .highlight{
+  color: $theme-blue;
+  font-weight: 400;
+}
+
+.subheader {
+  font-size: 16px;
+  color: $theme-grey;
+}
+
+.group-title, .expanded-title {
+  font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
+
+.content-container {
+  scroll-margin-top: 30px;
+  width: 100%;
+  height: auto;
+  padding: 20px 40px;
+  margin: 30px 0px;
+
+  .group {
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+
+    h1, h2, h3, h4, h5, h6, .wrapper {
+      flex-basis: 100%;
+    }
+  }
+
+  .info-group {
+    margin: 10px 0;
+  }
+
+  .btn-group {
+    justify-content: flex-end;
+
+    .close-btn {
+      margin-right: 60px;
+    }
+  }
+
+  .column-group {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 10px 0;
+  }
+
+  .section {
+    width: 100%;
+    margin-top: 10vh;
+  }
+
+  .link {
+    color: $theme-blue;
+    text-decoration: none;
+    
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  .project-image {
+    width: 80%;
+  }
+}
+
+.close-btn {
+  width: 30px;
+}
+
+@media screen and (min-width: 901px) {
+  .hero {
+    grid-template-columns: minmax(500px, 50vw) minmax(300px, 20vw);
+
+    .link-group {
+      margin-top: 15vh;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  .project-image {
+    display: none;
+  }
+
+  .content-container {
+    width: auto;
+    padding: 20px;
+    box-sizing: border-box;
+
+    * {
+      text-align: center;
+    }
+
+    .column-group {
+      .group {
+        grid-column: 1 / span 2;
+      }
+    }
+
+    .btn-group {
+      width: 100%;
+      margin-top: 10px;
+      justify-content: center;
+  
+      .close-btn {
+        margin-right: 0;
+        display: none;
+      }
+    }
+  }
+}

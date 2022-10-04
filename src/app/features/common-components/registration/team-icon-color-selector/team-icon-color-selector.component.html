@@ -1,0 +1,28 @@
+<div class="content-container">
+  <div class="headings-container">
+    <div [ngClass]="onIconMenu ? 'selected-heading left-heading' : 'left-heading'" (click)="showIcons()">
+      <h4>Icons</h4>
+    </div>
+    <div [ngClass]="onColorPicker ? 'selected-heading right-heading' : 'right-heading'" (click)="showColors()">
+      <h4>Colors</h4>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div *ngIf="onIconMenu" class="group selector all-icons">
+      <img *ngFor="let icon of teamIcons; let i = index" (click)="saveIcon(i)" class="icon" src={{icon.icon}} alt={{icon.name}}>
+    </div>
+    <div class="group selector" *ngIf="onColorPicker">
+      <div class="color-grid">
+        <div *ngFor="let color of colors; let i = index">
+          <div (click)="saveColor(i);" class="color-container" [style.backgroundColor]="color.background"></div>
+        </div>
+      </div>
+    </div>
+    <div class="group selected-icon-container">
+      <div class="selected-icon-background" [ngStyle]="changeBackground()">
+        <div class="selected-icon" [ngStyle]="changeIconColor()"></div>
+      </div>
+      <button class="btn btn-yellow" (click)="randomSelector()">Surpise Me</button>
+    </div>
+  </div>
+</div>

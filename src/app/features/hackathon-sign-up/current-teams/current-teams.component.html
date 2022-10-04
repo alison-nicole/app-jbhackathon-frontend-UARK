@@ -1,0 +1,32 @@
+<div class="teams">
+  <div *ngIf="teams.length === 0" class="noteams-card">
+    <h3>No teams have signed up yet</h3>
+    <h4>It wouldn't hurt to be first, would it?</h4>
+  </div>
+  <p *ngIf="teams.length !== 0" class="teams-title">Teams</p>
+  <div class="team-card" *ngFor="let team of teams; let i = index"
+    [ngStyle]="{'box-shadow': '0px 0px 10px ' + team.teamColor + '4D'}">
+
+    <div class="left-container">
+      <div class="img"
+        [ngStyle]="{'background-color': team.teamColorCode, 'box-shadow': '0px 0px 10px ' + team.teamColorCode}">
+        <!-- <img class="team-icon" [src]="team.teamIconCode" [alt]="team.teamIconCode"> -->
+        <div class="team-icon"
+          [ngStyle]="{'-webkit-mask-image': 'url(' + team.teamIconCode + ')', 'mask-image': 'url(' + team.teamIconCode + ')', 'background-color': team.teamIconColor}">
+        </div>
+      </div>
+    </div>
+
+    <div class="right-container">
+      <div class="team-content">
+        <h4>
+          {{team.teamName}}
+        </h4>
+      </div>
+      <div class="member-count">
+        <object class="icon" data="../../../../assets/svg/teams.svg" type="image/svg+xml"></object>
+        <h4>{{ teamMemberAmount[i] }}</h4>
+      </div>
+    </div>
+  </div>
+</div>

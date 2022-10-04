@@ -1,0 +1,26 @@
+<div class="content-container">
+  <div class="hero">
+    <div class="group">
+      <h1 [innerHTML]="'past.name' | translate"></h1>
+      <h4 class="subheader text-box" [innerHTML]="'past.Info' | translate"></h4>
+    </div>
+    <div class="link-group">
+        <h4 class="link" (click)='scroll(past_winners)' [innerHTML]="'past.title' | translate"></h4>
+        <h4 class="link" (click)='scroll(winner_stories)' [innerHTML]="'success-stories.title' | translate"></h4>
+    </div>
+  </div>
+  <div class="section" #past_winners>
+    <div class="group title">       
+      <h4 class="upperheader">Successful projects from the past</h4>
+      <h2 [innerHTML]="'past.title' | translate"></h2>
+    </div>
+    <app-past-winners></app-past-winners>
+  </div>
+  <div class="section" #winner_stories>
+    <div class="group title">       
+      <h4 class="upperheader">Stories from previous winners</h4>
+      <h2 [innerHTML]="'success-stories.title' | translate"></h2>
+    </div>
+    <app-winner-stories></app-winner-stories>
+  </div>
+</div>

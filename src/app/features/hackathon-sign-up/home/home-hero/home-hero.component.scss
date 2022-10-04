@@ -1,0 +1,141 @@
+@import "../../../../../styles.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;  
+}
+
+.upperheader {
+  color: $theme-blue;
+}
+
+.highlight{
+  color: $theme-blue;
+  font-weight: 600;
+}
+
+.subheader {
+  color: $theme-white;
+}
+
+h1, h2, h3, h4, h5 {
+  margin-bottom: 8px;
+}
+
+.section-title {
+  color: $theme-white;
+}
+
+.text-box {
+    height: fit-content;
+    min-width: 200px;
+    margin-bottom: 10px;
+    letter-spacing: 0.32px;
+    color: #707070;
+    gap: 10px;
+  }
+
+.hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 50px;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 705px;
+
+      .homepage-illustration {
+        margin-left: 0vw;
+        width: 500px;
+        pointer-events: none;
+      }
+  }
+
+  .blue-banner {
+    position: absolute;
+    width: 100vw;
+    height: 705px;
+    left: -20vw;
+    background: transparent linear-gradient(110deg, var(--unnamed-color-0288cc) 0%, #40BFFD 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(110deg, #0288CC 0%, #40BFFD 100%) 0% 0% no-repeat padding-box;
+    border-radius: 0px 0px 200px 0px;
+    opacity: 1;
+    z-index: -1;
+  }
+
+  .group {
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+
+    h1, h2, h3, h4, h5, h6, .wrapper {
+      flex-basis: 100%;
+      text-align: left;
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+      .blue-banner {
+          border-radius: 0px 0px 0px 0px;
+      }
+  
+      .hero {
+        grid-template-columns: 70% 0%;
+        display: flex;
+
+        .group {
+          grid-column: 1 / span 2;
+        }
+      }
+      
+      .text-box {
+        height: fit-content;
+        min-width: 200px;
+        margin-bottom: 10px;
+        letter-spacing: 0.32px;
+        color: #707070;
+      }
+
+
+  }
+
+@media screen and (max-width: 1300px) {
+    .homepage-illustration {
+        display: none;
+        
+    }
+
+    .hero {
+      .group {
+        grid-column: 1 / span 2;
+      }
+    }
+
+    .upperheader {
+        max-width: 100%;
+    }
+}
+
+.rubber-duck {
+  position: absolute;
+  width:70px;
+  top: 656px;
+  margin-left: 1000px;
+}
+
+.move-duck {
+  transform: translateX(-1900px);
+  transition: 4s ease-in;
+}
+
+@media screen and (max-width: 1600px) {
+  .rubber-duck {
+    display: none;
+  }
+}

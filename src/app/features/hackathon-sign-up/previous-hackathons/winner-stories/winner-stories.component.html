@@ -1,0 +1,27 @@
+<div class="content-container">
+  <div class="column-group">
+    <div class="group card-container">
+      <div *ngFor="let story of successStories; let i = index;" (click)="revealInformation(i)" class="info-card {{ story.expand ? 'selected' : '' }}">
+        <div class="info-container">
+          <img class="face-img" src={{story.image}} alt="Face Photograph">
+          <h4 class="name-successor">{{story.name | translate}}</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="group" *ngFor="let story of successStories; let i = index;">
+      <div class="expanded-information" *ngIf="story.expand">
+        <div [innerHTML]="'success-stories.question-one' | translate"></div>
+        <div class="question-answer">{{story.answerOne | translate}}</div>
+        <div [innerHTML]="'success-stories.question-two' | translate"> </div>
+        <div class="question-answer">{{story.answerTwo | translate}}</div>
+        <div [innerHTML]="'success-stories.question-three' | translate"></div>
+        <div class="question-answer">{{story.answerThree | translate}}</div>
+        <div [innerHTML]="'success-stories.question-four' | translate"></div>
+        <div class="question-answer">{{story.answerFour | translate}}</div>
+        <div [innerHTML]="'success-stories.question-five' | translate"> </div>
+        <div class="question-answer">{{story.answerFive | translate}}</div>
+      </div>
+    </div>
+  </div>
+</div>

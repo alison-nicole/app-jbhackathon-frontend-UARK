@@ -1,0 +1,77 @@
+[
+    {
+        "name": "bowling",
+        "icon": "assets/svg/team-icons/bowling.svg",
+        "selected": false
+    },
+    {
+        "name": "chess-horse",
+        "selected": false,
+        "icon": "assets/svg/team-icons/chess_horse.svg"
+    },
+    {
+        "selected": false,
+        "name": "cup",
+        "icon": "assets/svg/team-icons/cup.svg"
+    },
+    {
+        "name": "futball",
+        "icon": "assets/svg/team-icons/futball.svg",
+        "selected": false
+    },
+    {
+        "icon": "assets/svg/team-icons/medal.svg",
+        "selected": false,
+        "name": "medal"
+    },
+    {
+        "name": "pong",
+        "icon": "assets/svg/team-icons/pong.svg",
+        "selected": false
+    },
+    {
+        "selected": false,
+        "name": "airplane",
+        "icon": "assets/svg/team-icons/airplane.svg"
+    },
+    {
+        "name": "bicycle",
+        "icon": "assets/svg/team-icons/bicycle.svg",
+        "selected": false
+    },
+    {
+        "selected": false,
+        "name": "bike",
+        "icon": "assets/svg/team-icons/bike.svg"
+    },
+    {
+        "name": "diamond",
+        "icon": "assets/svg/team-icons/diamond.svg",
+        "selected": false
+    },
+    {
+        "selected": false,
+        "icon": "assets/svg/team-icons/car.svg",
+        "name": "car"
+    },
+    {
+        "icon": "assets/svg/team-icons/mouse.svg",
+        "name": "mouse",
+        "selected": false
+    },
+    {
+        "name": "helicopter",
+        "icon": "assets/svg/team-icons/helicopter.svg",
+        "selected": false
+    },
+    {
+        "icon": "assets/svg/team-icons/watch.svg",
+        "selected": false,
+        "name": "watch"
+    },
+    {
+        "icon": "assets/svg/team-icons/weights.svg",
+        "name": "weights",
+        "selected": false
+    }
+]

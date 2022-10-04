@@ -1,0 +1,25 @@
+<div class="content-container">
+  <div class="title-container">
+    <div class="text-container">
+      <h1 class="section-title">Competition</h1>
+      <h4 class="subheader">The latest on all things Hackathon</h4>
+    </div>
+  </div>
+  <div class="signup-container">
+    <div class="blue-banner"></div>
+    <div class="grid-container">
+        <img class="competition-image" src="../../../../assets/svg/competition-people.svg" alt="competition graphic">
+      <div class="right-container">
+        <div class="timer-container">
+          <app-countdown-timer *ngIf="showSignUpCountdown" [date]="signUpDeadline" [message]="'Sign Up Deadline'"></app-countdown-timer>
+          <app-countdown-timer *ngIf="showHackathonStartCountdown" [date]="hackathonStart" [message]="'Time Until Hackathon'"></app-countdown-timer>
+          <app-countdown-timer *ngIf="showHackathonEndCountdown" [date]="hackathonEnd" [message]="'Time Until End of Hackathon'"></app-countdown-timer>
+        </div>
+        <app-registration></app-registration>
+      </div>
+    </div>
+  </div>
+  <div class="teams-container">
+    <app-current-teams></app-current-teams>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+@import "../../../../styles.scss";
+
+.rubric {
+  margin-top: 80px;
+  height: auto;
+  position: relative;
+}
+
+.rubric-banner {
+    /* Layout Properties */
+  position: relative;
+  z-index: -2;
+  top: 0px;
+  left: -100px;
+  width: 68vw;
+  height: fit-content;
+  padding: 20px;
+
+  /* UI Properties */
+
+  background: transparent linear-gradient(181deg, var(--unnamed-color-0288cc) 0%, #40BFFD 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(181deg, #0288CC 0%, #40BFFD 100%) 0% 0% no-repeat padding-box;
+  border-radius: 90px;
+  opacity: 1;
+  margin-bottom: 100px;
+  
+}
+
+.number-row {
+  box-sizing: border-box;
+  border-bottom: 3px solid #FFDD00;
+}
+
+.title {
+  text-transform: capitalize;
+  font-weight: 600;
+  color: $theme-white;
+}
+td
+{
+  margin-top: 10px;
+  text-align: center;
+  vertical-align: top;
+  border-bottom: 1px solid black;
+  padding: 0 10px; 
+}
+
+@media screen and (min-width: 1201px) {
+  
+
+  .yellow-bar {
+    position: absolute;
+    top: 60px;
+    left: -40px;
+    width: 63vw;
+    height: 5px;
+  
+    /* UI Properties */
+  
+    background: #FFDD00 0% 0% no-repeat padding-box;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  table
+  {
+    margin-top: 1em;
+    overflow: auto;
+  }
+
+  th, td 
+  {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    text-align: center;
+    font-size: small;
+    padding: 10px;
+    margin: 5px 0;
+  }
+
+  .rubric-banner {
+    left: -32.5px;
+  }
+
+  td
+  {
+    border-right: 1px solid black;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .rubric-banner{
+    left: -90px;
+    max-width: 500px;
+    width: 160%;
+    border-radius: 0px;
+  }
+}

@@ -1,0 +1,110 @@
+@import './assets/theme/button-styles.scss';
+@import './assets/theme/fonts.scss';
+@import './/assets/theme/card-styles.scss';
+@import './/assets/theme/colors.scss';
+
+// color declarations
+:root{
+  --clr-foreground: #181818;
+  --clr-background: #fff;
+  --clr-footer-bg: #000;
+  --clr-footer-text: #fff;
+  --clr-header-bg: #fff;
+  --clr-foreground-light: #e2e2e2;
+}
+
+
+//Attribute variables
+$cornerRadious: 10px;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--clr-background);
+  color: var(--clr-foreground);
+}
+
+//This class specifies the style of containers:
+.border {
+  border-radius: $cornerRadious;
+  box-shadow: 5px 5px 7px rgba(0,0,0, 0.10);
+}
+
+.hide-scrollbar {
+  html,
+  body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+//changing colors to on everything
+
+a {
+  text-decoration: none;
+  color: var(--clr-background);
+  
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.secondary-link, span.data, span.accordion-tab, select, option{
+  color: var(--clr-foreground) !important;
+}
+
+.link-group, .link-img, .dropdown > ul{
+  background-color: var(--clr-background);
+}
+
+td {
+  color: $theme-white;
+  border: 15px hidden !important;
+  
+  p {
+    font-size: 14px;
+  }
+}
+
+textarea{
+  resize: none;
+}
+
+svg{
+  fill: var(--clr-foreground);
+}
+
+
+body.dark-mode{
+
+  --clr-foreground: #fff;
+  --clr-background: #181818;
+  --clr-header-bg: #202020;
+  --clr-foreground-light: #e2e2e2;
+
+
+  .placeholder{
+    color: var(--clr-background);
+  }
+
+  table, th, td, select, option, textarea, input[type=text]{
+    color: var(--clr-foreground) !important;
+    border: 1px solid var(--clr-foreground) !important;
+    background-color: var(--clr-background) !important;
+  }
+}
+html, body { 
+  height: 100%;
+  overflow-x: hidden;
+}
+
+

@@ -1,0 +1,162 @@
+@import '../../../../styles.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.resource-banner {
+  /* Layout Properties */
+  position: relative;
+  top: 0px;
+  left: -21vw;
+  width: 2390px;
+  height: fit-content;
+  padding: 0 21vw;
+
+  /* UI Properties */
+  background: transparent linear-gradient(70deg, #40BFFD 0%, var(--unnamed-color-0288cc) 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(70deg, #40BFFD 0%, #0288CC 100%) 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.upperheader, .highlight{
+  color: $theme-yellow;
+  font-weight: 400;
+}
+
+.subheader {
+  color: $theme-grey;
+}
+
+
+h1, h2, h3, h4, h5 {
+  margin-bottom: 8px;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+h2 {
+  color: $theme-white;
+  margin-top: 10px;
+}
+
+ul {
+  list-style-position: outside;
+  list-style-type: disc;
+}
+
+
+.content-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 0 20vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .hero {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+
+    .group {
+      margin-top: 140px;
+    }
+
+    .link {
+      margin-bottom: 20px;
+      margin-left: 15px;
+      font-size: 16px;
+      color: $theme-white;
+    }
+
+    .text-box {
+      height: fit-content;
+      min-width: 200px;
+      max-width: 60%;
+      margin-bottom: 10px;
+    }
+  }
+
+  .title {
+    margin-bottom: 20px;
+    border-left: solid 5px $theme-yellow;
+    padding-left: 10px;
+  }
+  .group {
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+
+    h1, h2, h3, h4, h5, h6, .wrapper {
+      flex-basis: 100%;
+      text-align: left;
+    }
+  }
+
+  .resources-group {
+    margin-bottom: 37px;
+
+    .column-group {
+      display: grid;
+      height: fit-content;
+  
+      .link-group {
+        margin-left: 15px;
+        flex-basis: 100%;
+        margin-bottom: 20px;
+        background-color: inherit;
+        color: $theme-white;
+  
+        h4 {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .section {
+    width: 100%;
+    margin-top: 100px;
+
+    
+  }
+
+  
+  .resource-section {
+    width: 100%;
+    margin-top: 100px;
+
+    
+  }
+
+  .link {
+    color: $theme-white;
+    text-decoration: none;
+    
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (min-width: 1001px) {
+
+  .hero, .column-group {
+    grid-template-columns: minmax(500px, 50vw) minmax(300px, 20vw);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  
+  .hero, .column-group {
+    grid-template-columns: 100%;
+  }
+}

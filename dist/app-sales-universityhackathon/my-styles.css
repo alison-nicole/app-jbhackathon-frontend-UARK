@@ -1,0 +1,199 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[6].rules[1].use[0]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[6].rules[1].use[1]!./src/styles.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@import url(https://use.typekit.net/ivo1aee.css);
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[6].rules[1].use[0]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[6].rules[1].use[1]!./src/styles.scss (1) ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.btn {
+  padding: 0.25rem 1rem !important;
+  min-width: 100px;
+  border-radius: 7px;
+  font-weight: 500;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.btn:hover {
+  cursor: pointer;
+}
+.btn-blue {
+  background: linear-gradient(#40BFFD, #0288CC);
+  border: 1px solid #0288CC;
+}
+.btn-blue:hover {
+  background: linear-gradient(#50c5ff, #0d8fd0);
+}
+.btn-blue:active {
+  background: linear-gradient(#40BFFD, #0288CC);
+}
+.btn-blue:disabled {
+  background: linear-gradient(#C7EDFF, #B1D5E8);
+  border: #B1D5E8;
+}
+.btn-blue:disabled:hover {
+  background: linear-gradient(#C7EDFF, #B1D5E8);
+  cursor: default;
+}
+.btn-yellow {
+  transition: 0.1s ease-out;
+  background-color: #FFDD00;
+  box-shadow: 0 4px 0 #ffae00;
+  border: 0px;
+  color: #000000;
+}
+.btn-yellow:enabled:active {
+  box-shadow: 0 0 0 #ffae00;
+  transform: translateY(4px);
+}
+.btn-yellow:disabled {
+  opacity: 50%;
+  cursor: default;
+}
+.btn-grey {
+  transition: 0.1s ease-out;
+  background-color: #ffffff;
+  box-shadow: 0 4px 0 #cecece;
+  border: 0px;
+  color: #000000;
+}
+.btn-grey:enabled:active {
+  box-shadow: 0 0 0 #cecece;
+  transform: translateY(4px);
+}
+.btn-grey:disabled {
+  opacity: 50%;
+  cursor: default;
+}
+.btn-red {
+  background: linear-gradient(#ff958e, #CC2D24);
+  border: 1px solid #CC2D24;
+}
+.btn-red:hover {
+  background: linear-gradient(#ff9d96, #ce3b33);
+}
+.btn-red:active {
+  background: linear-gradient(#ff958e, #CC2D24);
+}
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: proxima-nova, sans-serif;
+}
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+}
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+h4, h5, h6 {
+  font-size: 20px;
+  font-weight: 400;
+}
+input, select, textarea, p, button, label, a {
+  font-size: 16px;
+  font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5rem;
+}
+.card {
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.section {
+  scroll-margin-top: 50px;
+}
+:root {
+  --clr-foreground: #181818;
+  --clr-background: #fff;
+  --clr-footer-bg: #000;
+  --clr-footer-text: #fff;
+  --clr-header-bg: #fff;
+  --clr-foreground-light: #e2e2e2;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background-color: #fff;
+  background-color: var(--clr-background);
+  color: #181818;
+  color: var(--clr-foreground);
+}
+.border {
+  border-radius: 10px;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.1);
+}
+.hide-scrollbar html,
+.hide-scrollbar body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.hide-scrollbar ::-webkit-scrollbar {
+  display: none;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  color: var(--clr-background);
+}
+a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.secondary-link, span.data, span.accordion-tab, select, option {
+  color: #181818 !important;
+  color: var(--clr-foreground) !important;
+}
+.link-group, .link-img, .dropdown > ul {
+  background-color: #fff;
+  background-color: var(--clr-background);
+}
+td {
+  color: #ffffff;
+  border: 15px hidden !important;
+}
+td p {
+  font-size: 14px;
+}
+textarea {
+  resize: none;
+}
+svg {
+  fill: #181818;
+  fill: var(--clr-foreground);
+}
+body.dark-mode {
+  --clr-foreground: #fff;
+  --clr-background: #181818;
+  --clr-header-bg: #202020;
+  --clr-foreground-light: #e2e2e2;
+}
+body.dark-mode .placeholder {
+  color: #fff;
+  color: var(--clr-background);
+}
+body.dark-mode table, body.dark-mode th, body.dark-mode td, body.dark-mode select, body.dark-mode option, body.dark-mode textarea, body.dark-mode input[type=text] {
+  color: #181818 !important;
+  color: var(--clr-foreground) !important;
+  border: 1px solid #181818 !important;
+  border: 1px solid var(--clr-foreground) !important;
+  background-color: #fff !important;
+  background-color: var(--clr-background) !important;
+}
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/*# sourceMappingURL=my-styles.css.map*/

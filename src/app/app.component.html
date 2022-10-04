@@ -1,0 +1,29 @@
+<head>
+  <title></title>
+  <style id="antiClickjack">
+    body {
+      display: none !important;
+    }
+  </style>
+  <script type="text/javascript">
+    if (self === top) {
+      var antiClickjack = document.getElementById("antiClickjack");
+      antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+      top.location = self.location;
+    }
+  </script>
+  <link rel="stylesheet" href="https://use.typekit.net/ivo1aee.css">
+</head>
+
+<div class="header-container">
+  <app-header></app-header> 
+</div>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="footer-container">
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,166 @@
+@import "../../../../styles.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.teams {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    align-items: center;
+    text-align: start;
+
+    .team-card {
+        margin: 1em 0;
+        background-color: #E6F7FF;
+        height: 4.5em;
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        border-radius: 7px;
+
+    }
+}
+
+.teams-title {
+    margin: 0 0 1em -1em;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 60%;
+}
+
+.img {
+    height: 5em;
+    width: 5em;
+    margin: 0 0 0 -2.5em;
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .team-icon {
+        width: 55%;
+        height: 55%;
+        mask-position: center;
+        mask-size: cover;
+        mask-repeat: no-repeat;
+    }
+}
+
+.right-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 5em;
+
+    h4 {
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
+}
+
+.member-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2.5em 0 0;
+
+    .icon {
+        height: 30px;
+        margin: 0 10px;
+    }
+}
+
+.noteams-card {
+    grid-column: span 3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    padding: 20px 10px;
+
+    h3 {
+        color: $theme-blue;
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+
+    .noteams-card {
+        padding: 30% 10px;
+
+    }
+
+    .teams {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .team-card {
+            height: 4.5em;
+
+            display: flex;
+            flex-direction: row;
+            width: 70%;
+        }
+    }
+
+    .left-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .right-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .team-content {
+        margin: 0 0 0 1em;
+        width: 100%;
+    }
+
+    .img {
+        margin: 0 0 0 -2em;
+
+    }
+
+    .member-count {
+        width: 100%;
+        margin: 0;
+    }
+}

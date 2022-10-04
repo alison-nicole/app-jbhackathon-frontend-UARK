@@ -1,0 +1,68 @@
+@import "../../../../../styles.scss";
+
+.upperheader {
+  color: $theme-blue;
+}
+
+.highlight {
+  color: $theme-blue;
+  font-weight: 600;
+}
+
+.subheader {
+  color: $theme-white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 4px;
+}
+
+p {
+  width: 35%;
+  min-width: 150px;
+  color: $theme-grey;
+}
+
+.text-box {
+  height: fit-content;
+  min-width: 150px;
+  margin-bottom: 10px;
+  letter-spacing: 0.32px;
+  color: $theme-grey;
+}
+
+.split {
+  height: fit-content;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .text-box {
+    max-width: 40%;
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2vw;
+  width: 100%;
+  left: 10vw;
+}
+
+.link-container {
+  display: flex;
+  align-items: center;
+
+  .highlight {
+    margin-left: 20px;
+  }
+}

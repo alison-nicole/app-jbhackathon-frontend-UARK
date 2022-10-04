@@ -1,0 +1,227 @@
+@import "../../../../styles.scss";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.content-container {
+	display: flex;
+	justify-content: center;
+	margin-left: 30em;
+	margin-right: 30em;
+}
+
+.page-title {
+  	display: none;
+}
+
+.judging-form {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	padding: 8%;
+}
+
+.team-name {
+	text-align: left;
+	vertical-align: middle;
+	margin-bottom: 8px;
+	font-size: 28px;
+}
+.team-name-underline {
+	border: solid 1px;
+}
+
+.rubric {
+	.rubric--item {
+		margin-top: 3em;
+		padding: 0;
+
+		.section-header {
+			display: flex;
+			justify-content: space-between;
+      		white-space: nowrap; //turn off for mobile?
+			justify-self: end;
+			align-items: center;
+			font-size: 22px;
+
+			.section-title {
+				vertical-align: middle;
+				font-size: inherit;
+				// height: inherit; why isn't this div same height as parent, but score is
+			}
+
+			.section-score {
+				text-align: right;
+				font-size: inherit;
+
+				.input-score {
+					border: none;
+					font-size: inherit;
+					width: 30%;
+					text-align: right;
+					color: #00ABFF !important;
+					padding: 0;
+					margin-left: 20px;
+	
+					// &:active {
+					// 	border-color: blue;
+					// }
+				}
+			}
+		}
+		
+		.slider-container {
+			display: grid;
+			top: 200px;
+			width: 100%;
+
+			
+		}
+		.card {
+			margin-top: 1rem;
+			padding: 4px;
+			box-shadow: 0px 0px 5px #00000033;
+			background-color: white !important;
+			border-color: white !important;
+			table {
+				margin: 5px;
+				text-align: center;
+				border-collapse: collapse;
+				// border: 6px solid black;
+			}
+		}
+	}
+}
+
+.feedback {
+	display: flexbox;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	margin-top: 3rem;
+
+	label {
+		font-weight: 600;
+		font-size: 16px;
+	}
+
+	textarea {
+		background-color: white !important;
+		border: auto;
+		border-width: 1px;
+		border-color: grey;
+		border-radius: 0.6rem;
+		width: 100%;
+
+		resize: vertical;
+		overflow: hidden;
+		padding: 5px;
+	}
+}
+
+.score {
+	text-align: center;
+	
+	.score-title {
+		margin-top: 4vh;
+	}
+	.score-number {
+		display: flex;
+		justify-content: center;
+		margin-top: 1vh;
+		.calculated-score {
+			color: #00ABFF;
+      		margin-right: 12px;
+		}
+	}	
+}
+
+.submit-container {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.submit-button {
+	margin: 20px 0;
+	width: 12%;
+	text-align: center;
+	border-radius: 0.5rem;
+	align-self: center;
+}
+
+.btn-yellow {
+  transition: 0.1s ease-out;
+  background-color: #FFDD00;
+  box-shadow: 0 4px 0 #ffae00;
+  border: 0px solid #ffe600;
+}
+
+.btn-yellow:active {
+  box-shadow: 0 0 0 #ffae00;
+  transform: translateY(4px);
+}
+
+::placeholder {
+  color: #00ABFF !important;
+}
+
+th{
+	border-collapse: collapse !important;
+
+	text-align: center;
+	width: 20%;
+	// border: 1px solid rgba(0,0,0, 0.50);
+	padding: 0.5rem;
+}
+
+td{
+	border-collapse: collapse !important;
+
+	// border: 1px solid rgba(0,0,0, 0.50);
+	text-align: center;
+	font-size: 0.75rem;
+	padding: 0.5rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@media screen and (max-width: 1800px) {
+    .content-container {
+      margin-left: 20em;
+      margin-right: 20em;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .content-container {
+      margin-left: 15em;
+      margin-right: 15em;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .content-container {
+      margin-left: 10em;
+      margin-right: 10em;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .content-container {
+      margin-left: 5em;
+      margin-right: 5em;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .content-container {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+}

@@ -1,0 +1,147 @@
+@import '../../../../../styles.scss';
+
+.schedule-banner {
+  /* Layout Properties */
+  position: absolute;
+  top: -89px;
+  left: -543.578125px;
+  width: 1396px;
+  height: 487px;
+  padding: 0 21vw;
+  z-index: -2;
+  transform: matrix(-0.99, 0.1, -0.1, 0.99, 0, 0);
+
+  /* UI Properties */
+
+  background: transparent linear-gradient(70deg, #40BFFD 0%, var(--unnamed-color-0288cc) 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(70deg, #40BFFD 0%, #0288CC 100%) 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.schedule {
+  margin-top: 300px;
+  position: relative;
+  height: 550px;
+}
+
+.schedule-card {
+  width: 60vw;
+  height: 300px;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  color: $theme-white;
+
+  .upperheader {
+    height: 45px;
+  }
+}
+
+.schedule-section {
+  text-align: center;
+
+}
+
+.upperheader {
+  color: $theme-white;
+  letter-spacing: 0px;
+  font-size: 24px;
+  height: 25px;
+  margin-top: 4vh;
+}
+
+.ng-tns-c3-1 {
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0.32px;
+  opacity: 1;
+  color: $theme-white;
+}
+
+.schedule-title {
+  flex-basis: 100%;
+  position: relative;
+  // top: 160px;
+  min-width: 300px;
+  color: $theme-white;
+}
+
+.top-yellow-bar {
+  position: absolute;
+  margin-top: -191px;
+  left: 900px;
+  transform: rotate(0.3deg);
+  overflow-x: hidden;
+
+}
+
+.bottom-yellow-bar {
+  position: absolute;
+  top: 402.5px;
+  left: -530px;
+  transform: rotate(0.3deg);
+  overflow-x: hidden;
+}
+
+hr {
+  border: 1px solid white;
+  margin-top: 2.5vh;
+  width: 120px;
+}
+
+@media screen and (max-width: 1100px) {
+  hr {
+    border: 0px;
+  }
+
+  .vl {
+    border-left: 2px solid white;
+    height: 50px;
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 2.5vh;
+  }
+
+  .upperheader {
+    margin-left: 0vw;
+  }
+
+  p {
+    margin-top: 2.5vh;
+  }
+
+  .schedule-section {
+    display: flex;
+    width: 220px;
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 733px) {
+  .schedule-banner {
+    height: 680px;
+  }
+
+  .schedule {
+    height: 690px;
+  }
+
+  .schedule-section {
+    display: flex;
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 1682px) {
+  .bottom-yellow-bar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .schedule-section {
+    width: 190px;
+  }
+}

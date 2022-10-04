@@ -1,0 +1,587 @@
+[
+    {
+        "background": "#330000",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#331900",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#333300",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#193300",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "selected": false,
+        "background": "#003300",
+        "darkColor" : true
+    },
+    {
+        "selected": false,
+        "background": "#003319",
+        "darkColor" : true
+    },
+    {
+        "background": "#003333",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#001933",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#000033",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#190033",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#330033",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#330019",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#000000",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#660000",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#663300",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#666600",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "selected": false,
+        "background": "#336600",
+        "darkColor" : true
+    },
+    {
+        "selected": false,
+        "background": "#006600",
+        "darkColor" : true
+    },
+    {
+        "selected": false,
+        "background": "#006633",
+        "darkColor" : true
+    },
+    {
+        "selected": false,
+        "background": "#006666",
+        "darkColor" : true
+    },
+    {
+        "selected": false,
+        "background": "#003366",
+        "darkColor" : true
+    },
+    {
+        "selected": false,
+        "background": "#000066",
+        "darkColor" : true
+    },
+    {
+        "selected": false,
+        "background": "#330066",
+        "darkColor" : true
+    },
+    {
+        "selected": false,
+        "background": "#660066",
+        "darkColor" : true
+    },
+    {
+        "background": "#660033",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#202020",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#990000",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#994C00",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#999900",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#4C9900",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#009900",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#00994C",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#009999",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#004C99",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#000099",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#4C0099",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#990099",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#99004C",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#404040",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#CC0000",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#CC6600",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#CCCC00",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#66CC00",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#00CC00",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#00CC66",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#00CCCC",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#0066CC",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#0000CC",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#6600CC",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#CC00CC",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#CC0066",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#606060",
+        "selected": false,
+        "darkColor" : true
+    },
+    {
+        "background": "#FF0000",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FF8000",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FFFF00",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#80FF00",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#00FF00",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#00FF80",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#00FFFF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#0080FF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#0000FF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#7F00FF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FF00FF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FF007F",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#808080",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FF3333",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FF9933",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FFFF33",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#99FF33",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#33FF33",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#33FF99",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#33FFFF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#3399FF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#3333FF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#9933FF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FF33FF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FF3399",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#A0A0A0",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FF6666",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FFB266",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FFFF66",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#B2FF66",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "selected": false,
+        "background": "#66FF66",
+        "darkColor" : false
+    },
+    {
+        "selected": false,
+        "background": "#66FFB2",
+        "darkColor" : false
+    },
+    {
+        "selected": false,
+        "background": "#66FFFF",
+        "darkColor" : false
+    },
+    {
+        "selected": false,
+        "background": "#66B2FF",
+        "darkColor" : false
+    },
+    {
+        "selected": false,
+        "background": "#6666FF",
+        "darkColor" : false
+    },
+    {
+        "background": "#B266FF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FF66FF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FF66B2",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#C0C0C0",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FF9999",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FFCC99",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FFFF99",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#CCFF99",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#99FF99",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#99FFCC",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#99FFFF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#99CCFF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#9999FF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#CC99FF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FF99FF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FF99CC",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#E0E0E0",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FFCCCC",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FFE5CC",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FFFFCC",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#E5FFCC",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#CCFFCC",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#CCFFE5",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#CCFFFF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#CCE5FF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#CCCCFF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#E5CCFF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FFCCFF",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FFCCE5",
+        "selected": false,
+        "darkColor" : false
+    },
+    {
+        "background": "#FFFFFF",
+        "selected": false,
+        "darkColor" : false
+    }
+]

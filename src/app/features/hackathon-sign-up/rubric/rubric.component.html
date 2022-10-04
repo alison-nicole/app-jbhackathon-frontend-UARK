@@ -1,0 +1,270 @@
+<head>
+  <title></title>
+  <style id="antiClickjack">
+    body {
+      display: none !important;
+    }
+  </style>
+  <script type="text/javascript">
+    if (self === top) {
+      var antiClickjack = document.getElementById("antiClickjack");
+      antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+      top.location = self.location;
+    }
+  </script>
+</head>
+<div class="rubric">
+  <div class="rubric-banner">
+    <table *ngIf="isBigScreen">
+      <caption></caption>
+      <thead class="number-row">
+        <tr>
+          <th id="table" class="title" [innerHTML]="d | translate"></th>
+          <th id="table" class="title" [innerHTML]="'judging.one' | translate"></th>
+          <th id="table" class="title" [innerHTML]="'judging.two' | translate"></th>
+          <th id="table" class="title" [innerHTML]="'judging.three' | translate"></th>
+          <th id="table" class="title" [innerHTML]="'judging.four' | translate"></th>
+          <th id="table" class="title" [innerHTML]="'judging.five' | translate"></th>
+        </tr>
+      </thead>
+      <br>
+      <tr>
+        <td>
+          <p class="title" [innerHTML]="'judging.question-one.criteria' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-one.one' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-one.two' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-one.three' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-one.four' | translate"></p>
+        </td>
+        <td class="last">
+          <p [innerHTML]="'judging.question-one.five' | translate"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p class="title" [innerHTML]="'judging.question-two.criteria' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-two.one' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-two.two' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-two.three' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-two.four' | translate"></p>
+        </td>
+        <td class="last">
+          <p [innerHTML]="'judging.question-two.five' | translate"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p class="title" [innerHTML]="'judging.question-three.criteria' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-three.one' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-three.two' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-three.three' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-three.four' | translate"></p>
+        </td>
+        <td class="last">
+          <p [innerHTML]="'judging.question-three.five' | translate"></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p class="title" [innerHTML]="'judging.question-four.criteria' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-four.one' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-four.two' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-four.three' | translate"></p>
+        </td>
+        <td>
+          <p [innerHTML]="'judging.question-four.four' | translate"></p>
+        </td>
+        <td class="last">
+          <p [innerHTML]="'judging.question-four.five' | translate"></p>
+        </td>
+      </tr>
+    </table>
+    <table *ngIf="!isBigScreen">
+      <caption></caption>
+      <thead>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.criteria' | translate"></th>
+          <td>
+            <p class="title" [innerHTML]="'judging.question-one.criteria' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.one' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-one.one' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.two' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-one.two' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.three' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-one.three' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.four' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-one.four' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.five' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-one.five' | translate"></p>
+          </td>
+        </tr>
+      </thead>
+      <thead>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.criteria' | translate"></th>
+          <td>
+            <p class="title" [innerHTML]="'judging.question-two.criteria' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.one' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-two.one' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.two' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-two.two' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.three' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-two.three' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.four' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-two.four' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.five' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-two.five' | translate"></p>
+          </td>
+        </tr>
+      </thead>
+      <thead>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.criteria' | translate"></th>
+          <td>
+            <p class="title" [innerHTML]="'judging.question-three.criteria' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.one' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-three.one' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.two' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-three.two' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.three' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-three.three' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.four' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-three.four' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.five' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-three.five' | translate"></p>
+          </td>
+        </tr>
+      </thead>
+      <thead>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.criteria' | translate"></th>
+          <td>
+            <p class="title" [innerHTML]="'judging.question-four.criteria' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.one' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-four.one' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.two' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-four.two' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.three' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-four.three' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.four' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-four.four' | translate"></p>
+          </td>
+        </tr>
+        <tr>
+          <th id="table" class="title" [innerHTML]="'judging.five' | translate"></th>
+          <td>
+            <p [innerHTML]="'judging.question-four.five' | translate"></p>
+          </td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="yellow-bar"></div>
+</div>

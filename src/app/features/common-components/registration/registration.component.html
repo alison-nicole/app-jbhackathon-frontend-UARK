@@ -1,0 +1,130 @@
+<div class="master-container">
+  <div class="head">
+    <h3 class="title">Register </h3>
+  </div>
+  <form (keydown.enter)="$event.preventDefault()" [formGroup]="signUpForm" class="form">
+    <div id="module1" class="module first">
+      <div class="content">
+        <div class="single-field">
+          <label>First Name* </label>
+          <label *ngIf="signUpForm.get('firstName').invalid && signUpForm.get('firstName').touched" class="error">Enter your first name</label>
+          <input formControlName="firstName" class="form-control" type="text">
+        </div>
+        <div class="single-field">
+          <label>Last Name* </label>
+          <label *ngIf="signUpForm.get('lastName').invalid && signUpForm.get('lastName').touched" class="error">Enter your last name</label>
+          <input formControlName="lastName" class="form-control" type="text">
+        </div>
+        <div class="single-field">
+          <label>School Email*</label>
+          <label *ngIf="signUpForm.get('schoolEmailAddress').invalid && signUpForm.get('schoolEmailAddress').touched" class="error">Enter a valid school email address</label>
+          <input formControlName="schoolEmailAddress" class="form-control" type="text">
+        </div>
+        <div class="single-field">
+          <label>Accommodations</label>
+          <textarea class="text-area" formControlName="accommodations" cols="30" rows="10"></textarea>
+        </div>
+        <div class="checkbox-single-field">
+          <input class="checkbox" type="checkbox" (click)="changeGradVal()">
+          <label>Graduate Student</label>
+        </div>
+      </div>
+      <div class="buttons">
+        <button [disabled]="signUpForm.get('firstName').invalid || signUpForm.get('lastName').invalid || signUpForm.get('schoolEmailAddress').invalid" class="next btn btn-yellow" (click)="next('module1', 'module2')">Continue</button>
+      </div>
+    </div>
+    <div id="module2" class="module hidden two">
+      <div class="content">
+        <div class="group">
+          <button class="btn btn-grey icon-btn" (click)="next('module2', 'module3-1');">
+            <p> I have a team code </p>
+          </button>
+          <button class="btn btn-grey icon-btn" (click)="next('module2', 'module4');  this.teamModule = 'module2';">
+            <p> Pair me with a random team </p>
+          </button>
+          <button class="btn btn-grey icon-btn" (click)="next('module2', 'module3-2'); createdTeam = true;">
+            <p> I want to create a team </p>
+          </button>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-grey" (click)="back('module2', 'module1'); signUpForm.get('teamName').setValue('')">Back</button>
+      </div>
+    </div>
+    <div id="module3-1" class="module hidden three-1">
+      <div style="flex-direction: column;" class="content">
+        <label class="team-code-text">Enter Team Code</label>
+        <div class="group">
+          <app-code-verification (submitForm)="checkTeamCode($event);"></app-code-verification>
+        </div>
+        <div style="margin-top: 30px;" class="group" *ngIf="signUpForm.get('teamName').valid">
+          {{ signUpForm.get("teamName").value }}
+          <hr class="separator">
+        </div>
+        <div style="margin-top: 30px; position: relative; text-align: center; margin-left: 0;" class="error" *ngIf="invalidTeamCode"> Team has too many members, please talk to the team leader or enter a new team code. </div>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-grey" (click)="back('module3-1', 'module2'); signUpForm.get('teamName').setValue('')">Back</button>
+        <button [disabled]="signUpForm.get('teamName').invalid" class="btn btn-yellow" (click)="next('module3-1', 'module4'); this.teamModule = 'module3-1';">Continue</button>
+      </div>
+    </div>
+    <div id="module3-2" class="module hidden three-2">
+      <div class="content">
+        <app-team-icon-color-selector class="iconColorComponent" (sendIcon)="saveIcon($event)" (sendColor)="saveColor($event)" ></app-team-icon-color-selector>
+        <div class="single-field">
+          <label>Team Name*</label>
+          <label *ngIf="signUpForm.get('teamName').invalid && signUpForm.get('teamName').touched" class="error">Enter a team name (6-25 chars)</label>
+          <input formControlName="teamName" class="team-name form-control" type="text">
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-grey" (click)="back('module3-2', 'module2'); signUpForm.get('teamName').setValue('')">Back</button>
+        <button [disabled]="(signUpForm.get('teamName').invalid) || (signUpForm.get('teamIconCode').invalid) || (signUpForm.get('teamColorCode').invalid)" class=" btn btn-yellow" (click)="next('module3-2', 'module4'); this.teamModule = 'module3-2';">Continue</button>
+      </div>
+    </div>
+    <div id="module4" class="module hidden four">
+      <div class="content">
+        <div style="justify-content: flex-start;" class="group team-overview">
+          <div class="team-header" *ngIf="signUpForm.get('teamName').valid && signUpForm.get('teamIconCode').valid && signUpForm.get('teamColorCode').valid">
+            <div class="color-icon-container" [ngStyle]="changeBackground()">
+              <div class="selected-icon" [ngStyle]="changeIconColor()"></div>
+            </div>
+            <h4 class="data team-name"> {{ signUpForm.get("teamName").value }} </h4>
+          </div>
+          <div class="info-group">
+            <p class="category">Name</p>
+            <p class="data"> {{ signUpForm.get("firstName").value }} {{ signUpForm.get("lastName").value }} </p>
+          </div>
+          <div class="info-group">
+            <p class="category">Email</p>
+            <p class="data"> {{ signUpForm.get("schoolEmailAddress").value }} </p>
+          </div>
+          <div class="info-group" *ngIf="signUpForm.get('accommodations').value !== ''">
+            <p class="category">Accommodations</p>
+            <p class="data"> {{ signUpForm.get("accommodations").value }} </p>
+          </div>
+          <div class="info-group">
+            <p class="category">Graduate</p>
+            <p class="data"> {{ signUpForm.get('isGradStudent').value }} </p>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-grey" (click)="back('module4', this.teamModule);">Back</button>
+        <button class="btn btn-yellow" (click)="submit();">Submit</button>
+      </div>
+    </div>
+    <div *ngIf="success === true" id="module5" class="module seven">
+      <div class="group">
+        <h5 style="text-align: center;">You're signed up for the 2022 Hackathon. See you there!</h5>
+        <div class="message">
+          <h3 *ngIf="createdTeamCode !== null"> {{ this.createdTeamCode }} </h3>
+          <p *ngIf="createdTeamCode !== null">Copy this team code and send it out to your team. They will need this when they sign up.</p>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-yellow" (click)="closeSignUp();">Reset</button>
+      </div>
+    </div>
+  </form>
+</div>

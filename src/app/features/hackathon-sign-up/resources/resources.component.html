@@ -1,0 +1,137 @@
+<div class="content-container">
+  <div class="hero">
+    <div class="group">
+      <h1>Resources</h1>
+      <h4 class="subheader text-box" style="margin-bottom: 30px">References that will take your skills to the next level.</h4>
+    </div>
+    <!-- <div class="group">
+        <h4 class="link" (click)='scroll(front_end)'>Front-end Development</h4>
+        <h4 class="link" (click)='scroll(back_end)'>Back-end Development</h4>
+        <h4 class="link" (click)='scroll(misc)'>Programming Fundamentals</h4>
+        <h4 class="link" (click)='scroll(faq)'>FAQ</h4>
+        <h4 class="link" (click)='scroll(rubric)'>Rubric</h4>
+    </div> -->
+  </div>
+  <div class="section resource-banner">
+    <div #front_end class="group resources-group">
+      <div class="group title" style="margin-top: 40px">
+        <h2 [innerHTML]="'resources.front-end' | translate"></h2>
+        <h4 class="upperheader">The face of your project</h4>
+      </div>
+      <div class="column-group">
+        <div class="group">
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.angular.title' | translate"></h4>
+            <ul [innerHTML]="'resources.angular.links' | translate"></ul>
+          </div>
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.html.title' | translate"></h4>
+            <ul [innerHTML]="'resources.html.links' | translate"></ul>
+          </div>
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.typescript.title' | translate"></h4>
+            <ul [innerHTML]="'resources.typescript.links' | translate"></ul>
+          </div>
+        </div>
+        <div class="group">
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.react-native.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.react-native.links' | translate"></ul>
+          </div>
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.javascript.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.javascript.links' | translate"></ul>
+          </div>
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.jquery.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.jquery.links' | translate"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div #back_end class="group resources-group">
+      <div class="group title">   
+        <h2 [innerHTML]="'resources.back-end' | translate"></h2>
+        <h4 class="upperheader">The infrastructure of your project</h4>
+      </div>
+      <div class="column-group">
+        <div class="group">
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.java.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.java.links' | translate"></ul>
+          </div>
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.kotlin.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.kotlin.links' | translate"></ul>
+          </div>
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.sql.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.sql.links' | translate"></ul>
+          </div>
+        </div>
+        <div class="group">
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.c++.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.c++.links' | translate"></ul>
+          </div>
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.python.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.python.links' | translate"></ul>
+          </div>
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.nosql.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.nosql.links' | translate"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div #misc class="group resources-group">
+      <div class="group title">    
+        <h2 [innerHTML]="'resources.miscellaneous' | translate"></h2>
+        <h4 class="upperheader">The neccessities of programming</h4>
+      </div>
+      <div class="column-group">
+        <div class="group">
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.programming.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.programming.links' | translate"></ul>
+          </div>
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.linux.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.linux.links' | translate"></ul>
+          </div>
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.cryptography.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.cryptography.links' | translate"></ul>
+          </div>
+        </div>
+        <div class="group" style="margin-bottom: 50px">
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.github.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.github.links' | translate"></ul>
+          </div>
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.blockchain.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.blockchain.links' | translate"></ul>
+          </div>
+          <div class="link-group">
+            <h4 [innerHTML]="'resources.ai.title' | translate"></h4>
+            <ul style="list-style-type:disc" [innerHTML]="'resources.ai.links' | translate"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  <div #faq class="section">
+    <div style="margin-bottom: 30px;" class="group">        
+      <h2 style="color:black; margin-bottom: -10px; margin-top: 100px">Frequently Asked Questions</h2>
+    </div>
+    <app-faq></app-faq>
+  </div>
+  <div #rubric class="section">
+    <div style="margin-bottom: 30px;" class="group">        
+      <h2  style="color:black; margin-bottom: -10px; margin-top: 100px">Rubric</h2>
+    </div>
+  </div>
+  <app-rubric></app-rubric>
+</div>

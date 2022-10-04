@@ -1,0 +1,39 @@
+<div class="content-container">
+  <div class="page-title-container">
+    <h1 class="title">Current Hackathon Standings</h1>
+    <hr>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <div class="card-section card-section-place">
+        <p>Place</p>
+      </div>
+      <div class="card-section card-section-team-name">
+        <p>Team Name</p>
+      </div>
+      <div class="card-section card-section-team-score">
+        <p>Team Score</p>
+      </div>
+      <div class="card-section card-section-team-size">
+        <p>Team Size</p>
+      </div>
+    </div>
+    <div  id="{{'id-'+i}}" *ngFor="let team of teams; let i = index;" 
+      class="card card-section-place"
+      [style.backgroundColor]="i%2===0 ? '#E6F7FF' : ''">
+        <div class="card-section card-section-place">
+          <p>{{i+1}}</p>
+        </div>
+        <div class="card-section card-section-team-name">
+          <p>{{team.teamName}}</p>
+        </div>
+        <div class="card-section card-section-team-score">
+          <p>{{team.score}}</p>
+        </div>
+        <div class="card-section card-section-team-size">
+          <p>{{teamMemberAmount[i]}}</p>
+        </div>
+    </div>
+  </div>
+</div>

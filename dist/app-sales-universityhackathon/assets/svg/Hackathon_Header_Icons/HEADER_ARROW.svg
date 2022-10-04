@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10.666" height="8" viewBox="0 0 10.666 8">
+  <defs>
+    <style>
+      .cls-1 {
+        mix-blend-mode: darken;
+        isolation: isolate;
+      }
+    </style>
+  </defs>
+  <g id="Arrow_Up" class="cls-1" transform="translate(10.666 -2) rotate(90)">
+    <path id="_Compound_Path_" data-name="&lt;Compound Path&gt;" d="M9.912,4.108s-3.6-3.933-3.666-4A.333.333,0,0,0,6,0a.319.319,0,0,0-.246.108c-.047.047-3.666,4-3.666,4a.334.334,0,0,0,.492.451L5.666,1.191v9.142a.333.333,0,1,0,.667,0V1.191L9.42,4.558a.334.334,0,1,0,.492-.451Z" transform="translate(0 0)"/>
+  </g>
+</svg>

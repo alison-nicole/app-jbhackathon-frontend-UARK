@@ -1,0 +1,340 @@
+{
+    "top": "<a href=\"/past-winners#top\">Back to Top <i _ngcontent-c16=\"\" class=\"icon-Arrow_Up\"></i></a>",
+    "home": {
+        "title": "J.B. Hunt Hackathon",
+        "address": "227 N. Harmon Ave. Fayetteville, AR",
+        "date": "March 6, 2020, 6p.m. to March 7, 2020, 4p.m.",
+        "what-is": "What is the J.B. Hunt Hackathon?",
+        "schedule": "What is the schedule?",
+        "prizes": " Past Prizes",
+        "schools": "Schools Involved",
+        "description": "The J.B. Hunt Hackathon is a competition that is hosted in conjuction with the Association of Computing Machinery (ACM) at the University of Arkansas twice each year. Students from various schools and education levels have the chance to showcase and develop their skills to create a collaborative programming project in just 24 hours. The competition consists of teams competing against each other to develop a working prototype that is presented in front of a panel of J.B. Hunt judges. Participants are not required to have a computer science background - all majors are welcome! Join the next Hackathon and push your limits!",
+        "prize-pickup": "Prize Pickup: Following the end of team presentations, prizes will be ordered and pickup will be available at a later date.",
+        "goodie-bags": "*Goodie Bag & Prize Pickups will be at 534 W Research Center Blvd Fayetteville, AR 72701"
+    },
+    "contact-us": {
+        "title": "Contact Us",
+        "here": "Send us an email with your questions & follow us on social media!",
+        "email": "CollegeHackathon@jbhunt.onmicrosoft.com"
+    },
+    "faq": {
+        "title": "FAQ",
+        "subtitle": "Frequently Asked Questions - need I say more?",
+        "general": {
+            "title": "General",
+            "code": "Although prior knowledge of programming languages and related technologies can help, no previous knowledge is required. Many participants learn the tools they need during the Hackathon! Coding is just one of many components that make a project successful. Teams can and should use the various skill sets that their team members can provide, whether technical or non-technical. There will be technical support at the event the entire time! (Yes, all night!)",
+            "cost": "No! The J.B. Hunt Hackathon is always free of charge! So sign up!",
+            "parking": "You can park at Harmon Parking Garage. Please note there is a charge associated with parking. You must pay for parking at the Harmon Parking Garage from 7 a.m. to 8 p.m. Monday through Friday. This means there is about a 2 hour overlap between paid parking time ending and the event beginning. Parking can be paid for on the Whoosh! App, that can be found on both the iOS and Google Play Stores, or through terminals that are present in the garage itself. Parking is free for the rest of the event.",
+            "major": "Absolutely not! The J.B. Hunt Hackathon is open to all majors. There are many skills that would be useful to a hackathon team other than programming knowledge.",
+            "location": "The J.B. Hunt Hackathon is located at the J.B. Hunt Transport Services Inc. Center for Academic Excellence. The address for this building is 227 N Harmon Ave, Fayetteville, AR 72701.",
+            "start-and-end": "The J.B. Hunt Hackathon starts at 6 p.m. on Friday, November 19, and ends at 4 p.m. on Saturday, November 20."
+        },
+        "teams": {
+            "title": "Hackathon Teams",
+            "required": "No, you do not need to have a team! Select the \"No\" button underneath \"Do You Have A Team\" section when signing up, and we will pair you with others!",
+            "size": "The maximum team size is 6, also with a maximum of 2 graduate students per team.",
+            "all-sign-up": "Yes! Please have all team members sign up so that we know how much food and how many prizes to provide.",
+            "forgot-sign-up": "If the event has not started, please have the member sign up ASAP! If they forgot to sign up and it is after the start of the event, please have them speak to a JBH volunteer.",
+            "no-team": "If you can't find a team, talk to one of the JBH volunteers. We can help pair you with a group!",
+            "not-undergraduates": "Yes! Teams may have a mix of education levels including high school, college undergraduate, or graduate students. Please note that there is a max of 2 graduate students per team.",
+            "mixed-schooling": "Absolutely! Please note that there is a max of 2 graduate students per team."
+        },
+        "before": {
+            "title": "Before the Hackathon",
+            "sign-up-link": "Sign ups",
+            "prepare": "There are various ways to prepare for the J.B. Hunt Hackathon. You can prepare by looking at a past or current project you are working on at school or work. You can also take a look at our ",
+            "preparelink": "resource page.",
+            "prepareAfter": " where you can find useful tools.",
+            "open": " Sign ups are open right now!",
+            "close": "We will close registration when the event starts! We ask that you sign up at least a week in advance so we have the right amount of food. If you miss the sign up window, you are still welcome to attend the event, but please make sure to speak with a JBH volunteer."
+        },
+        "during": {
+            "title": "During the Hackathon",
+            "long": "The Hackathon lasts for a total of 22 hours. Presentations take place at the end of the 22 hours on Saturday. The rest of the time is spent working on your project.",
+            "food": "Yes! Food will be provided free of charge. We will communicate the arrival of meals via our discord channel. Food will be pre-packaged for safety measures. There will be snacks and drinks available during the event. If there are any concerns about allergies and/or personal dietary lifestyle, please let us know when signing up.",
+            "bring": "Please bring a laptop or \"portable\" desktop computer. We cannot guarantee that machines at U of A will be available for participants to use. You may also bring external hardware if you wish. (Ex: Mechanical Keyboards, Monitors, Mice) Games are also welcome! We have had Super Smash, Oculus Rift games, and board games in the past. This event is FUN!",
+            "leave": "Yes, but it is not recommended. You may leave during the event to sleep, eat, etc. It is HIGHLY discouraged and could lead to disqualification if you leave to work on your hackathon projects.",
+            "breaks": "There will be no official breaks, but teams should set their own pace. You do not have to be working 24/7. Teams have the freedom to take breaks as often as they want. It is up to teams to decide when to work and when to take a break.",
+            "code": "NO! All work presented at the end of the event should be done at the hackathon. Please do not build on previous projects as this does not create a fair competition environment.",
+            "outside": "Please use your best judgment. You are welcome to use frameworks, APIs, etc. to help you. If you want clarification during the event please ask a JBH volunteer. When in doubt, don't copy it.....Also, please document any sources. We do not condone plagiarism."
+        },
+        "after": {
+            "title": "After the Hackathon",
+            "rubric-link": "rubric page!",
+            "scored": "Please see our ",
+            "judges": "The judging panel will comprise of current J.B. Hunt employees. It usually consists of high level managers, directors, vice presidents, and experienced developers.",
+            "prizes": "Yes! There will be a large array of prizes. Teams that placed highest in the ranking will get to pick prizes from a prize table. This process will continue until all prizes are gone. Please see our Home page for a list of this year's prizes!",
+            "presentations": "Prizes are awarded at the end of presentations. If you need to leave, you may. However, you will not be able to accept prizes for team members that are not present for both the presentation and prize distribution.",
+            "leave": "We strongly urge teams to present even if some members are no longer at the competition. That said, teams are not able to accept prizes for participants that did not present and remain for prize distribution. Additionally, teams that do not present at all, will not be judged and cannot accept prizes."
+        },
+        "top": "<a href=\"/faq#top\">Back to Top <i _ngcontent-c16=\"\" class=\"icon-Arrow_Up\"></i></a>"
+    },
+    "header": "Sign Up Now!",
+    "judging": {
+        "rubric_title": "Rubric",
+        "rubric_comment": "Familiarize yourself with the scaling rubric before the big day.",
+        "title": "JUDGING FORM",
+        "judge-name": "Judge Name",
+        "team-name": "Team Name",
+        "total": "Total Score: ",
+        "internal": "Internal Feedback",
+        "external": "External Feedback (will be emailed to the team after the hackathon)",
+        "criteria": "Criteria",
+        "one": "1",
+        "two": "2",
+        "three": "3",
+        "four": "4",
+        "five": "5",
+        "question-one": {
+            "title": "Question 1: Problem Idenfication/Innovative Solution (Weight: 2)",
+            "criteria": "Problem Identification & Innovative Solution",
+            "one": "Similar and/or existing solutions already exist.",
+            "two": "The new code provides a better/faster/clearer way to attack the problem than existing solutions.",
+            "three": "The new code adds functionality beyond that provided by the existing products/solution.",
+            "four": "The new project tackles a problem that has been overlooked or ignored in the past, or attacks a problem with a new angle, on a bigger scale, or on a higher level.",
+            "five": "The new project attacks an entirely new problem and provides a good solution."
+        },
+        "question-two": {
+            "title": "Question 2: Level of Implementation (Weight: 3)",
+            "criteria": "Level of Implementation",
+            "one": "Has little to no code written.",
+            "two": "Some systems working, but critical functionality missing.",
+            "three": "Not a completely architected project.",
+            "four": "Mostly completed implementation, but some missing configurations or design elements. Functional but not polished.",
+            "five": "Successful implementation and architecture including any hardware components. Cross platform functionality, including multiple services or componenets. Able to demonstrate complete functionality. There is a connection to an external service if hardware is included."
+        },
+        "question-three": {
+            "title": "Question 3: Presentation Quality (Weight: 1)",
+            "criteria": "Presentation Quality",
+            "one": "Problem <b>AND</b> solution were unclear and were not well communicated.",
+            "two": "Problem <b>OR</b> solution were unclear and were not well communicated.",
+            "three": "Problem <b>OR</b> solution were well communicated, but critical questions remain at the end of the presentation.",
+            "four": "Problem <b>AND</b> solution were well communicated, and the presentation is informative and engaging.",
+            "five": "Problem <b>AND</b> solutions were excellently communicated, all critical questions are answered before the end of the presentation. Presentation was creative and unique."
+        },
+        "question-four": {
+            "title": "Question 4: Connection to the Theme (Weight: 1)",
+            "criteria": "Connection to the Theme",
+            "one": "The connection to the theme was unclear.",
+            "two": "The connection to the theme was poor.",
+            "three": "The connection to the theme was present, but poorly explained.",
+            "four": "The connection to the theme was present.",
+            "five": "The connection to the theme was present and well explained."
+        }
+    },
+    "404": {
+        "title": "404 Page Not found",
+        "main": "Looks like you missed a turn somewhere"
+    },
+    "past": {
+        "name": "Previous Hackathons",
+        "Info": "What the hackathon has brought to life.",
+        "title": "Past Projects",
+        "topic": "Hackathon Topic:",
+        "description": "Description:",
+        "technologies": "Technologies Used:",
+        "members": "Team Members:",
+        "section-one": {
+            "title": "Spirit Animal Chatbot",
+            "topic": "<i>New and Emerging Technologies</i>",
+            "body": "The Spirit Animal Chatbot implemented in slack had 3 major functionalities. It will tell you your spirit animal, tell you a joke, and it will give you a quote. The Spirit Animal Chatbot is a fun and simple example of the power of AI as well as what can be achieved with some new and emerging technologies.",
+            "technologies": "This project utilized a platform called Watson Assistant by IBM that allows developers to create a conversational AI-powered chatbot.",
+            "members": "Dalynn Hatch, Natalie Bostwick, and Natalie Friede"
+        },
+        "section-two": {
+            "title": "Training Data, Training Humans, Training FullSpec",
+            "topic": "<i>New and Emerging Technologies</i>",
+            "body": "We created a Mobile Polling App that would allow audience members to answer questions on their phones and then see the overall results from everybody's answers on a website with dynamically updating charts. With this we were training an Artificial Intelligence to learn to predict people's answers.",
+            "technologies": "Angular, Javascript, AWS, MongoDB, Socket.IO",
+            "members": "Gage Regier, Keaton Grimmett, Marshall Richards, Tyler Gerth, and Tyler Tracy"
+        },
+        "section-three": {
+            "title": "Freshies: An Interactive Campus Map",
+            "topic": "<i>Social</i>",
+            "body": "We re-created the University of Arkansas Mobile Campus Map so that it would be easier to use. Also, we added the functionality of users being able to create and pin events on the map that others could see and come join. Finally, we added a heat map that would show anyone looking at our campus map where large groups of people were.",
+            "technologies": "NodeJS, MongoDB, AWS, the UARK Campus Map API",
+            "members": "Jeremy Collins, Marshall Richards, Tyler Gerth, and Tyler Tracy"
+        },
+        "section-four": {
+            "title": "Are You Fine or Are You Fined",
+            "topic": "<i>Transportation</i>",
+            "body": "We created a License Plate Scanner using object recognition software. This would allow the campus parking department to go around to each parking lot and scan the license plates of cars there. Then, they can automatically see if they had the correct parking permits.",
+            "technologies": "React Native, OpenAPLR, Angular, Socket-io, ExpressJS",
+            "members": "Keaton Grimmett, Marshall Richards, Tyler Gerth, Tyler Tracy, and Will Hoisington"
+        },
+        "section-five": {
+            "title": "Mucky Bottle",
+            "topic": "<i>Sustainability & Efficiency</i>",
+            "body": "MuckyBottle can tell you when your neighborhood recycles, where your local recycling center is, and what kind of materials can be recycled. To incite more recycling, you can enter your recycling habits and score points to level up as a sustainable citizen.",
+            "technologies": "Angular and Google Home Actions",
+            "members": "Adam Greenfield, Andrea Donati, Austin Chitmon, Beau Cross, Caroline Gschwend, and Turner Sawyer"
+        },
+        "section-six": {
+            "title": "Crash Correspondance",
+            "topic": "<i>Efficiency & Sustainability</i>",
+            "body": "If a crash is detected using sensors on an Arduino, emergency services and contacts will immediately be notified via phone and text of the location and severity of an accident. This can save precious minutes by cutting down the time to the ininial 911 contact.",
+            "technologies": "Arduino, car, code",
+            "members": "Jab Bobda, Vincent Tran, Luke Faupel, Eli Helf, Garrett Whitehead, and Brett Helms"
+        }
+    },
+    "resources": {
+        "title": "Resources",
+        "front-end": "Front-end Development",
+        "back-end": "Back-end Development",
+        "miscellaneous": "Programming Fundamentals",
+        "recommended": "Recommended",
+        "angular": {
+            "title": "Angular",
+            "links": "<li> <a class=\"link\" href =\"https://angular.io/docs/\" target = _blank>Angular Introduction</a></li><li> <a class=\"link\" href =\"https://angular.io/tutorial\" target = _blank>Angular Tutorial: Tour of Heroes</a></li>"
+        },
+        "react-native": {
+            "title": "React Native",
+            "links": "<li> <a class=\"link\" href =\"https://www.tutorialspoint.com/react_native/\" target = _blank>React Native tutorial</a></li><li> <a class=\"link\" href =\"https://www.raywenderlich.com/485-react-native-tutorial-building-ios-apps-with-javascript\" target = _blank>Building iOS Apps with JavaScript</a></li>"
+        },
+        "html": {
+            "title": "HTML/CSS",
+            "links": "<li> <a class=\"link\" href =\"https://www.w3schools.com/css/\" target = _blank>CSS Tutorial and Reference</a></li><li> <a class=\"link\" href =\"https://www.w3schools.com/html/\" target = _blank>HTML Tutorial and Reference</a></li>"
+        },
+        "javascript": {
+            "title": "Javascript",
+            "links": "<li> <a class=\"link\" href =\"https://www.w3schools.com/js/default.asp\" tar-get = _blank>Javascript Tutorial and Reference</a></li><li> <a class=\"link\" href =\"https://www.w3schools.com/jquery/default.asp\" target = _blank>JQuery Tutorial and Reference</a></li>"
+        },
+        "typescript": {
+            "title": "Typescript",
+            "links": "<li> <a class=\"link\" href =\"https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html\" target = _blank>Typescript Tutorial</a></li><li> <a class=\"link\" href =\"https://www.typescriptlang.org/docs/home.html\" target = _blank>Typescript Documentation</a></li>"
+        },
+        "jquery": {
+            "title": "JQuery",
+            "links": "<li> <a class=\"link\" href =\"https://www.w3schools.com/jquery/\" target = _blank>JQuery Tutorial and Reference</a></li><li> <a class=\"link\" href =\"https://api.jquery.com/\" target = _blank>JQuery Documentation</a></li>"
+        },
+        "java": {
+            "title": "Java",
+            "links": "<li> <a class=\"link\" href=\"https://www.w3schools.com/java/\" target=_blank>Java Tutorial and Reference</a></li><li> <a class=\"link\" href=\"https://docs.oracle.com/en/java/\" target=_blank>Java Documentation</a></li>"
+        },
+        "c++": {
+            "title": "C++",
+            "links": "<li> <a class=\"link\" href=\"http://www.cplusplus.com/doc/tutorial/\" target=_blank>C++ Tutorial</a></li><li> <a class=\"link\" href=\"http://www.cplusplus.com/reference/\" target=_blank>C++ Documentation</a></li>"
+        },
+        "kotlin": {
+            "title": "Kotlin",
+            "links": "<li> <a class=\"link\" href=\"https://www.tutorialspoint.com/kotlin\" target=_blank>Kotlin Tutorial</a></li><li> <a class=\"link\" href=\"https://kotlinlang.org/docs/reference/\" target=_blank>Kotlin Documentation</a></li>"
+        },
+        "python": {
+            "title": "Python",
+            "links": "<li> <a class=\"link\" href=\"https://www.w3schools.com/python/default.asp\" target=_blank>Python Tutorial and Reference</a></li><li> <a class=\"link\" href=\"https://docs.python.org/3/tutorial/\" target=_blank>Python Documentation</a></li>"
+        },
+        "sql": {
+            "title": "SQL",
+            "links": "<li> <a class=\"link\" href=\"https://www.w3schools.com/sql/\" target=_blank>SQL tutorial and Reference</a></li><li> <a class=\"link\" href=\"https://docs.oracle.com/cd/B19306_01/server.102/b14200/toc.htm\" target=_blank>Documentation</a></li>"
+        },
+        "nosql": {
+            "title": "NoSQL",
+            "links": "<li> <a class=\"link\" href=\"http://nosql-database.org/\" target=_blank>NoSQL list</a></li><li> <a class=\"link\" href=\"https://www.w3resource.com/mongodb/nosql.php\" target=_blank>NoSQL Tutorial</a></li>"
+        },
+        "programming": {
+            "title": "Programming",
+            "links": "<li> <a class=\"link\" href=\"https://www.tutorialspoint.com/computer_programming/index.htm\" target=_blank>Beginner's Guide to Programming</a></li><li> <a class=\"link\" href=\"https://www.khanacademy.org/computing/computer-programming\" target=_blank>Khan Academy </a></li>"
+        },
+        "github": {
+            "title": "GitHub",
+            "links": "<li> <a class=\"link\" href=\"https://guides.github.com/\" target=_blank>GitHub Guide</a></li><li> <a class=\"link\" href=\"https://www.w3schools.com/whatis/whatis_github.asp\" target=_blank> What is GitHub?</a></li>"
+        },
+        "linux": {
+            "title": "Linux",
+            "links": "<li> <a class=\"link\" href=\"https://ryanstutorials.net/linuxtutorial/\" target=_blank>Linux Commandline Basics</a></li><li> <a class=\"link\" href=\"https://www.tutorialspoint.com/unix/\" target=_blank>UNIX/Linux Tutorial</a></li>"
+        },
+        "blockchain": {
+            "title": "Blockchain",
+            "links": "<li> <a class=\"link\" href=\"https://www.tutorialspoint.com/blockchain_online_training/index.asp\" target=_blank>Blockchain Tutorial</a></li><li> <a class=\"link\" href=\"https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=XIM12354USEN\" target=_blank>Blockchain for Dummies</a></li>"
+        },
+        "cryptography": {
+            "title": "Cryptography",
+            "links": "<li> <a class=\"link\" href=\"https://www.tutorialspoint.com/cryptography/index.htm\" target=_blank>Cryptography Tutorial</a></li><li> <a class=\"link\" href=\"https://gpgtools.tenderapp.com/kb/how-to/introduction-to-cryptography\" target=_blank>Intro to Cryptography</a></li>"
+        },
+        "ai": {
+            "title": "AI",
+            "links": "<li> <a class=\"link\" href=\"https://www.tutorialspoint.com/artificial_intelligence/index.htm\" target=_blank>AI Tutorial</a></li><li> <a class=\"link\" href=\"http://www.philocomp.net/links/ai.htm\" target=_blank>AI References</a></li>"
+        }
+    },
+    "resultsTitle": "HACKATHON RESULTS",
+    "sidebar": {
+        "home": "Home",
+        "sign-up": "Sign Up",
+        "past": "Past Projects",
+        "success-stories": "Success Stories",
+        "resources": "Resources",
+        "rubric": "Rubric",
+        "faq": "FAQ",
+        "contact": "Contact Us"
+    },
+    "sign-up": {
+        "title": "Sign Up Form",
+        "title-info": "Fill in the form to sign up for the the Hackathon!",
+        "resume": "*If you are interested in an internship or full time position with J.B. Hunt, please bring your resume to the event.",
+        "name": "Name (First & Last)",
+        "discord": "Discord with Identifier (ex: User#1234)",
+        "major": "Major",
+        "email": "Email",
+        "year": "School Year",
+        "school-name": "School Name",
+        "have-team": "Do You Have A Team?",
+        "other-school-name": "Other School Name",
+        "new-team-name": "New Team Name",
+        "select-team": "Select Your Team",
+        "skills": "Skills",
+        "skill": "Skill",
+        "years": "Years",
+        "additional-skills": "Additional Relevant Skills",
+        "additional-relevant-skills": "Additional Relevant Skills (Other Languages, etc.)",
+        "additional-requirements": "Additional Requirements",
+        "additional-requirements-label": "Additional Requirements (Dietary Needs, Allergies, etc.)"
+    },
+    "success-stories": {
+        "title": "Success Stories",
+        "question-one": "<b>Q: When did you start programming?</b><br />",
+        "question-two": "<br /><br /><b>Q: How did you hear about the J.B. Hunt Hackathon? </b><br />",
+        "question-three": "<br /><br /><b>Q: What was your Hackathon experience?</b><br />",
+        "question-four": "<br /><br /><b>Q: Did you learn anything at the Hackathon?</b><br />",
+        "question-five": "<br /><br /><b>Q: Do you feel like the J.B. Hunt Hackathon helped you in the process of getting hired?</b><br />",
+        "winner-one": {
+            "name": "Jaden Martin",
+            "answer-one": "“My sophomore year of college in the fall when I took programming foundations l.”",
+            "answer-two": "“During my programming class.”",
+            "answer-three": "“It was a great experience. I would definitely do it again.”",
+            "answer-four": "“I learned how important and helpful it is working with a team when completing a project.”",
+            "answer-five": "“Yes I believe the hackathon helped me in the process of getting hired, it made my resume stand out more.”"
+        },
+        "winner-two": {
+            "name": "Blake Hatch",
+            "answer-one": "“I started programming at the end of my senior year in high school because my friend and I wanted to make a text based video game using Python.”",
+            "answer-two": "“I heard about the J.B. Hunt Hackathon through the Association for Computing Machinery club at the U of A.”",
+            "answer-three": "“It was really fun, although the start was rough since I was on a team with two people I had never met before. When my teammates and I started to get to know each other and bond more, it went a little smoother. The overall process was very fun, and I had a great time.”",
+            "answer-four": "“I learned that working on a project with a team can be very helpful. I also learned a little bit about how to work on a team with people that I did not know very well at the start.”",
+            "answer-five": "“Yes, I feel that being able to put the experience of the hackathon on my resume helped greatly in the process of getting hired.”"
+        },
+        "winner-three": {
+            "name": "Luke Faupel",
+            "answer-one": "“At the beginning of my sophomore year of high school, I was randomly placed into a fashion merchandising course. Wanting absolutely nothing to do with that, I immediately requested to be switched into a programming class.“",
+            "answer-two": "“Some of my friends saw signs around campus and invited me to join their team.“",
+            "answer-three": "“Hackathons are always exhausting and often frustrating, but provide an immense sense of accomplishment once completed. Aside from that, the food is always great.“",
+            "answer-four": "“I  probably learned more during the two J.B. Hunt hackathons I participated in than the entirety of my high school programming classes. You have to work well with a team, utilize software engineering practices, and quickly solve difficult problems. It is as good of practice as you can get to develop your programming skills.“",
+            "answer-five": "“It definitely helped me, especially considering we won our second hackathon. Executives at the event were very impressed with our solution, which no doubt played a significant role.“"
+        },
+        "winner-four": {
+            "name": "Eli Helf",
+            "answer-one": "“I started programming my junior year of highschool when I took AP Computer Science”",
+            "answer-two": "“I heard about the hackathon through my PF1 class I was taking senior year of highschool”",
+            "answer-three": "“My experience was super good, it was the first time I've built a product from scratch with a team like that. Doing well also made some awesome memories.”",
+            "answer-four": "“My first hackathon my team and I learned about what not to do and we did not do very well, but as we came back the next semester we had a better grasp on how to work as a team and organize tasks as well as what kind of product/presentation would score best. Being more specific, we learned a lot about Git/source control and interactions between different programs you have to build, like getting the code from the arduino to trigger code on a local serve to trigger code on a cloud server”",
+            "answer-five": "“I was already hired at J.B Hunt when we won that one, but for the folks that werent, its a super good way to get some spotlight and highlight what you are capable of, bring resumes!”"
+        },
+        "winner-five": {
+            "name": "Trevor Barlett",
+            "answer-one": "“I began programming Freshman year of college. My family didn't own a computer for most of my time in school, so I didn't really know about it growing up.”",
+            "answer-two": "“One of my friends that was interning at J.B. Hunt at the time told me about it.”",
+            "answer-three": "“Lots of coding, lots of food, and no sleep.”",
+            "answer-four": "“I learned Python. Well, I learned enough Python to make a semi-functional app, but I had never worked with the language before the competition. One of my friends loved Python though, so I had to learn it on the fly.”",
+            "answer-five": "“Yes, there is no question that it helped me get hired. I made sure to bring it up in my interview!”"
+        }
+    }
+}

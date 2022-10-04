@@ -1,0 +1,183 @@
+<div class='content-container'>
+	<h1 class="page-title" [innerHTML]="'judging.title' | translate"></h1>
+	<form [formGroup]="judgingForm" (ngSubmit)="onSubmit()" class="judging-form card">
+		<h1 class="team-name">Team Name</h1>
+		<hr class="team-name-underline">
+		<div class="rubric">
+			<div class="rubric--item">
+				<div class="section-header">
+					<h3 class="section-title">
+						Problem Identification and Innovative Solution
+					</h3>
+					<h3 class="section-score">
+						<input type="number" class="input-score" id='inputNumber1' placeholder='---' 
+							onkeyup='if(this.value > 250) {
+										this.value = 250;
+									} if (this.value < 0) {
+										this.value = 0;
+									}'>
+						/ 250
+					</h3>
+				</div>
+
+				<div class="slider-container">
+					<input type="range" class="input-range" id='inputRange1' min="0" max="250" value="125" />
+				</div>
+				
+				<table class="table card" aria-describedby="rubric for problem identification/innovative solution">
+					<thead>
+						<tr>
+							<th id = "table-header">0 - 50</th>
+							<th id = "table-header">51 - 100</th>
+							<th id = "table-header">101 - 150</th>
+							<th id = "table-header">151 - 200</th>
+							<th id = "table-header">201 - 250</th>
+						</tr>
+					</thead>
+					<tbody>
+						<td [innerHTML]="'judging.question-one.one' | translate"></td>
+						<td [innerHTML]="'judging.question-one.two' | translate"></td>
+						<td [innerHTML]="'judging.question-one.three' | translate"></td>
+						<td [innerHTML]="'judging.question-one.four' | translate"></td>
+						<td [innerHTML]="'judging.question-one.five' | translate"></td>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="rubric--item">
+				<div class="section-header">
+					<h3 class="section-title">
+						Level of Implementation
+					</h3>
+					<h3 class="section-score">
+						<input type="number" class="input-score" id='inputNumber2' placeholder='---'
+							onkeyup='if(this.value > 250) {
+										this.value = 250;
+									} if (this.value < 0) {
+										this.value = 0;
+									}'>
+						/ 250
+					</h3>
+				</div>
+				<div class="slider-container">
+					<input type="range" class="input-range" id='inputRange2' min="0" max="250" value="125" />
+				</div>
+
+				<table class="table card" aria-describedby="rubric for level of implementation">
+					<thead>
+						<tr>
+							<th id = "table-header">0 - 50</th>
+							<th id = "table-header">51 - 100</th>
+							<th id = "table-header">101 - 150</th>
+							<th id = "table-header">151 - 200</th>
+							<th id = "table-header">201 - 250</th>
+						</tr>
+					</thead>
+					<tbody>
+						<td [innerHTML]="'judging.question-two.one' | translate"></td>
+						<td [innerHTML]="'judging.question-two.two' | translate"></td>
+						<td [innerHTML]="'judging.question-two.three' | translate"></td>
+						<td [innerHTML]="'judging.question-two.four' | translate"></td>
+						<td [innerHTML]="'judging.question-two.five' | translate"></td>
+					</tbody>
+				</table>
+			</div>
+
+
+			<div class="rubric--item">
+				<div class="section-header">
+					<h3 class="section-title">
+						Presentation Quality
+					</h3>
+					<h3 class="section-score">
+						<input type="number" class="input-score" id='inputNumber3' placeholder='---'
+							onkeyup='if(this.value > 250) {
+										this.value = 250;
+									} if (this.value < 0) {
+										this.value = 0;
+									}'>
+						/ 250
+					</h3>
+				</div>
+				<div class="slider-container">
+					<input type="range" class="input-range" id='inputRange3' min="0" max="250" value="125" />
+				</div>
+
+				<table class="table card" aria-describedby="rubric for presentation quality">
+					<thead>
+						<tr>
+							<th id = "table-header">0 - 50</th>
+							<th id = "table-header">51 - 100</th>
+							<th id = "table-header">101 - 150</th>
+							<th id = "table-header">151 - 200</th>
+							<th id = "table-header">201 - 250</th>
+						</tr>
+					</thead>
+					<tbody>
+						<td [innerHTML]="'judging.question-three.one' | translate"></td>
+						<td [innerHTML]="'judging.question-three.two' | translate"></td>
+						<td [innerHTML]="'judging.question-three.three' | translate"></td>
+						<td [innerHTML]="'judging.question-three.four' | translate"></td>
+						<td [innerHTML]="'judging.question-three.five' | translate"></td>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="rubric--item">
+				<div class="section-header">
+					<h3 class="section-title">
+						Connection to Theme
+					</h3>
+					<h3 class="section-score">
+						<input type="number" class="input-score" id='inputNumber4' placeholder='---'
+							onkeyup='if(this.value > 250) {
+										this.value = 250;
+									} if (this.value < 0) {
+										this.value = 0;
+									}'>
+						/ 250
+					</h3>
+				</div>
+				<div class="slider-container">
+					<input type="range" class="input-range" id='inputRange4' min="0" max="250" value="125" />
+				</div>
+
+				<table class="table card" aria-describedby="rubric for connection to theme">
+					<thead>
+						<tr>
+							<th id = "table-header">0 - 50</th>
+							<th id = "table-header">51 - 100</th>
+							<th id = "table-header">101 - 150</th>
+							<th id = "table-header">151 - 200</th>
+							<th id = "table-header">201 - 250</th>
+						</tr>
+					</thead>
+					<tbody>
+						<td [innerHTML]="'judging.question-four.one' | translate"></td>
+						<td [innerHTML]="'judging.question-four.two' | translate"></td>
+						<td [innerHTML]="'judging.question-four.three' | translate"></td>
+						<td [innerHTML]="'judging.question-four.four' | translate"></td>
+						<td [innerHTML]="'judging.question-four.five' | translate"></td>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="feedback">
+			<label for="feedbackBox">Feedback to Team</label>
+			<textarea pInputTextarea formControlName="feedback" appInputRestriction="noSpecialChars"
+				id="feedbackBox" maxlength="4000"></textarea>
+		</div>
+
+		<div class="score">
+			<h2 class="score-title">Total Score</h2>
+			<h2 class="score-number">
+				<h2 class='calculated-score' id='totalScoreId'>{{ totalScore }}</h2> / 1000
+			</h2>
+		</div>
+		
+		<div class='submit-container'>
+			<input type="submit" class="submit-button btn-yellow" id='submitButton' value="Submit">
+		</div>
+	</form>
+</div>

@@ -1,0 +1,19 @@
+.special-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    input {
+        height: 50px;
+        width: 50px;
+        box-sizing: border-box;
+        border: 1px solid #b3b3b3;
+        border-radius: 7px;
+        margin-top: 10px;
+        margin-left: 12px;
+        margin-right: 4px;
+        text-align: center;
+        font-size: 24px;
+        caret-color:  transparent;
+    }
+}

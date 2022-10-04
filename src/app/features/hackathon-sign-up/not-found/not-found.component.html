@@ -1,0 +1,26 @@
+<head>
+  <title></title>
+  <style id="antiClickjack">
+    body {
+      display: none !important;
+    }
+  </style>
+  <script type="text/javascript">
+    if (self === top) {
+      var antiClickjack = document.getElementById("antiClickjack");
+      antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+      top.location = self.location;
+    }
+  </script>
+</head>
+<div class="background">
+  <video autoplay muted loop id="myVideo">
+    <source src="assets/image/background-road.mp4" type="video/mp4">
+  </video>
+  <div class="content">
+    <h1 [innerHTML]="'404.title' | translate"></h1>
+    <p [innerHTML]="'404.main' | translate"></p>
+    <img alt="not found truck" src="assets/image/truck1.png">
+  </div>
+</div>
