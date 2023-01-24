@@ -5,7 +5,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { RegistrationComponent } from './registration/registration.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TeamIconColorSelectorComponent } from './registration/team-icon-color-selector/team-icon-color-selector.component';
 import { CodeVerificationComponent } from './code-verification/code-verification.component';
 
@@ -14,7 +14,8 @@ import { CodeVerificationComponent } from './code-verification/code-verification
     CommonModule,
     TranslateModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [
     TranslateService,

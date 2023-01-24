@@ -5,20 +5,25 @@
   <form (keydown.enter)="$event.preventDefault()" [formGroup]="signUpForm" class="form">
     <div id="module1" class="module first">
       <div class="content">
-        <div class="single-field">
+        <div class="half-field">
           <label>First Name* </label>
           <label *ngIf="signUpForm.get('firstName').invalid && signUpForm.get('firstName').touched" class="error">Enter your first name</label>
           <input formControlName="firstName" class="form-control" type="text">
         </div>
-        <div class="single-field">
+        <div class="half-field">
           <label>Last Name* </label>
           <label *ngIf="signUpForm.get('lastName').invalid && signUpForm.get('lastName').touched" class="error">Enter your last name</label>
           <input formControlName="lastName" class="form-control" type="text">
         </div>
-        <div class="single-field">
+        <div class="half-field">
           <label>School Email*</label>
           <label *ngIf="signUpForm.get('schoolEmailAddress').invalid && signUpForm.get('schoolEmailAddress').touched" class="error">Enter a valid school email address</label>
           <input formControlName="schoolEmailAddress" class="form-control" type="text">
+        </div>
+        <div class="half-field">
+          <label>Phone Number*</label>
+          <label *ngIf="signUpForm.get('phoneNumber').invalid || signUpForm.get('phoneNumber').touched" class="error">Enter a valid phone number</label>
+          <input formControlName="phoneNumber" class="form-control" type="text">
         </div>
         <div class="single-field">
           <label>Accommodations</label>
