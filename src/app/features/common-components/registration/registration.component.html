@@ -22,8 +22,28 @@
         </div>
         <div class="half-field">
           <label>Phone Number*</label>
-          <label *ngIf="signUpForm.get('phoneNumber').invalid || signUpForm.get('phoneNumber').touched" class="error">Enter a valid phone number</label>
+          <label *ngIf="signUpForm.get('phoneNumber').invalid && signUpForm.get('phoneNumber').touched" class="error">Enter a valid phone number</label>
           <input formControlName="phoneNumber" class="form-control" type="text">
+        </div>
+        <div class="half-field">
+          <label>Developer Type*</label>
+          <label *ngIf="signUpForm.get('developerType').invalid && signUpForm.get('developerType').touched" class="error">Select a type</label>
+             <select class="form-select" formControlName="developerType" required>
+              <option [ngValue]="null" disabled>Select a developer type</option>
+              <option *ngFor="let type of devType" [ngValue]="type">
+                {{type.viewValue}}
+              </option>
+            </select>
+        </div>
+        <div class="half-field">
+          <label>Class*</label>
+          <label *ngIf="signUpForm.get('class').invalid && signUpForm.get('class').touched" class="error">Select a class</label>
+          <select class="form-select" formControlName="class" required>
+            <option [ngValue]="null" disabled>Select a class</option>
+            <option *ngFor="let class of classLevel" [ngValue]="class">
+              {{class.viewValue}}
+            </option>
+          </select>
         </div>
         <div class="single-field">
           <label>Accommodations</label>
@@ -35,7 +55,7 @@
         </div>
       </div>
       <div class="buttons">
-        <button [disabled]="signUpForm.get('firstName').invalid || signUpForm.get('lastName').invalid || signUpForm.get('schoolEmailAddress').invalid" class="next btn btn-yellow" (click)="next('module1', 'module2')">Continue</button>
+        <button [disabled]="signUpForm.get('firstName').invalid || signUpForm.get('lastName').invalid || signUpForm.get('schoolEmailAddress').invalid || signUpForm.get('phoneNumber').invalid || signUpForm.get('developerType').invalid || signUpForm.get('class').invalid "class="next btn btn-yellow" (click)="next('module1', 'module2')">Continue</button>
       </div>
     </div>
     <div id="module2" class="module hidden two">
