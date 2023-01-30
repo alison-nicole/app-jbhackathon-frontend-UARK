@@ -260,6 +260,59 @@
     }
 }
 
+.checkbox-multiple-field{
+    display:flex;
+    place-content:end space-between;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .checkbox {
+        appearance: none;
+        background-color: transparent;
+        margin: 0;
+        height: 1em;
+        width: 1em;
+        border: 0.15em solid #fff;
+        border-radius: 0.15em;
+        display:flex;
+        flex-wrap: wrap;
+        place-content:end space-between;
+
+        &::before {
+            content: "";
+            width: 0.75em;
+            height: 0.75em;
+            border-radius: 0.15em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            background-color: #fff;
+        }
+
+        &:checked::before {
+            transform: scale(1);
+        }
+    }
+
+}
+
+
+.dropdwn{
+
+    select{
+        border:none;
+        padding: 3px 3px;
+        border-radius:5px;
+    }
+    select:focus{
+        outline:none;
+    }
+
+}
+
+
+
 .team-code-text {
     text-align: center;
     font-size: 24px;

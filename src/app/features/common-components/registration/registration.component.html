@@ -20,6 +20,7 @@
           <label *ngIf="signUpForm.get('schoolEmailAddress').invalid && signUpForm.get('schoolEmailAddress').touched" class="error">Enter a valid school email address</label>
           <input formControlName="schoolEmailAddress" class="form-control" type="text">
         </div>
+        
         <div class="half-field">
           <label>Phone Number*</label>
           <label *ngIf="signUpForm.get('phoneNumber').invalid && signUpForm.get('phoneNumber').touched" class="error">Enter a valid phone number</label>
@@ -45,6 +46,89 @@
             </option>
           </select>
         </div>
+        
+             <div class = "single-field">
+          <label>Tech Stack*</label>
+          </div>
+          <div class = "checkbox-multiple-field">
+            <input class ="checkbox"type="checkbox" (click)="changeAngularval()">
+            <label> Angular </label>
+          </div>
+          <div class = "checkbox-multiple-field">
+            <input class ="checkbox"type="checkbox" (click)="changeReactval()">
+            <label> React </label>
+          </div>
+          <div class = "checkbox-multiple-field">
+            <input class ="checkbox"type="checkbox" (click)="changejQueryval()">
+            <label>jQuery</label>
+          </div>
+          <div class = "checkbox-multiple-field">
+            <input class ="checkbox"type="checkbox" (click)="changeHTML_CSSval()">
+            <label>HTML/CSS </label>
+          </div>
+          <div class = "checkbox-multiple-field">
+            <input class ="checkbox"type="checkbox" (click)=" changeOracleval()">
+            <label>Oracle</label>
+          </div>
+          <div class = "checkbox-multiple-field">
+            <input class ="checkbox"type="checkbox" (click)="changemySQLval()">
+            <label>mySQL</label>
+          </div>
+          <div class = "checkbox-multiple-field">
+            <input class ="checkbox"type="checkbox" (click)="changeMongoDBval()">
+            <label>MongoDB</label>
+          </div>
+          <div class = "checkbox-multiple-field">
+            <input class ="checkbox"type="checkbox" (click)="changePostgresval()">
+            <label>PostgreSQL</label>
+          </div>
+          <div class = "checkbox-multiple-field">
+            <input class ="checkbox"type="checkbox" (click)="changeJavaval()">
+            <label>Java</label>
+          </div>
+          <div class = "checkbox-multiple-field">
+            <input class ="checkbox"type="checkbox" (click)="changecplusplusval()">
+            <label>C++</label>
+          </div>
+          <div class = "checkbox-multiple-field">
+            <input class ="checkbox"type="checkbox" (click)="changePythonval()">
+            <label>Python</label>
+          </div>
+          <div class = "checkbox-multiple-field">
+            <input class ="checkbox"type="checkbox" (click)="changeotherval()">
+            <label>Other</label>
+          </div>
+          <div class = "single-field">
+            <label>If other, please specify </label>
+            <textarea class="text-area" formControlName = "If other, please specify" cols="30" rows="10"></textarea>
+          </div>
+  
+          <div class = "single-field">
+            <label>Have you participated in the J.B Hunt Hackathon before ?</label>
+          </div>
+         
+          <div class = "checkbox-multiple-field">
+            <input class ="checkbox"type="checkbox" (click)="changeYesval()">
+            <label>Yes</label>
+          </div>
+          <div class = "checkbox-multiple-field">
+            <input class ="checkbox"type ="checkbox"(click)="changeNoval()">
+          </div>
+          <label>No</label>
+          
+          <div class ="dropdwn">
+          <label for="Years">If yes, how many years ? </label>
+          <select name="years"
+          id="years">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="more">More</option>
+        </select> 
+        </div>
+  
+
         <div class="single-field">
           <label>Accommodations</label>
           <textarea class="text-area" formControlName="accommodations" cols="30" rows="10"></textarea>
