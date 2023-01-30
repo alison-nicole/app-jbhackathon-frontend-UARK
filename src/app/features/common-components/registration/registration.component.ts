@@ -18,6 +18,22 @@ export class RegistrationComponent implements OnInit {
   colors = colorsJson;
 
   gradCheckBox = false;
+  AngularCheckBox = false;
+  ReactCheckBox = false;
+  jQueryCheckBox = false;
+  HTML_CSSCheckBox = false;
+  oracleCheckBox = false;
+  mySqlCheckBox = false;
+  MongoDBCheckBox = false;
+  PostgresCheckBox = false;
+  JavaCheckBox = false;
+  CplusplusCheckBox = false;
+  pythonCheckBox = false; 
+  othercheckBox = false;
+  YesCheckBox = false ;
+  NoCheckBox=false;
+
+
   isLookingForTeam = false;
   displayTeamHeader = false;
   signUpForm: FormGroup;
@@ -36,6 +52,22 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit() {
     this.gradCheckBox = false;
+    this.AngularCheckBox = false;
+    this.jQueryCheckBox = false;
+    this.HTML_CSSCheckBox = false;
+    this.oracleCheckBox = false;
+    this.mySqlCheckBox = false;
+    this.MongoDBCheckBox = false;
+    this.PostgresCheckBox = false;
+    this.JavaCheckBox = false;
+    this.CplusplusCheckBox = false;
+    this.pythonCheckBox = false; 
+    this.othercheckBox = false;
+    this.NoCheckBox=false;
+    this.YesCheckBox = false ;
+    
+
+
     this.isLookingForTeam = false;
 
     this.signUpForm = this.fb.group({
@@ -45,6 +77,20 @@ export class RegistrationComponent implements OnInit {
       'schoolEmailAddress': new FormControl('', Validators.compose([Validators.required, Validators.email, Validators.maxLength(50), schoolEmail])),
       'accommodations': new FormControl('', Validators.maxLength(1000)),
       'isGradStudent': new FormControl(this.gradCheckBox),
+      'hasAngular': new FormControl(this.AngularCheckBox),
+      'hasReact': new FormControl(this.ReactCheckBox),
+      'hasjQuery': new FormControl(this.jQueryCheckBox),
+      'hasHTML_CSS': new FormControl(this.HTML_CSSCheckBox),
+      'hasOracle': new FormControl(this.oracleCheckBox),
+      'hasmySql': new FormControl(this.mySqlCheckBox),
+      'hasMongDB': new FormControl(this.MongoDBCheckBox),
+      'hasPostgres': new FormControl(this.PostgresCheckBox),
+      'hasJava': new FormControl(this.JavaCheckBox),
+      'hasCplusplus': new FormControl(this.CplusplusCheckBox),
+      'haspython': new FormControl(this.pythonCheckBox),
+      'hasother': new FormControl(this.othercheckBox),
+      'hasYes': new FormControl(this.YesCheckBox),
+      'hasNo' : new FormControl(this.NoCheckBox),
       'teamIconCode': new FormControl('', hasValue),
       'teamColorCode': new FormControl('', hasValue),
       'teamCode': new FormControl('')
@@ -140,6 +186,70 @@ export class RegistrationComponent implements OnInit {
     this.gradCheckBox = !this.gradCheckBox;
     this.signUpForm.get('isGradStudent').setValue(this.gradCheckBox);
   }
+     
+  changeAngularval(){
+    this.AngularCheckBox = !this.AngularCheckBox;
+    this.signUpForm.get('hasAngular').setValue(this.AngularCheckBox);
+
+  }
+changeReactval(){
+  this.ReactCheckBox = !this.ReactCheckBox;
+  this.signUpForm.get('hasReact').setValue(this.ReactCheckBox);
+}
+changejQueryval(){
+  this.jQueryCheckBox = !this.jQueryCheckBox;
+  this.signUpForm.get('hasjQuery').setValue(this.jQueryCheckBox);
+
+}
+changeHTML_CSSval(){
+this.HTML_CSSCheckBox = !this.HTML_CSSCheckBox;
+this.signUpForm.get('hasHTML_CSS').setValue(this.HTML_CSSCheckBox);
+
+}
+
+changeOracleval(){
+  this.oracleCheckBox = !this.oracleCheckBox;
+  this.signUpForm.get('hasOracle').setValue(this.oracleCheckBox);
+}
+
+changemySQLval(){
+  this.mySqlCheckBox = !this.mySqlCheckBox;
+  this.signUpForm.get('hasmySQL').setValue(this.mySqlCheckBox);
+}
+
+changeMongoDBval(){
+  this.MongoDBCheckBox = !this.MongoDBCheckBox;
+  this.signUpForm.get('hasMongoDB').setValue(this.MongoDBCheckBox);
+}
+changePostgresval(){
+  this.PostgresCheckBox = !this.PostgresCheckBox;
+  this.signUpForm.get('hasPostgres').setValue(this.PostgresCheckBox);
+}
+changeJavaval(){
+  this.JavaCheckBox = !this.JavaCheckBox;
+  this.signUpForm.get('hasJava').setValue(this.JavaCheckBox);
+}
+changecplusplusval(){
+  this.CplusplusCheckBox = !this.CplusplusCheckBox;
+  this.signUpForm.get('hasCplusplus').setValue(this.CplusplusCheckBox);
+}
+changePythonval(){
+  this.pythonCheckBox = !this.pythonCheckBox;
+  this.signUpForm.get('haspython').setValue(this.pythonCheckBox);
+}
+changeotherval(){
+  this.othercheckBox = !this.othercheckBox;
+  this.signUpForm.get('hasother').setValue(this.othercheckBox);
+}
+changeNoval(){
+  this.NoCheckBox = !this.NoCheckBox;
+  this.signUpForm.get('hasNo').setValue(this.NoCheckBox);
+}
+changeYesval(){
+  this.YesCheckBox = !this.YesCheckBox;
+  this.signUpForm.get('hasYes').setValue(this.YesCheckBox);
+}
+
 
   displayLoadingSvg() {
     this.isLookingForTeam = true;
