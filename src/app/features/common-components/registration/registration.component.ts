@@ -7,6 +7,15 @@ import { SignUpService } from '../../../shared/services/sign-up.service';
 import iconsJson from '../../../../assets/jsonFiles/teamIcons.json';
 import colorsJson from '../../../../assets/jsonFiles/colors.json';
 
+export interface DevType {
+  value: string;
+  viewValue: string;
+}
+
+export interface Class {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-registration',
@@ -30,7 +39,24 @@ export class RegistrationComponent implements OnInit {
   createdTeam = false;
   createdTeamCode: number;
   teamModule: string;
+  
+  devType: DevType[] = [
+    {value: 'front-end', viewValue: 'Front-End Developer'},
+    {value: 'back-end', viewValue: 'Back-End Developer'},
+    {value: 'full-stack', viewValue: 'Full-Stack Developer'},
+  ]
 
+  selectedDevType: DevType;
+
+  classLevel: Class[] = [
+    {value: 'highSchool', viewValue: 'High School'},
+    {value: 'freshman', viewValue: 'Freshman'},
+    {value: 'sophomore', viewValue: 'Sophmomore'},
+    {value: 'junior', viewValue: 'Junior'},
+    {value: 'senior', viewValue: 'Senior'},
+    {value: 'gradStudent', viewValue: 'Graduate Student'},
+  ]
+  
   constructor(readonly fb: FormBuilder, readonly signUpService: SignUpService) {
   }
 
@@ -43,6 +69,9 @@ export class RegistrationComponent implements OnInit {
       'firstName': new FormControl('', Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(37), hasValue])),
       'lastName': new FormControl('', Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(37), hasValue])),
       'schoolEmailAddress': new FormControl('', Validators.compose([Validators.required, Validators.email, Validators.maxLength(50), schoolEmail])),
+      'phoneNumber': new FormControl('', Validators.compose([Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$"), Validators.minLength(1),Validators.maxLength(10)])),
+      'developerType': new FormControl(null, Validators.compose([Validators.required])),
+      'class': new FormControl(null, Validators.compose([Validators.required])),
       'accommodations': new FormControl('', Validators.maxLength(1000)),
       'isGradStudent': new FormControl(this.gradCheckBox),
       'teamIconCode': new FormControl('', hasValue),
