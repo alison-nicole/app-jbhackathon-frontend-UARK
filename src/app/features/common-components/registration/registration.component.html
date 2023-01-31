@@ -46,7 +46,6 @@
             </option>
           </select>
         </div>
-        
         <div class="single-field label">
           <label>Tech Stack*</label>
           <label *ngIf="signUpForm.get('techStack').invalid && signUpForm.get('techStack').touched" class="error">Select at least one option</label>
@@ -58,42 +57,35 @@
               <span *ngIf="lang">
                 {{lang.name}}
               </span>
-              
             </div>
           </div>
         </div>
-
         <div class="single-field">
           <label>If other, please specify </label>
           <input type="text" formControlName="otherLang">
         </div>
-  
-          <div class = "single-field">
-            <label>Have you participated in the J.B Hunt Hackathon before ?</label>
-          </div>
-         
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changeYesval()">
-            <label>Yes</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type ="checkbox"(click)="changeNoval()">
-          </div>
-          <label>No</label>
-          
-          <div class ="dropdwn">
-          <label for="Years">If yes, how many years ? </label>
-          <select name="years"
-          id="years">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="more">More</option>
-        </select> 
+        <div class="single-field label">
+          <label>Have you participated in the J.B Hunt Hackathon before?</label>
         </div>
-  
-
+        <div class="single-field no-padding">
+          <div class="inline" formGroupName="prevParticipation">
+            <div class="checkbox-multiple-field">
+              <input class ="checkbox"type="checkbox" (click)="changeParticipationVal()">
+              <label>Yes</label>
+            </div>
+            <div class = "checkbox-multiple-field">
+              <input class="checkbox" type ="checkbox">
+              <label>No</label>
+            </div>
+            <label>If yes, how many years?</label>
+            <select class="form-select-quarter" formControlName="years">
+              <option [ngValue]="null" disabled>Select years</option>
+              <option *ngFor="let year of numYears" [ngValue]="year">
+                {{year}}
+              </option>
+            </select> 
+          </div>
+        </div>
         <div class="single-field">
           <label>Accommodations</label>
           <textarea class="text-area" formControlName="accommodations" cols="30" rows="10"></textarea>

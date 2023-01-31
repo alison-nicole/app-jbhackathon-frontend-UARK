@@ -32,8 +32,7 @@ export class RegistrationComponent implements OnInit {
   colors = colorsJson;
 
   gradCheckBox = false;
-  YesCheckBox = false ;
-  NoCheckBox=false;
+  participationCheckBox = false;
 
 
   isLookingForTeam = false;
@@ -54,8 +53,6 @@ export class RegistrationComponent implements OnInit {
     {value: 'back-end', viewValue: 'Back-End Developer'},
     {value: 'full-stack', viewValue: 'Full-Stack Developer'},
   ]
-
-  selectedDevType: DevType;
 
   classLevel: Class[] = [
     {value: 'highSchool', viewValue: 'High School'},
@@ -80,13 +77,15 @@ export class RegistrationComponent implements OnInit {
     {name: 'Python', value: 'python'},
     {name: 'Other', value: ''},
   ]
+
+  numYears: number[] = [1, 2, 3]
   
   constructor(readonly fb: FormBuilder, readonly signUpService: SignUpService) {
   }
 
   ngOnInit() {
     this.gradCheckBox = false;
-
+    this.participationCheckBox = false;
     this.isLookingForTeam = false;
 
     this.signUpForm = this.fb.group({
@@ -101,6 +100,10 @@ export class RegistrationComponent implements OnInit {
       'isGradStudent': new FormControl(this.gradCheckBox),
       'techStack': this.fb.array([], Validators.compose([Validators.required, Validators.minLength(1), validateFormArray])),
       'otherLang': new FormControl('', Validators.compose([Validators.maxLength(250)])),
+      'prevParticipation': new FormGroup({
+        participation: new FormControl(this.participationCheckBox),
+        years: new FormControl(null)
+      }),
       'teamIconCode': new FormControl('', hasValue),
       'teamColorCode': new FormControl('', hasValue),
       'teamCode': new FormControl('')
@@ -197,6 +200,11 @@ export class RegistrationComponent implements OnInit {
     this.signUpForm.get('isGradStudent').setValue(this.gradCheckBox);
   }
 
+  changeParticipationVal() {
+    this.participationCheckBox = !this.participationCheckBox;
+    this.signUpForm.get('prevParticipation').get('participation').setValue(this.participationCheckBox);
+  }
+
   onCheckboxChange(e) {
     const techStack: FormArray = this.signUpForm.get('techStack') as FormArray;
     if(e.target.checked) {
@@ -213,20 +221,7 @@ export class RegistrationComponent implements OnInit {
       
     }
     this.signUpForm.get('techStack').markAllAsTouched;
-    console.log(techStack.value);
-    console.log(this.signUpForm.get('techStack').touched);
   }
-     
-
-changeNoval(){
-  this.NoCheckBox = !this.NoCheckBox;
-  this.signUpForm.get('hasNo').setValue(this.NoCheckBox);
-}
-changeYesval(){
-  this.YesCheckBox = !this.YesCheckBox;
-  this.signUpForm.get('hasYes').setValue(this.YesCheckBox);
-}
-
 
   displayLoadingSvg() {
     this.isLookingForTeam = true;

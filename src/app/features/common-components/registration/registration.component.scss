@@ -251,12 +251,15 @@
         }
     }
 
-    input {
-        height: 2rem;
-    }
 
     textarea {
         height: 6rem;
+    }
+
+    .form-select-quarter {
+        color: #ffffff !important;
+        cursor: pointer;
+        width: 30%;
     }
 }
 
@@ -312,20 +315,18 @@
     width: 25%;
 }
 
-.dropdwn{
-
-    select{
-        border:none;
-        padding: 3px 3px;
-        border-radius:5px;
-    }
-    select:focus{
-        outline:none;
-    }
-
+.inline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
 }
 
-
+.no-padding {
+    padding: 0;
+}
 
 .team-code-text {
     text-align: center;
