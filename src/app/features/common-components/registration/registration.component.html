@@ -17,7 +17,7 @@
         </div>
         <div class="half-field">
           <label>School Email*</label>
-          <label *ngIf="signUpForm.get('schoolEmailAddress').invalid && signUpForm.get('schoolEmailAddress').touched" class="error">Enter a valid school email address</label>
+          <label *ngIf="signUpForm.get('schoolEmailAddress').invalid && signUpForm.get('schoolEmailAddress').touched" class="error">Enter a valid school email</label>
           <input formControlName="schoolEmailAddress" class="form-control" type="text">
         </div>
         
@@ -47,61 +47,26 @@
           </select>
         </div>
         
-             <div class = "single-field">
+        <div class="single-field label">
           <label>Tech Stack*</label>
+          <label *ngIf="signUpForm.get('techStack').invalid && signUpForm.get('techStack').touched" class="error">Select at least one option</label>
+        </div>
+        <div class="box-container">
+        <div *ngFor="let lang of techStack; let i=index" class="four-a-row">
+            <div class="checkbox-multiple-field">
+              <input type="checkbox" class="checkbox" [value]="lang.value" (change)="onCheckboxChange($event)">
+              <span *ngIf="lang">
+                {{lang.name}}
+              </span>
+              
+            </div>
           </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changeAngularval()">
-            <label> Angular </label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changeReactval()">
-            <label> React </label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changejQueryval()">
-            <label>jQuery</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changeHTML_CSSval()">
-            <label>HTML/CSS </label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)=" changeOracleval()">
-            <label>Oracle</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changemySQLval()">
-            <label>mySQL</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changeMongoDBval()">
-            <label>MongoDB</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changePostgresval()">
-            <label>PostgreSQL</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changeJavaval()">
-            <label>Java</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changecplusplusval()">
-            <label>C++</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changePythonval()">
-            <label>Python</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changeotherval()">
-            <label>Other</label>
-          </div>
-          <div class = "single-field">
-            <label>If other, please specify </label>
-            <textarea class="text-area" formControlName = "If other, please specify" cols="30" rows="10"></textarea>
-          </div>
+        </div>
+
+        <div class="single-field">
+          <label>If other, please specify </label>
+          <input type="text" formControlName="otherLang">
+        </div>
   
           <div class = "single-field">
             <label>Have you participated in the J.B Hunt Hackathon before ?</label>
