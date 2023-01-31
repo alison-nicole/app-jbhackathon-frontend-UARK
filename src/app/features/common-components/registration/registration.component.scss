@@ -251,12 +251,15 @@
         }
     }
 
-    input {
-        height: 2rem;
-    }
 
     textarea {
         height: 6rem;
+    }
+
+    .form-select-quarter {
+        color: #ffffff !important;
+        cursor: pointer;
+        width: 30%;
     }
 }
 
@@ -264,21 +267,22 @@
     display:flex;
     place-content:end space-between;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
 
     .checkbox {
         appearance: none;
         background-color: transparent;
-        margin: 0;
-        height: 1em;
-        width: 1em;
+        margin: 1em 0.5em;
+        height: 1.5em;
+        width: 1.5em;
         border: 0.15em solid #fff;
         border-radius: 0.15em;
         display:flex;
-        flex-wrap: wrap;
         place-content:end space-between;
+        justify-content: center;
+        align-items: center;
 
         &::before {
             content: "";
@@ -297,21 +301,32 @@
 
 }
 
-
-.dropdwn{
-
-    select{
-        border:none;
-        padding: 3px 3px;
-        border-radius:5px;
-    }
-    select:focus{
-        outline:none;
-    }
-
+.label {
+    padding-bottom: 0;
 }
 
+.box-container {
+    width: 100%;
+}
 
+.four-a-row {
+    float: left;
+    display: table-column;
+    width: 25%;
+}
+
+.inline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.no-padding {
+    padding: 0;
+}
 
 .team-code-text {
     text-align: center;

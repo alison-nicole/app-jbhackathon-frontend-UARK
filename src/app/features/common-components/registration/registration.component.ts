@@ -7,6 +7,11 @@ import { SignUpService } from '../../../shared/services/sign-up.service';
 import iconsJson from '../../../../assets/jsonFiles/teamIcons.json';
 import colorsJson from '../../../../assets/jsonFiles/colors.json';
 
+export interface TechStack {
+  name: string;
+  value: string;
+}
+
 export interface DevType {
   value: string;
   viewValue: string;
@@ -27,20 +32,7 @@ export class RegistrationComponent implements OnInit {
   colors = colorsJson;
 
   gradCheckBox = false;
-  AngularCheckBox = false;
-  ReactCheckBox = false;
-  jQueryCheckBox = false;
-  HTML_CSSCheckBox = false;
-  oracleCheckBox = false;
-  mySqlCheckBox = false;
-  MongoDBCheckBox = false;
-  PostgresCheckBox = false;
-  JavaCheckBox = false;
-  CplusplusCheckBox = false;
-  pythonCheckBox = false; 
-  othercheckBox = false;
-  YesCheckBox = false ;
-  NoCheckBox=false;
+  participationCheckBox = false;
 
 
   isLookingForTeam = false;
@@ -62,8 +54,6 @@ export class RegistrationComponent implements OnInit {
     {value: 'full-stack', viewValue: 'Full-Stack Developer'},
   ]
 
-  selectedDevType: DevType;
-
   classLevel: Class[] = [
     {value: 'highSchool', viewValue: 'High School'},
     {value: 'freshman', viewValue: 'Freshman'},
@@ -72,28 +62,30 @@ export class RegistrationComponent implements OnInit {
     {value: 'senior', viewValue: 'Senior'},
     {value: 'gradStudent', viewValue: 'Graduate Student'},
   ]
+
+  techStack: TechStack[] = [
+    {name: 'Angular', value: 'angular'},
+    {name: 'React', value: 'react'},
+    {name: 'jQuery', value: 'jquery'},
+    {name: 'HTML/CSS', value: 'html-css'},
+    {name: 'Oracle', value: 'oracle'},
+    {name: 'mySQL', value: 'mysql'},
+    {name: 'MongoDB', value: 'mongodb'},
+    {name: 'PostgreSQL', value: 'postgressql'},
+    {name: 'Java', value: 'java'},
+    {name: 'C++', value: 'c++'},
+    {name: 'Python', value: 'python'},
+    {name: 'Other', value: ''},
+  ]
+
+  numYears: number[] = [1, 2, 3]
   
   constructor(readonly fb: FormBuilder, readonly signUpService: SignUpService) {
   }
 
   ngOnInit() {
     this.gradCheckBox = false;
-    this.AngularCheckBox = false;
-    this.jQueryCheckBox = false;
-    this.HTML_CSSCheckBox = false;
-    this.oracleCheckBox = false;
-    this.mySqlCheckBox = false;
-    this.MongoDBCheckBox = false;
-    this.PostgresCheckBox = false;
-    this.JavaCheckBox = false;
-    this.CplusplusCheckBox = false;
-    this.pythonCheckBox = false; 
-    this.othercheckBox = false;
-    this.NoCheckBox=false;
-    this.YesCheckBox = false ;
-    
-
-
+    this.participationCheckBox = false;
     this.isLookingForTeam = false;
 
     this.signUpForm = this.fb.group({
@@ -106,20 +98,12 @@ export class RegistrationComponent implements OnInit {
       'class': new FormControl(null, Validators.compose([Validators.required])),
       'accommodations': new FormControl('', Validators.maxLength(1000)),
       'isGradStudent': new FormControl(this.gradCheckBox),
-      'hasAngular': new FormControl(this.AngularCheckBox),
-      'hasReact': new FormControl(this.ReactCheckBox),
-      'hasjQuery': new FormControl(this.jQueryCheckBox),
-      'hasHTML_CSS': new FormControl(this.HTML_CSSCheckBox),
-      'hasOracle': new FormControl(this.oracleCheckBox),
-      'hasmySql': new FormControl(this.mySqlCheckBox),
-      'hasMongDB': new FormControl(this.MongoDBCheckBox),
-      'hasPostgres': new FormControl(this.PostgresCheckBox),
-      'hasJava': new FormControl(this.JavaCheckBox),
-      'hasCplusplus': new FormControl(this.CplusplusCheckBox),
-      'haspython': new FormControl(this.pythonCheckBox),
-      'hasother': new FormControl(this.othercheckBox),
-      'hasYes': new FormControl(this.YesCheckBox),
-      'hasNo' : new FormControl(this.NoCheckBox),
+      'techStack': this.fb.array([], Validators.compose([Validators.required, Validators.minLength(1), validateFormArray])),
+      'otherLang': new FormControl('', Validators.compose([Validators.maxLength(250)])),
+      'prevParticipation': new FormGroup({
+        participation: new FormControl(this.participationCheckBox),
+        years: new FormControl(null)
+      }),
       'teamIconCode': new FormControl('', hasValue),
       'teamColorCode': new FormControl('', hasValue),
       'teamCode': new FormControl('')
@@ -215,70 +199,27 @@ export class RegistrationComponent implements OnInit {
     this.gradCheckBox = !this.gradCheckBox;
     this.signUpForm.get('isGradStudent').setValue(this.gradCheckBox);
   }
-     
-  changeAngularval(){
-    this.AngularCheckBox = !this.AngularCheckBox;
-    this.signUpForm.get('hasAngular').setValue(this.AngularCheckBox);
 
+  changeParticipationVal() {
+    this.participationCheckBox = !this.participationCheckBox;
+    this.signUpForm.get('prevParticipation').get('participation').setValue(this.participationCheckBox);
   }
-changeReactval(){
-  this.ReactCheckBox = !this.ReactCheckBox;
-  this.signUpForm.get('hasReact').setValue(this.ReactCheckBox);
-}
-changejQueryval(){
-  this.jQueryCheckBox = !this.jQueryCheckBox;
-  this.signUpForm.get('hasjQuery').setValue(this.jQueryCheckBox);
 
-}
-changeHTML_CSSval(){
-this.HTML_CSSCheckBox = !this.HTML_CSSCheckBox;
-this.signUpForm.get('hasHTML_CSS').setValue(this.HTML_CSSCheckBox);
-
-}
-
-changeOracleval(){
-  this.oracleCheckBox = !this.oracleCheckBox;
-  this.signUpForm.get('hasOracle').setValue(this.oracleCheckBox);
-}
-
-changemySQLval(){
-  this.mySqlCheckBox = !this.mySqlCheckBox;
-  this.signUpForm.get('hasmySQL').setValue(this.mySqlCheckBox);
-}
-
-changeMongoDBval(){
-  this.MongoDBCheckBox = !this.MongoDBCheckBox;
-  this.signUpForm.get('hasMongoDB').setValue(this.MongoDBCheckBox);
-}
-changePostgresval(){
-  this.PostgresCheckBox = !this.PostgresCheckBox;
-  this.signUpForm.get('hasPostgres').setValue(this.PostgresCheckBox);
-}
-changeJavaval(){
-  this.JavaCheckBox = !this.JavaCheckBox;
-  this.signUpForm.get('hasJava').setValue(this.JavaCheckBox);
-}
-changecplusplusval(){
-  this.CplusplusCheckBox = !this.CplusplusCheckBox;
-  this.signUpForm.get('hasCplusplus').setValue(this.CplusplusCheckBox);
-}
-changePythonval(){
-  this.pythonCheckBox = !this.pythonCheckBox;
-  this.signUpForm.get('haspython').setValue(this.pythonCheckBox);
-}
-changeotherval(){
-  this.othercheckBox = !this.othercheckBox;
-  this.signUpForm.get('hasother').setValue(this.othercheckBox);
-}
-changeNoval(){
-  this.NoCheckBox = !this.NoCheckBox;
-  this.signUpForm.get('hasNo').setValue(this.NoCheckBox);
-}
-changeYesval(){
-  this.YesCheckBox = !this.YesCheckBox;
-  this.signUpForm.get('hasYes').setValue(this.YesCheckBox);
-}
-
+  onCheckboxChange(e) {
+    const techStack: FormArray = this.signUpForm.get('techStack') as FormArray;
+    if(e.target.checked) {
+        techStack.push(new FormControl(e.target.value));
+    } else {
+      let i: number = 0;
+      techStack.controls.forEach((item: FormControl) => {
+        if(item.value == e.target.value) {
+          techStack.removeAt(i);
+          return;
+        }
+        i++;
+      })
+    }
+  }
 
   displayLoadingSvg() {
     this.isLookingForTeam = true;
@@ -329,4 +270,12 @@ function schoolEmail(control: AbstractControl): { [key: string]: any } | null {
     return { 'notSchoolEmail': true };
   }
   return null;
+}
+
+function validateFormArray(controls: FormArray): ValidationErrors | null {
+  if (controls.value.length) {
+    controls.markAllAsTouched();
+    return null;
+  }
+  return { notValid: true };
 }

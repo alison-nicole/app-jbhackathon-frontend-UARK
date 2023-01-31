@@ -17,7 +17,7 @@
         </div>
         <div class="half-field">
           <label>School Email*</label>
-          <label *ngIf="signUpForm.get('schoolEmailAddress').invalid && signUpForm.get('schoolEmailAddress').touched" class="error">Enter a valid school email address</label>
+          <label *ngIf="signUpForm.get('schoolEmailAddress').invalid && signUpForm.get('schoolEmailAddress').touched" class="error">Enter a valid school email</label>
           <input formControlName="schoolEmailAddress" class="form-control" type="text">
         </div>
         
@@ -46,89 +46,46 @@
             </option>
           </select>
         </div>
-        
-             <div class = "single-field">
+        <div class="single-field label">
           <label>Tech Stack*</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changeAngularval()">
-            <label> Angular </label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changeReactval()">
-            <label> React </label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changejQueryval()">
-            <label>jQuery</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changeHTML_CSSval()">
-            <label>HTML/CSS </label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)=" changeOracleval()">
-            <label>Oracle</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changemySQLval()">
-            <label>mySQL</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changeMongoDBval()">
-            <label>MongoDB</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changePostgresval()">
-            <label>PostgreSQL</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changeJavaval()">
-            <label>Java</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changecplusplusval()">
-            <label>C++</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changePythonval()">
-            <label>Python</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changeotherval()">
-            <label>Other</label>
-          </div>
-          <div class = "single-field">
-            <label>If other, please specify </label>
-            <textarea class="text-area" formControlName = "If other, please specify" cols="30" rows="10"></textarea>
-          </div>
-  
-          <div class = "single-field">
-            <label>Have you participated in the J.B Hunt Hackathon before ?</label>
-          </div>
-         
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type="checkbox" (click)="changeYesval()">
-            <label>Yes</label>
-          </div>
-          <div class = "checkbox-multiple-field">
-            <input class ="checkbox"type ="checkbox"(click)="changeNoval()">
-          </div>
-          <label>No</label>
-          
-          <div class ="dropdwn">
-          <label for="Years">If yes, how many years ? </label>
-          <select name="years"
-          id="years">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="more">More</option>
-        </select> 
+          <label *ngIf="signUpForm.get('techStack').invalid && signUpForm.get('techStack').touched" class="error">Select at least one option</label>
         </div>
-  
-
+        <div class="box-container">
+        <div *ngFor="let lang of techStack; let i=index" class="four-a-row">
+            <div class="checkbox-multiple-field">
+              <input type="checkbox" class="checkbox" [value]="lang.value" (change)="onCheckboxChange($event)">
+              <span *ngIf="lang">
+                {{lang.name}}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="single-field">
+          <label>If other, please specify </label>
+          <input type="text" formControlName="otherLang">
+        </div>
+        <div class="single-field label">
+          <label>Have you participated in the J.B. Hunt Hackathon before?</label>
+        </div>
+        <div class="single-field no-padding">
+          <div class="inline" formGroupName="prevParticipation">
+            <div class="checkbox-multiple-field">
+              <input class ="checkbox"type="checkbox" (click)="changeParticipationVal()">
+              <label>Yes</label>
+            </div>
+            <div class = "checkbox-multiple-field">
+              <input class="checkbox" type ="checkbox">
+              <label>No</label>
+            </div>
+            <label>If yes, how many years?</label>
+            <select class="form-select-quarter" formControlName="years">
+              <option [ngValue]="null" disabled>Select years</option>
+              <option *ngFor="let year of numYears" [ngValue]="year">
+                {{year}}
+              </option>
+            </select> 
+          </div>
+        </div>
         <div class="single-field">
           <label>Accommodations</label>
           <textarea class="text-area" formControlName="accommodations" cols="30" rows="10"></textarea>
@@ -139,7 +96,7 @@
         </div>
       </div>
       <div class="buttons">
-        <button [disabled]="signUpForm.get('firstName').invalid || signUpForm.get('lastName').invalid || signUpForm.get('schoolEmailAddress').invalid || signUpForm.get('phoneNumber').invalid || signUpForm.get('developerType').invalid || signUpForm.get('class').invalid "class="next btn btn-yellow" (click)="next('module1', 'module2')">Continue</button>
+        <button [disabled]="signUpForm.get('firstName').invalid || signUpForm.get('lastName').invalid || signUpForm.get('schoolEmailAddress').invalid || signUpForm.get('phoneNumber').invalid || signUpForm.get('developerType').invalid || signUpForm.get('class').invalid || signUpForm.get('techStack').invalid "class="next btn btn-yellow" (click)="next('module1', 'module2')">Continue</button>
       </div>
     </div>
     <div id="module2" class="module hidden two">
