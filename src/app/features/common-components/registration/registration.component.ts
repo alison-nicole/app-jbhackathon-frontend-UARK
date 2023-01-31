@@ -218,9 +218,7 @@ export class RegistrationComponent implements OnInit {
         }
         i++;
       })
-      
     }
-    this.signUpForm.get('techStack').markAllAsTouched;
   }
 
   displayLoadingSvg() {
