@@ -182,7 +182,9 @@
         "front-end": "Front-end Development",
         "back-end": "Back-end Development",
         "miscellaneous": "Programming Fundamentals",
+        "starter-projects": "Starter Projects",
         "recommended": "Recommended",
+
         "angular": {
             "title": "Angular",
             "links": "<li> <a class=\"link\" href =\"https://angular.io/docs/\" target = _blank>Angular Introduction</a></li><li> <a class=\"link\" href =\"https://angular.io/tutorial\" target = _blank>Angular Tutorial: Tour of Heroes</a></li>"
@@ -254,7 +256,33 @@
         "ai": {
             "title": "AI",
             "links": "<li> <a class=\"link\" href=\"https://www.tutorialspoint.com/artificial_intelligence/index.htm\" target=_blank>AI Tutorial</a></li><li> <a class=\"link\" href=\"http://www.philocomp.net/links/ai.htm\" target=_blank>AI References</a></li>"
+        },
+        "arduino": {
+            "title": "Arduino",
+            "links":"<li> <a class=\"link\" href =\"https://docs.arduino.cc/\" target = _blank>Arduino Documentation</a></li><li> <a class=\"link\" href =\"https://github.com/arduino/\" target = _blank>Arduino Github Resources</a></li>"
+        },
+        "external API requests ":{
+            "title": "External API Requests",
+            "links": "<li> <a class=\"link\" href =\"https://docs.xano.com/working-with-data/functions/external-api-request  \" target = _blank> What are External API Requests?</a></li><li> <a class=\"link\" href =\"https://github.com/topics/external-api  \" target = _blank>Github Resources </a></li>"
+        },
+        "security confoguration ":{
+            "title": " Security Configuration",
+            "links": "<li> <a class=\"link\" href=\"https://www.sciencedirect.com/topics/computer-science/configuration-security \" target=_blank> What are Seurity Configurations? </a></li>"
+        },
+        "cloud--aws":{
+            "title":"Cloud--AWS",
+            "links":"<li> <a class=\"link\" href =\"https://docs.aws.amazon.com/ \" target = _blank>AWS documentation</a></li><li> <a class=\"link\" href =\"https://github.com/aws-samples/aws-codedeploy-github-actions-deployment  \" target = _blank>Github Repositories</a></li>"
+        },
+        "cloud--GCP":{
+            "title":" Cloud--GCP",
+            "links":"<li> <a class=\"link\" href =\"https://cloud.google.com/docs  \" target = _blank>GCP Documentation</a></li><li> <a class=\"link\" href =\"https://github.com/GoogleCloudPlatform/spring-cloud-gcp \" target = _blank>Github Repositories</a></li>"
+        },
+        "cloud-Docker":{
+            "title":"Cloud--Docker",
+            "links":"<li> <a class=\"link\" href =\"https://docs.docker.com/  \" target = _blank>Docker Documentation</a></li><li> <a class=\"link\" href =\"https://github.com/collabnix/dockerlabs  \" target = _blank> Github Repositories </a></li>"
         }
+
+        
     },
     "resultsTitle": "HACKATHON RESULTS",
     "sidebar": {
