@@ -265,7 +265,7 @@
             "title": "External API Requests",
             "links": "<li> <a class=\"link\" href =\"https://docs.xano.com/working-with-data/functions/external-api-request  \" target = _blank> What are External API Requests?</a></li><li> <a class=\"link\" href =\"https://github.com/topics/external-api  \" target = _blank>Github Resources </a></li>"
         },
-        "security confoguration ":{
+        "security configuration ":{
             "title": " Security Configuration",
             "links": "<li> <a class=\"link\" href=\"https://www.sciencedirect.com/topics/computer-science/configuration-security \" target=_blank> What are Seurity Configurations? </a></li>"
         },
