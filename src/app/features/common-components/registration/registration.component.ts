@@ -78,7 +78,7 @@ export class RegistrationComponent implements OnInit {
     {name: 'Other', value: ''},
   ]
 
-  numYears: number[] = [1, 2, 3]
+  numYears: number[] = [0,1, 2, 3]
   
   constructor(readonly fb: FormBuilder, readonly signUpService: SignUpService) {
   }
@@ -102,7 +102,7 @@ export class RegistrationComponent implements OnInit {
       'otherLang': new FormControl('', Validators.compose([Validators.maxLength(250)])),
       'prevParticipation': new FormGroup({
         participation: new FormControl(this.participationCheckBox),
-        years: new FormControl(null)
+        years: new FormControl(0)
       }),
       'teamIconCode': new FormControl('', hasValue),
       'teamColorCode': new FormControl('', hasValue),

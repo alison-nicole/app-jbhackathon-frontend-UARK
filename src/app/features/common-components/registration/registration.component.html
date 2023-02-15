@@ -165,6 +165,27 @@
             <p class="category">Email</p>
             <p class="data"> {{ signUpForm.get("schoolEmailAddress").value }} </p>
           </div>
+
+          <div class="info-group">
+            <p class="category">Phone Number</p>
+            <p class="data"> {{ signUpForm.get("phoneNumber").value }} </p>
+          </div>
+
+          <div class="info-group">
+            <p class="category">Developer Type</p>
+            <p class="data">{{ signUpForm.get("developerType").value?.viewValue}}</p>
+          </div>
+
+          <div class="info-group">
+            <p class="category"> Class </p>
+            <p class="data">{{ signUpForm.get("class").value?.viewValue}}</p>
+          </div>
+
+          <div class="info-group">
+            <p class="category"> Years of experience </p>
+            <p class="data">{{ signUpForm.get("prevParticipation").value.years}}</p>
+          </div>
+
           <div class="info-group" *ngIf="signUpForm.get('accommodations').value !== ''">
             <p class="category">Accommodations</p>
             <p class="data"> {{ signUpForm.get("accommodations").value }} </p>
