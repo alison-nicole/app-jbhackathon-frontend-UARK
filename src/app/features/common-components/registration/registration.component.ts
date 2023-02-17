@@ -64,17 +64,17 @@ export class RegistrationComponent implements OnInit {
   ]
 
   techStack: TechStack[] = [
-    {name: 'Angular', value: 'angular'},
-    {name: 'React', value: 'react'},
-    {name: 'jQuery', value: 'jquery'},
-    {name: 'HTML/CSS', value: 'html-css'},
-    {name: 'Oracle', value: 'oracle'},
-    {name: 'mySQL', value: 'mysql'},
-    {name: 'MongoDB', value: 'mongodb'},
-    {name: 'PostgreSQL', value: 'postgressql'},
-    {name: 'Java', value: 'java'},
-    {name: 'C++', value: 'c++'},
-    {name: 'Python', value: 'python'},
+    {name: 'Angular', value: 'Angular'},
+    {name: 'React', value: 'React'},
+    {name: 'jQuery', value: 'jQuery'},
+    {name: 'HTML/CSS', value: 'HTML/CSS'},
+    {name: 'Oracle', value: 'Oracle'},
+    {name: 'mySQL', value: 'mySQL'},
+    {name: 'MongoDB', value: 'MongoDB'},
+    {name: 'PostgreSQL', value: 'PostgreSQL'},
+    {name: 'Java', value: 'Java'},
+    {name: 'C++', value: 'C++'},
+    {name: 'Python', value: 'Python'},
     {name: 'Other', value: ''},
   ]
 
