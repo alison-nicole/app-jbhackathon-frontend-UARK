@@ -1,11 +1,22 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import {
-  AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, FormGroupDirective,
+  AbstractControl, FormArray, FormBuilder, FormControl, FormGroup,
   ValidationErrors, Validators
 } from '@angular/forms';
 import { SignUpService } from '../../../shared/services/sign-up.service';
 import iconsJson from '../../../../assets/jsonFiles/teamIcons.json';
 import colorsJson from '../../../../assets/jsonFiles/colors.json';
+
+
+@Pipe({
+  name: 'join'
+})
+export class JoinPipe implements PipeTransform {
+  transform(input:Array<any>, sep = ','): string {
+    input = input.filter(str => str != "");
+    return input.join(sep);
+  }
+}
 
 export interface TechStack {
   name: string;

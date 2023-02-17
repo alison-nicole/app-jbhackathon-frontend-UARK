@@ -165,6 +165,11 @@
             <p class="category">Email</p>
             <p class="data"> {{ signUpForm.get("schoolEmailAddress").value }} </p>
           </div>
+          <div class="info-group">
+            <p class="category">Tech Stack</p>
+            <p class="data"> {{ signUpForm.get("techStack").value | join: ', ' }} </p>
+            <p class="data" *ngIf="signUpForm.get('otherLang').value != ''">  {{ signUpForm.get("otherLang").value }} </p>
+          </div>
           <div class="info-group" *ngIf="signUpForm.get('accommodations').value !== ''">
             <p class="category">Accommodations</p>
             <p class="data"> {{ signUpForm.get("accommodations").value }} </p>

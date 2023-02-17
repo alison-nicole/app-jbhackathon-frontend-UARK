@@ -4,7 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
-import { RegistrationComponent } from './registration/registration.component';
+import { JoinPipe, RegistrationComponent } from './registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TeamIconColorSelectorComponent } from './registration/team-icon-color-selector/team-icon-color-selector.component';
 import { CodeVerificationComponent } from './code-verification/code-verification.component';
@@ -25,7 +25,8 @@ import { CodeVerificationComponent } from './code-verification/code-verification
     FooterComponent,
     RegistrationComponent,
     TeamIconColorSelectorComponent,
-    CodeVerificationComponent
+    CodeVerificationComponent,
+    JoinPipe
   ],
   exports: [
     HeaderComponent,
