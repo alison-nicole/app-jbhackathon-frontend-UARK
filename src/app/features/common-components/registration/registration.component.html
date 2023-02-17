@@ -79,7 +79,7 @@
             </div>
             <label>If yes, how many years?</label>
             <select class="form-select-quarter" formControlName="years">
-              <option [ngValue]="null" disabled>Select years</option>
+              <option [ngValue]= 0 disabled>Select years</option>
               <option *ngFor="let year of numYears" [ngValue]="year">
                 {{year}}
               </option>
@@ -182,7 +182,7 @@
           </div>
 
           <div class="info-group">
-            <p class="category"> Years of experience </p>
+            <p class="category"> Years of Experience </p>
             <p class="data">{{ signUpForm.get("prevParticipation").value.years}}</p>
           </div>
 
