@@ -90,10 +90,6 @@
           <label>Accommodations</label>
           <textarea class="text-area" formControlName="accommodations" cols="30" rows="10"></textarea>
         </div>
-        <div class="checkbox-single-field">
-          <input class="checkbox" type="checkbox" (click)="changeGradVal()">
-          <label>Graduate Student</label>
-        </div>
       </div>
       <div class="buttons">
         <button [disabled]="signUpForm.get('firstName').invalid || signUpForm.get('lastName').invalid || signUpForm.get('schoolEmailAddress').invalid || signUpForm.get('phoneNumber').invalid || signUpForm.get('developerType').invalid || signUpForm.get('class').invalid || signUpForm.get('techStack').invalid "class="next btn btn-yellow" (click)="next('module1', 'module2')">Continue</button>
@@ -173,10 +169,6 @@
           <div class="info-group" *ngIf="signUpForm.get('accommodations').value !== ''">
             <p class="category">Accommodations</p>
             <p class="data"> {{ signUpForm.get("accommodations").value }} </p>
-          </div>
-          <div class="info-group">
-            <p class="category">Graduate</p>
-            <p class="data"> {{ signUpForm.get('isGradStudent').value }} </p>
           </div>
         </div>
       </div>

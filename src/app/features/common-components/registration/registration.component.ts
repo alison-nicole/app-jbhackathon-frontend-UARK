@@ -42,7 +42,6 @@ export class RegistrationComponent implements OnInit {
   icons = iconsJson;
   colors = colorsJson;
 
-  gradCheckBox = false;
   participationCheckBox = false;
 
 
@@ -95,7 +94,6 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.gradCheckBox = false;
     this.participationCheckBox = false;
     this.isLookingForTeam = false;
 
@@ -108,7 +106,6 @@ export class RegistrationComponent implements OnInit {
       'developerType': new FormControl(null, Validators.compose([Validators.required])),
       'class': new FormControl(null, Validators.compose([Validators.required])),
       'accommodations': new FormControl('', Validators.maxLength(1000)),
-      'isGradStudent': new FormControl(this.gradCheckBox),
       'techStack': this.fb.array([], Validators.compose([Validators.required, Validators.minLength(1), validateFormArray])),
       'otherLang': new FormControl('', Validators.compose([Validators.maxLength(250)])),
       'prevParticipation': new FormGroup({
@@ -204,11 +201,6 @@ export class RegistrationComponent implements OnInit {
     this.signUpService.getTeamByTeamID(teamID).subscribe(data => {
       this.createdTeamCode = data.teamCode;
     });
-  }
-
-  changeGradVal() {
-    this.gradCheckBox = !this.gradCheckBox;
-    this.signUpForm.get('isGradStudent').setValue(this.gradCheckBox);
   }
 
   changeParticipationVal() {
