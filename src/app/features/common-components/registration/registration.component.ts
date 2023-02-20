@@ -43,7 +43,7 @@ export class RegistrationComponent implements OnInit {
   colors = colorsJson;
 
   participationCheckBox = false;
-
+  isGraduate = false;
 
   isLookingForTeam = false;
   displayTeamHeader = false;
@@ -94,6 +94,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.isGraduate = false;
     this.participationCheckBox = false;
     this.isLookingForTeam = false;
 
@@ -105,6 +106,7 @@ export class RegistrationComponent implements OnInit {
       'phoneNumber': new FormControl('', Validators.compose([Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$"), Validators.minLength(1),Validators.maxLength(10)])),
       'developerType': new FormControl(null, Validators.compose([Validators.required])),
       'class': new FormControl(null, Validators.compose([Validators.required])),
+      'isGradStudent': new FormControl(this.isGraduate),
       'accommodations': new FormControl('', Validators.maxLength(1000)),
       'techStack': this.fb.array([], Validators.compose([Validators.required, Validators.minLength(1), validateFormArray])),
       'otherLang': new FormControl('', Validators.compose([Validators.maxLength(250)])),
@@ -201,6 +203,20 @@ export class RegistrationComponent implements OnInit {
     this.signUpService.getTeamByTeamID(teamID).subscribe(data => {
       this.createdTeamCode = data.teamCode;
     });
+  }
+
+  changeGradVal(e) {
+    const value = e.target.value;
+
+    if(value.includes('gradStudent')) {
+      this.isGraduate = !this.isGraduate;
+      this.signUpForm.get('isGradStudent').setValue(this.isGraduate);
+    } else {
+      if(this.isGraduate) {
+        this.isGraduate = !this.isGraduate;
+        this.signUpForm.get('isGradStudent').setValue(this.isGraduate);
+      }
+    }
   }
 
   changeParticipationVal() {

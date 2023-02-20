@@ -39,9 +39,9 @@
         <div class="half-field">
           <label>Class*</label>
           <label *ngIf="signUpForm.get('class').invalid && signUpForm.get('class').touched" class="error">Select a class</label>
-          <select class="form-select" formControlName="class" required>
+          <select class="form-select" formControlName="class" required (change)="changeGradVal($event)">
             <option [ngValue]="null" disabled>Select a class</option>
-            <option *ngFor="let class of classLevel" [ngValue]="class">
+            <option *ngFor="let class of classLevel" [ngValue]="class.value">
               {{class.viewValue}}
             </option>
           </select>
