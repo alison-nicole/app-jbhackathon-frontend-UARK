@@ -109,10 +109,10 @@ export class RegistrationComponent implements OnInit {
       'isGradStudent': new FormControl(this.isGraduate),
       'accommodations': new FormControl('', Validators.maxLength(1000)),
       'techStack': this.fb.array([], Validators.compose([Validators.required, Validators.minLength(1), validateFormArray])),
-      'otherLang': new FormControl('', Validators.compose([Validators.maxLength(250)])),
+      'otherLang': new FormControl({ value: '', disabled: true }, Validators.compose([Validators.maxLength(250)])),
       'prevParticipation': new FormGroup({
         participation: new FormControl(this.participationCheckBox),
-        years: new FormControl(0)
+        years: new FormControl({ value: 0, disabled: true })
       }),
       'teamIconCode': new FormControl('', hasValue),
       'teamColorCode': new FormControl('', hasValue),
@@ -219,15 +219,29 @@ export class RegistrationComponent implements OnInit {
     }
   }
 
-  changeParticipationVal() {
-    this.participationCheckBox = !this.participationCheckBox;
-    this.signUpForm.get('prevParticipation').get('participation').setValue(this.participationCheckBox);
+  changeParticipationVal(e) {
+    if(e.target.value == 'true') {
+      if(e.target.checked) {
+        this.signUpForm.get('prevParticipation').get('years').enable();
+        this.participationCheckBox = !this.participationCheckBox;
+        this.signUpForm.get('prevParticipation').get('participation').setValue(this.participationCheckBox);
+      } else {
+        this.signUpForm.get('prevParticipation').get('years').disable();
+        this.participationCheckBox = !this.participationCheckBox;
+        this.signUpForm.get('prevParticipation').get('participation').setValue(this.participationCheckBox);
+      }
+    } else {
+      this.signUpForm.get('prevParticipation').get('years').disable();
+      this.signUpForm.get('prevParticipation').get('participation').setValue(this.participationCheckBox);
+    }
   }
 
   onCheckboxChange(e) {
     const techStack: FormArray = this.signUpForm.get('techStack') as FormArray;
     if(e.target.checked) {
         techStack.push(new FormControl(e.target.value));
+        if(e.target.value == '')
+          this.signUpForm.get('otherLang').enable();
     } else {
       let i: number = 0;
       techStack.controls.forEach((item: FormControl) => {
@@ -237,6 +251,9 @@ export class RegistrationComponent implements OnInit {
         }
         i++;
       })
+
+      if(e.target.value == '')
+        this.signUpForm.get('otherLang').disable();
     }
   }
 

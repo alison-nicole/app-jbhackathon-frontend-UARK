@@ -251,6 +251,14 @@
         }
     }
 
+    input:disabled {
+        opacity: 0.7;
+    }
+
+    .input-disabled {
+        opacity: 0.7;
+    }
+
 
     textarea {
         height: 6rem;

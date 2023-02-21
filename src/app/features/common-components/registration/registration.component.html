@@ -61,7 +61,7 @@
           </div>
         </div>
         <div class="single-field">
-          <label>If other, please specify </label>
+          <label [ngClass]="this.signUpForm.get('otherLang').disabled ? 'input-disabled' : 'input-enabled' ">If other, please specify</label>
           <input type="text" formControlName="otherLang">
         </div>
         <div class="single-field label">
@@ -70,14 +70,14 @@
         <div class="single-field no-padding">
           <div class="inline" formGroupName="prevParticipation">
             <div class="checkbox-multiple-field">
-              <input class ="checkbox"type="checkbox" (click)="changeParticipationVal()">
+              <input class ="checkbox"type="checkbox" [value]="true" (click)="changeParticipationVal($event)">
               <label>Yes</label>
             </div>
             <div class = "checkbox-multiple-field">
-              <input class="checkbox" type ="checkbox">
+              <input class="checkbox" type ="checkbox" [value]="false" (click)="changeParticipationVal($event)">
               <label>No</label>
             </div>
-            <label>If yes, how many years?</label>
+            <label [ngClass]="this.signUpForm.get('prevParticipation').get('years').disabled ? 'input-disabled' : 'input-enabled' ">If yes, how many years?</label>
             <select class="form-select-quarter" formControlName="years">
               <option [ngValue]= 0 disabled>Select years</option>
               <option *ngFor="let year of numYears" [ngValue]="year">
@@ -178,11 +178,15 @@
           <div class="info-group">
             <p class="category">Tech Stack</p>
             <p class="data"> {{ signUpForm.get("techStack").value | join: ', ' }} </p>
-            <p class="data" *ngIf="signUpForm.get('otherLang').value != ''">  {{ signUpForm.get("otherLang").value }} </p>
+            <p class="data" *ngIf="!signUpForm.get('otherLang').disabled">  {{ signUpForm.get("otherLang").value }} </p>
           </div>
           <div class="info-group">
-            <p class="category"> Years of Experience </p>
-            <p class="data">{{ signUpForm.get("prevParticipation").value.years}}</p>
+            <p class="category">Previous Hackathon Experience</p>
+            <p class="data">{{ signUpForm.get("prevParticipation").value.participation }}</p>
+          </div>
+          <div class="info-group" *ngIf="signUpForm.get('prevParticipation').value.participation">
+            <p class="category">Years of Experience</p>
+            <p class="data">{{ signUpForm.get("prevParticipation").value.years }}</p>
           </div>
           <div class="info-group" *ngIf="signUpForm.get('accommodations').value !== ''">
             <p class="category">Accommodations</p>
