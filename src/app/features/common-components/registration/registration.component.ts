@@ -1,11 +1,22 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import {
-  AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, FormGroupDirective,
+  AbstractControl, FormArray, FormBuilder, FormControl, FormGroup,
   ValidationErrors, Validators
 } from '@angular/forms';
 import { SignUpService } from '../../../shared/services/sign-up.service';
 import iconsJson from '../../../../assets/jsonFiles/teamIcons.json';
 import colorsJson from '../../../../assets/jsonFiles/colors.json';
+
+
+@Pipe({
+  name: 'join'
+})
+export class JoinPipe implements PipeTransform {
+  transform(input:Array<any>, sep = ','): string {
+    input = input.filter(str => str != "");
+    return input.join(sep);
+  }
+}
 
 export interface TechStack {
   name: string;
@@ -31,9 +42,8 @@ export class RegistrationComponent implements OnInit {
   icons = iconsJson;
   colors = colorsJson;
 
-  gradCheckBox = false;
   participationCheckBox = false;
-
+  isGraduate = false;
 
   isLookingForTeam = false;
   displayTeamHeader = false;
@@ -64,17 +74,17 @@ export class RegistrationComponent implements OnInit {
   ]
 
   techStack: TechStack[] = [
-    {name: 'Angular', value: 'angular'},
-    {name: 'React', value: 'react'},
-    {name: 'jQuery', value: 'jquery'},
-    {name: 'HTML/CSS', value: 'html-css'},
-    {name: 'Oracle', value: 'oracle'},
-    {name: 'mySQL', value: 'mysql'},
-    {name: 'MongoDB', value: 'mongodb'},
-    {name: 'PostgreSQL', value: 'postgressql'},
-    {name: 'Java', value: 'java'},
-    {name: 'C++', value: 'c++'},
-    {name: 'Python', value: 'python'},
+    {name: 'Angular', value: 'Angular'},
+    {name: 'React', value: 'React'},
+    {name: 'jQuery', value: 'jQuery'},
+    {name: 'HTML/CSS', value: 'HTML/CSS'},
+    {name: 'Oracle', value: 'Oracle'},
+    {name: 'mySQL', value: 'mySQL'},
+    {name: 'MongoDB', value: 'MongoDB'},
+    {name: 'PostgreSQL', value: 'PostgreSQL'},
+    {name: 'Java', value: 'Java'},
+    {name: 'C++', value: 'C++'},
+    {name: 'Python', value: 'Python'},
     {name: 'Other', value: ''},
   ]
 
@@ -84,7 +94,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.gradCheckBox = false;
+    this.isGraduate = false;
     this.participationCheckBox = false;
     this.isLookingForTeam = false;
 
@@ -96,8 +106,8 @@ export class RegistrationComponent implements OnInit {
       'phoneNumber': new FormControl('', Validators.compose([Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$"), Validators.minLength(1),Validators.maxLength(10)])),
       'developerType': new FormControl(null, Validators.compose([Validators.required])),
       'class': new FormControl(null, Validators.compose([Validators.required])),
+      'isGradStudent': new FormControl(this.isGraduate),
       'accommodations': new FormControl('', Validators.maxLength(1000)),
-      'isGradStudent': new FormControl(this.gradCheckBox),
       'techStack': this.fb.array([], Validators.compose([Validators.required, Validators.minLength(1), validateFormArray])),
       'otherLang': new FormControl('', Validators.compose([Validators.maxLength(250)])),
       'prevParticipation': new FormGroup({
@@ -195,9 +205,18 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-  changeGradVal() {
-    this.gradCheckBox = !this.gradCheckBox;
-    this.signUpForm.get('isGradStudent').setValue(this.gradCheckBox);
+  changeGradVal(e) {
+    const value = e.target.value;
+
+    if(value.includes('gradStudent')) {
+      this.isGraduate = !this.isGraduate;
+      this.signUpForm.get('isGradStudent').setValue(this.isGraduate);
+    } else {
+      if(this.isGraduate) {
+        this.isGraduate = !this.isGraduate;
+        this.signUpForm.get('isGradStudent').setValue(this.isGraduate);
+      }
+    }
   }
 
   changeParticipationVal() {

@@ -39,9 +39,9 @@
         <div class="half-field">
           <label>Class*</label>
           <label *ngIf="signUpForm.get('class').invalid && signUpForm.get('class').touched" class="error">Select a class</label>
-          <select class="form-select" formControlName="class" required>
+          <select class="form-select" formControlName="class" required (change)="changeGradVal($event)">
             <option [ngValue]="null" disabled>Select a class</option>
-            <option *ngFor="let class of classLevel" [ngValue]="class">
+            <option *ngFor="let class of classLevel" [ngValue]="class.value">
               {{class.viewValue}}
             </option>
           </select>
@@ -89,10 +89,6 @@
         <div class="single-field">
           <label>Accommodations</label>
           <textarea class="text-area" formControlName="accommodations" cols="30" rows="10"></textarea>
-        </div>
-        <div class="checkbox-single-field">
-          <input class="checkbox" type="checkbox" (click)="changeGradVal()">
-          <label>Graduate Student</label>
         </div>
       </div>
       <div class="buttons">
@@ -165,7 +161,6 @@
             <p class="category">Email</p>
             <p class="data"> {{ signUpForm.get("schoolEmailAddress").value }} </p>
           </div>
-
           <div class="info-group">
             <p class="category">Phone Number</p>
             <p class="data"> {{ signUpForm.get("phoneNumber").value }} </p>
@@ -180,19 +175,18 @@
             <p class="category"> Class </p>
             <p class="data">{{ signUpForm.get("class").value?.viewValue}}</p>
           </div>
-
+          <div class="info-group">
+            <p class="category">Tech Stack</p>
+            <p class="data"> {{ signUpForm.get("techStack").value | join: ', ' }} </p>
+            <p class="data" *ngIf="signUpForm.get('otherLang').value != ''">  {{ signUpForm.get("otherLang").value }} </p>
+          </div>
           <div class="info-group">
             <p class="category"> Years of Experience </p>
             <p class="data">{{ signUpForm.get("prevParticipation").value.years}}</p>
           </div>
-
           <div class="info-group" *ngIf="signUpForm.get('accommodations').value !== ''">
             <p class="category">Accommodations</p>
             <p class="data"> {{ signUpForm.get("accommodations").value }} </p>
-          </div>
-          <div class="info-group">
-            <p class="category">Graduate</p>
-            <p class="data"> {{ signUpForm.get('isGradStudent').value }} </p>
           </div>
         </div>
       </div>
