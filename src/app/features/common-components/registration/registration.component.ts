@@ -205,10 +205,10 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-  changeGradVal(e) {
-    const value = e.target.value;
-
-    if(value.includes('gradStudent')) {
+  changeGradVal() {
+    const value = this.signUpForm.get('class').value.value;
+    
+    if(value != null && value.includes('gradStudent')) {
       this.isGraduate = !this.isGraduate;
       this.signUpForm.get('isGradStudent').setValue(this.isGraduate);
     } else {
