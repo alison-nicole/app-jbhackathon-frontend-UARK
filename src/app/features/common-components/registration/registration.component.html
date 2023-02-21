@@ -176,10 +176,6 @@
             <p class="data">{{ signUpForm.get("class").value?.viewValue}}</p>
           </div>
           <div class="info-group">
-            <p class="category"> Graduate </p>
-            <p class="data">{{ signUpForm.get("isGradStudent").value }}</p>
-          </div>
-          <div class="info-group">
             <p class="category">Tech Stack</p>
             <p class="data"> {{ signUpForm.get("techStack").value | join: ', ' }} </p>
             <p class="data" *ngIf="signUpForm.get('otherLang').value != ''">  {{ signUpForm.get("otherLang").value }} </p>
