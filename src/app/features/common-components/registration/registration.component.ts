@@ -67,7 +67,7 @@ export class RegistrationComponent implements OnInit {
   classLevel: Class[] = [
     {value: 'highSchool', viewValue: 'High School'},
     {value: 'freshman', viewValue: 'Freshman'},
-    {value: 'sophomore', viewValue: 'Sophmomore'},
+    {value: 'sophomore', viewValue: 'Sophomore'},
     {value: 'junior', viewValue: 'Junior'},
     {value: 'senior', viewValue: 'Senior'},
     {value: 'gradStudent', viewValue: 'Graduate Student'},
