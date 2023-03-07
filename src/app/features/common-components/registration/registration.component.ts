@@ -220,20 +220,13 @@ export class RegistrationComponent implements OnInit {
   }
 
   changeParticipationVal(e) {
-    if(e.target.value == 'true') {
-      if(e.target.checked) {
-        this.signUpForm.get('prevParticipation').get('years').enable();
-        this.participationCheckBox = !this.participationCheckBox;
-        this.signUpForm.get('prevParticipation').get('participation').setValue(this.participationCheckBox);
-      } else {
-        this.signUpForm.get('prevParticipation').get('years').disable();
-        this.participationCheckBox = !this.participationCheckBox;
-        this.signUpForm.get('prevParticipation').get('participation').setValue(this.participationCheckBox);
-      }
-    } else {
+    if(e.target.value == 'true')
+      this.signUpForm.get('prevParticipation').get('years').enable();
+    else 
       this.signUpForm.get('prevParticipation').get('years').disable();
-      this.signUpForm.get('prevParticipation').get('participation').setValue(this.participationCheckBox);
-    }
+    
+    this.participationCheckBox = !this.participationCheckBox;
+    this.signUpForm.get('prevParticipation').get('participation').setValue(this.participationCheckBox);
   }
 
   onCheckboxChange(e) {

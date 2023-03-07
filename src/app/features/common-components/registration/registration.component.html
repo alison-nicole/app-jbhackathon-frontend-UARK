@@ -67,15 +67,17 @@
         <div class="single-field label">
           <label>Have you participated in the J.B. Hunt Hackathon before?</label>
         </div>
-        <div class="single-field no-padding">
+        <div class="single-field no-padding-left">
           <div class="inline" formGroupName="prevParticipation">
             <div class="checkbox-multiple-field">
-              <input class ="checkbox"type="checkbox" [value]="true" (click)="changeParticipationVal($event)">
-              <label>Yes</label>
-            </div>
-            <div class = "checkbox-multiple-field">
-              <input class="checkbox" type ="checkbox" [value]="false" (click)="changeParticipationVal($event)">
-              <label>No</label>
+              <div class="radio">
+                <input class ="checkbox"type="radio" name="prevExpGroup" [value]="true" (change)="changeParticipationVal($event)">
+                <label>Yes</label>
+              </div>
+              <div class="radio">
+                <input class="checkbox" type ="radio" name="prevExpGroup" [value]="false" (change)="changeParticipationVal($event)">
+                <label>No</label>
+              </div>
             </div>
             <label [ngClass]="this.signUpForm.get('prevParticipation').get('years').disabled ? 'input-disabled' : 'input-enabled' ">If yes, how many years?</label>
             <select class="form-select-quarter" formControlName="years">
