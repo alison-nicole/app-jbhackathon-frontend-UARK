@@ -88,7 +88,7 @@ export class RegistrationComponent implements OnInit {
     {name: 'Other', value: ''},
   ]
 
-  numYears: number[] = [0,1, 2, 3]
+  numYears: number[] = [1, 2, 3, 4, 5, 6]
   
   constructor(readonly fb: FormBuilder, readonly signUpService: SignUpService) {
   }
