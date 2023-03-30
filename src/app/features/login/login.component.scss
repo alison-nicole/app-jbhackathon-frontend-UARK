@@ -1,0 +1,78 @@
+.content-container {
+    min-width: 100vw;
+    min-height: 100vh;
+    background: rgb(2, 136, 204);
+    background: linear-gradient(175deg, rgb(2, 136, 204) 23%, rgb(64, 191, 253) 50%, rgb(255, 255, 255) 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background: transparent linear-gradient(102deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.3411764706) 100%) 0% 0% no-repeat padding-box;
+        border-radius: 7px;
+        opacity: 1;
+        width: 28em;
+        height: 4.5em;
+        margin: 0 0 1.5em 0;
+
+        .left-header {
+            display: flex;
+            flex-direction: row;
+
+            .logo {
+                width: 7em;
+            }
+
+            .brand-title {
+                color: white;
+                font-size: 1em;
+                line-height: 2em;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.forms-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
+    opacity: 1;
+    width: 28em;
+    height: 29em;
+
+    .options-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        .form-button {
+            width: 60%;
+            height: 5em;
+            margin: 1em;
+            border-radius: 7px;
+            color: white;
+            background: linear-gradient(#40BFFD, #0288CC);
+            border: 1px solid #0288CC;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.9;
+            }
+        }
+    }
+}
