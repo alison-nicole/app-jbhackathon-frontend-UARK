@@ -1,16 +1,19 @@
 <div class="master-container" [style.position]="displayBanner ? 'relative' : 'absolute'">
-  <div class="button-container">
-    <button (click)="routeTo('/JGdrGCSnGnLyuXYfIRfEdUDA');" class="btn btn-small btn-yellow">Judge</button>
+  <div class="button-container" [style.padding]="displayLinks ? '5px 0' : '20px 0'">
+    <button *ngIf="displayLinks" (click)="routeTo('/login');" class="btn btn-small btn-yellow">Login</button>
   </div>
-  <div class="header-container">
+  <div class="header-container" [style.width]="displayLinks ? '80vw' : '40vw'">
     <div (click)="routeTo('/home');" class="brand-container">
       <img src="../../../../assets/svg/JBH_logo.svg" alt="J.B. Hunt Logo" class="logo">
       <h3 class="brand-title">Hackathon</h3>
     </div>
-    <div class="link-container">
+    <div *ngIf="!displayLinks" class="button-container">
+      <button class="btn btn-small btn-yellow">Back</button> 
+    </div>
+    <div *ngIf="displayLinks" class="link-container">
       <a routerLink="/competition" class="link">Competition</a>
       <a routerLink="/resources" class="link">Resources</a>
     </div>
   </div>
-  <div *ngIf="displayBanner" class="blue-banner"></div>
+  <div *ngIf="displayBanner" [ngClass]="displayLinks ? 'blue-banner' : 'blue-banner-login'"></div>
 </div>
