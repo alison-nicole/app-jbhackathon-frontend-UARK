@@ -8,12 +8,14 @@ import { StandingsComponent } from './features/judge/standings/standings.compone
 import { NotFoundComponent } from './features/hackathon-sign-up/not-found/not-found.component';
 import { PreviousHackathonsComponent } from './features/hackathon-sign-up/previous-hackathons/previous-hackathons.component';
 import { CompetitionComponent } from './features/hackathon-sign-up/competition/competition.component';
+import { LoginComponent } from './features/login/login.component';
 
 const routes: Routes = [
   { path: 'not-found', component: NotFoundComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'competition', component: CompetitionComponent},
+  { path: 'login', component: LoginComponent },
   { path: 'resources', component: ResourcesComponent },
   { path: 'previous-hackathons', component: PreviousHackathonsComponent },
   { path: 'JGdrGCSnGnLyuXYfIRfEdUDA', component: JudgingComponent},

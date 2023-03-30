@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { JudgeModule } from './features/judge/judge.module';
 import { HackathonSignUpModule } from './features/hackathon-sign-up/hackathon-sign-up.module';
 import { CommonComponentsModule } from './features/common-components/common-components.module';
+import { LoginModule } from './features/login/login.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -31,6 +32,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     HttpClientModule,
     JudgeModule,
+    LoginModule,
     HackathonSignUpModule,
     FormsModule,
     TranslateModule.forRoot({

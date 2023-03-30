@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
   @Output() signUpEvent: EventEmitter<any> = new EventEmitter<any>();
 
   displayBanner: boolean = false;
+  displayLogin: boolean = true; 
+  displayLoginButton: boolean = true;
 
   constructor(private router: Router, public signUpService: SignUpService, public authService: AuthService) {}
 
@@ -25,6 +27,16 @@ export class HeaderComponent implements OnInit {
         else {
           this.displayBanner = true;
         }
+
+        if(event.url === '/login')
+          this.displayLogin = false;
+        else 
+          this.displayLogin = true; 
+
+        if(event.url === '/JGdrGCSnGnLyuXYfIRfEdUDA')
+          this.displayLoginButton = false;
+        else
+          this.displayLoginButton = true;
       }
     })
   }
