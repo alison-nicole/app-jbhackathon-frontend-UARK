@@ -67,7 +67,7 @@ export class RegistrationComponent implements OnInit {
   classLevel: Class[] = [
     {value: 'highSchool', viewValue: 'High School'},
     {value: 'freshman', viewValue: 'Freshman'},
-    {value: 'sophomore', viewValue: 'Sophmomore'},
+    {value: 'sophomore', viewValue: 'Sophomore'},
     {value: 'junior', viewValue: 'Junior'},
     {value: 'senior', viewValue: 'Senior'},
     {value: 'gradStudent', viewValue: 'Graduate Student'},
@@ -88,7 +88,7 @@ export class RegistrationComponent implements OnInit {
     {name: 'Other', value: ''},
   ]
 
-  numYears: number[] = [0,1, 2, 3]
+  numYears: number[] = [1, 2, 3, 4, 5, 6]
   
   constructor(readonly fb: FormBuilder, readonly signUpService: SignUpService) {
   }
@@ -109,10 +109,10 @@ export class RegistrationComponent implements OnInit {
       'isGradStudent': new FormControl(this.isGraduate),
       'accommodations': new FormControl('', Validators.maxLength(1000)),
       'techStack': this.fb.array([], Validators.compose([Validators.required, Validators.minLength(1), validateFormArray])),
-      'otherLang': new FormControl('', Validators.compose([Validators.maxLength(250)])),
+      'otherLang': new FormControl({ value: '', disabled: true }, Validators.compose([Validators.maxLength(250)])),
       'prevParticipation': new FormGroup({
         participation: new FormControl(this.participationCheckBox),
-        years: new FormControl(0)
+        years: new FormControl({ value: 0, disabled: true })
       }),
       'teamIconCode': new FormControl('', hasValue),
       'teamColorCode': new FormControl('', hasValue),
@@ -205,10 +205,10 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-  changeGradVal(e) {
-    const value = e.target.value;
-
-    if(value.includes('gradStudent')) {
+  changeGradVal() {
+    const value = this.signUpForm.get('class').value.value;
+    
+    if(value != null && value.includes('gradStudent')) {
       this.isGraduate = !this.isGraduate;
       this.signUpForm.get('isGradStudent').setValue(this.isGraduate);
     } else {
@@ -219,15 +219,25 @@ export class RegistrationComponent implements OnInit {
     }
   }
 
-  changeParticipationVal() {
-    this.participationCheckBox = !this.participationCheckBox;
+  changeParticipationVal(e) {
+    if(e.target.value == 'true') {
+      this.signUpForm.get('prevParticipation').get('years').enable();
+      this.participationCheckBox = true;
+    } else {
+      this.signUpForm.get('prevParticipation').get('years').disable();
+      this.participationCheckBox = false;
+    }
+
     this.signUpForm.get('prevParticipation').get('participation').setValue(this.participationCheckBox);
+
   }
 
   onCheckboxChange(e) {
     const techStack: FormArray = this.signUpForm.get('techStack') as FormArray;
     if(e.target.checked) {
         techStack.push(new FormControl(e.target.value));
+        if(e.target.value == '')
+          this.signUpForm.get('otherLang').enable();
     } else {
       let i: number = 0;
       techStack.controls.forEach((item: FormControl) => {
@@ -237,6 +247,9 @@ export class RegistrationComponent implements OnInit {
         }
         i++;
       })
+
+      if(e.target.value == '')
+        this.signUpForm.get('otherLang').disable();
     }
   }
 

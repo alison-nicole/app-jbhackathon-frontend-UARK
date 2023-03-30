@@ -251,6 +251,14 @@
         }
     }
 
+    input:disabled {
+        opacity: 0.7;
+    }
+
+    .input-disabled {
+        opacity: 0.7;
+    }
+
 
     textarea {
         height: 6rem;
@@ -322,6 +330,17 @@
     flex-direction: row;
     flex-wrap: nowrap;
     width: 100%;
+}
+
+.no-padding-left {
+    padding-left: 0;
+}
+
+.radio {
+    padding-right: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .right-padding {

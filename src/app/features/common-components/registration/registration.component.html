@@ -39,9 +39,9 @@
         <div class="half-field">
           <label>Class*</label>
           <label *ngIf="signUpForm.get('class').invalid && signUpForm.get('class').touched" class="error">Select a class</label>
-          <select class="form-select" formControlName="class" required (change)="changeGradVal($event)">
+          <select class="form-select" formControlName="class" required (change)="changeGradVal()">
             <option [ngValue]="null" disabled>Select a class</option>
-            <option *ngFor="let class of classLevel" [ngValue]="class.value">
+            <option *ngFor="let class of classLevel" [ngValue]="class">
               {{class.viewValue}}
             </option>
           </select>
@@ -61,23 +61,25 @@
           </div>
         </div>
         <div class="single-field">
-          <label>If other, please specify </label>
+          <label [ngClass]="this.signUpForm.get('otherLang').disabled ? 'input-disabled' : 'input-enabled' ">If other, please specify</label>
           <input type="text" formControlName="otherLang">
         </div>
         <div class="single-field label">
           <label>Have you participated in the J.B. Hunt Hackathon before?</label>
         </div>
-        <div class="single-field no-padding">
+        <div class="single-field no-padding-left">
           <div class="inline" formGroupName="prevParticipation">
             <div class="checkbox-multiple-field">
-              <input class ="checkbox"type="checkbox" (click)="changeParticipationVal()">
-              <label>Yes</label>
+              <div class="radio">
+                <input class ="checkbox"type="radio" name="prevExpGroup" [value]="true" (change)="changeParticipationVal($event)">
+                <label>Yes</label>
+              </div>
+              <div class="radio">
+                <input class="checkbox" type ="radio" name="prevExpGroup" [value]="false" (change)="changeParticipationVal($event)">
+                <label>No</label>
+              </div>
             </div>
-            <div class = "checkbox-multiple-field">
-              <input class="checkbox" type ="checkbox">
-              <label>No</label>
-            </div>
-            <label>If yes, how many years?</label>
+            <label [ngClass]="this.signUpForm.get('prevParticipation').get('years').disabled ? 'input-disabled' : 'input-enabled' ">If yes, how many years?</label>
             <select class="form-select-quarter" formControlName="years">
               <option [ngValue]= 0 disabled>Select years</option>
               <option *ngFor="let year of numYears" [ngValue]="year">
@@ -178,11 +180,15 @@
           <div class="info-group">
             <p class="category">Tech Stack</p>
             <p class="data"> {{ signUpForm.get("techStack").value | join: ', ' }} </p>
-            <p class="data" *ngIf="signUpForm.get('otherLang').value != ''">  {{ signUpForm.get("otherLang").value }} </p>
+            <p class="data" *ngIf="!signUpForm.get('otherLang').disabled">  {{ signUpForm.get("otherLang").value }} </p>
           </div>
           <div class="info-group">
-            <p class="category"> Years of Experience </p>
-            <p class="data">{{ signUpForm.get("prevParticipation").value.years}}</p>
+            <p class="category">Previous Hackathon Experience</p>
+            <p class="data">{{ signUpForm.get("prevParticipation").value.participation }}</p>
+          </div>
+          <div class="info-group" *ngIf="signUpForm.get('prevParticipation').value.participation">
+            <p class="category">Years of Experience</p>
+            <p class="data">{{ signUpForm.get("prevParticipation").value.years }}</p>
           </div>
           <div class="info-group" *ngIf="signUpForm.get('accommodations').value !== ''">
             <p class="category">Accommodations</p>
