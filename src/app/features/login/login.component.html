@@ -9,47 +9,39 @@
       </div>
     </div>
     <div class="forms-container">
-        <div class="options-container">
-            <button (click)="routeTo('/JGdrGCSnGnLyuXYfIRfEdUDA');" class="form-button">Judge</button>
-        
-            
-            <button onclick="document.getElementById('id01').style.display='block'" class = "form-button">Admin</button>
-
-            <div id="id01" class="modal">
-              
-              <form class="content-container" action="/action_page.php" method="post">
-               
-                <div class="container">
-                  <label for="uname"><b>Username</b></label>
-                  <input type="text" placeholder="Enter Username" name="uname" class="options-container" required>
-            
-                  <label for="psw"><b>Password</b></label>
-                  <input type="password" placeholder="Enter Password" name="psw"  class="options-container"required>
-                    
-                  <button type="submit" class ="options-container">Login</button>   
-                </div>
-            
-                <div class="container" style="background-color:#f1f1f1">
-                  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                  <!--span class="psw">Forgot <a href="#">password?</a></span-->
-                </div>
-              </form>
-            </div>
-            
-            <script>
-            // Get the modal
-            var modal = document.getElementById('id01');
-            
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-            </script>
-       
-      
+      <div id="module1" class="module first">
+        <div class="content">
+          <div class="options-container">
+              <button (click)="routeTo('/JGdrGCSnGnLyuXYfIRfEdUDA');" class="form-button">Judge</button>
+              <button (click)="next('module1', 'module2')"class="form-button">Admin</button>
+          </div>  
+        </div>
       </div>
+      <div id="module2" class="module hidden two">
+        <div class="back-container">
+          <button class="back-button" (click)="back('module2', 'module1')">
+            <img src="../../../../assets/svg/arrow-back.svg" alt="back-arrow" class="logo">
+          </button>
+        </div>
+        <div class="content">
+          <div class="head">
+            <h3 class="title">Admin</h3>
+          </div>
+          <form [formGroup]="adminLoginForm" class="form">
+            <div class="single-field">
+              <label>Email*</label>
+              <input formControlName="email" class="form-control" type="text">
+            </div>
+            <div class="single-field">
+              <label>Password*</label>
+              <input formControlName="password" class="form-control" type="text">
+            </div>
+            <div class="single-field center">
+              <button class="btn btn-yellow padded">Login</button>
+            </div>
+          </form>
+        </div>
+      </div> 
     </div>
 </div>
 
