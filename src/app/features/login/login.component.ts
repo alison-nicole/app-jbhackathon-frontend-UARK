@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   adminLoginForm: FormGroup;
 
-  constructor(private router: Router, readonly fb: FormBuilder) { }
+  constructor(private router: Router, readonly fb: FormBuilder, public auth: AuthService) { }
 
   ngOnInit() {
     this.adminLoginForm = this.fb.group({
@@ -33,3 +34,4 @@ export class LoginComponent implements OnInit {
     document.getElementById(end).classList.toggle('hidden');
   }
 }
+

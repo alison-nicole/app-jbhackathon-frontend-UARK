@@ -19,7 +19,7 @@ import { HomeHeroComponent } from './home/home-hero/home-hero.component';
 import { HomeScheduleComponent } from './home/home-schedule/home-schedule.component';
 import { HomeExperienceComponent } from './home/home-experience/home-experience.component';
 import { HomeInfoComponent } from './home/home-info/home-info.component';
-
+import { PrizesComponent } from './prizes/prizes.component';
 
 
 @NgModule({
@@ -46,7 +46,8 @@ import { HomeInfoComponent } from './home/home-info/home-info.component';
         HomeHeroComponent,
         HomeScheduleComponent,
         HomeExperienceComponent,
-        HomeInfoComponent
+        HomeInfoComponent,
+        PrizesComponent,
     ],
     exports: [
         WinnerStoriesComponent,

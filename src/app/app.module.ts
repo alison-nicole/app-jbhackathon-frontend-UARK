@@ -13,6 +13,8 @@ import { JudgeModule } from './features/judge/judge.module';
 import { HackathonSignUpModule } from './features/hackathon-sign-up/hackathon-sign-up.module';
 import { CommonComponentsModule } from './features/common-components/common-components.module';
 import { LoginModule } from './features/login/login.module';
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment } from 'src/environments/environment';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -45,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientXsrfModule.withOptions({
       cookieName: 'XSRF-TOKEN',
       headerName: 'X-CSRF-TOKEN'
-    })
+    }),
+    AuthModule.forRoot(environment.auth),
   ],
   providers: [
     ProfileService,
