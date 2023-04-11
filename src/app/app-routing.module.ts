@@ -9,6 +9,7 @@ import { NotFoundComponent } from './features/hackathon-sign-up/not-found/not-fo
 import { PreviousHackathonsComponent } from './features/hackathon-sign-up/previous-hackathons/previous-hackathons.component';
 import { CompetitionComponent } from './features/hackathon-sign-up/competition/competition.component';
 import { LoginComponent } from './features/login/login.component';
+import { PrizesComponent } from './features/hackathon-sign-up/prizes/prizes.component';
 
 const routes: Routes = [
   { path: 'not-found', component: NotFoundComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'competition', component: CompetitionComponent},
   { path: 'login', component: LoginComponent },
+  { path: 'prizes', component: PrizesComponent },
   { path: 'resources', component: ResourcesComponent },
   { path: 'previous-hackathons', component: PreviousHackathonsComponent },
   { path: 'JGdrGCSnGnLyuXYfIRfEdUDA', component: JudgingComponent},

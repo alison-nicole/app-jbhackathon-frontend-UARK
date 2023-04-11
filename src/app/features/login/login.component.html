@@ -9,10 +9,40 @@
       </div>
     </div>
     <div class="forms-container">
-        <div class="options-container">
-            <button (click)="routeTo('/JGdrGCSnGnLyuXYfIRfEdUDA');" class="form-button">Judge</button>
-            <button class="form-button">Admin</button>
+      <div id="module1" class="module first">
+        <div class="content">
+          <div class="options-container">
+              <button (click)="routeTo('/JGdrGCSnGnLyuXYfIRfEdUDA');" class="form-button">Judge</button>
+              <!--button (click)="next('module1', 'module2')"class="form-button">Admin</button-->
+              <button class="form-button" (click)="auth.loginWithRedirect()">Admin</button>
+          </div>  
         </div>
+      </div>
+      <div id="module2" class="module hidden two">
+        <div class="back-container">
+          <button class="back-button" (click)="back('module2', 'module1')">
+            <img src="../../../../assets/svg/arrow-back.svg" alt="back-arrow" class="logo">
+          </button>
+        </div>
+        <div class="content">
+          <div class="head">
+            <h3 class="title">Admin</h3>
+          </div>
+          <form [formGroup]="adminLoginForm" class="form">
+            <div class="single-field">
+              <label>Email*</label>
+              <input formControlName="email" class="form-control" type="text">
+            </div>
+            <div class="single-field">
+              <label>Password*</label>
+              <input formControlName="password" class="form-control" type="password">
+            </div>
+            <div class="single-field center">
+              <button class="btn btn-yellow padded">Login</button>
+            </div>
+          </form>
+        </div>
+      </div> 
     </div>
 </div>
 

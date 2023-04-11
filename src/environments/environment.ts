@@ -6,7 +6,14 @@ export const environment = {
   production: false,
   baseApiUrl: '/api/ws_infrastructure_university_hackathon',
   // baseApiUrl: '/ws_infrastructure_university_hackathon',
-  env: 'LOCAL'
+  env: 'LOCAL',
+  auth: {
+    domain: 'dev-6vv0txqs2k1lipuf.us.auth0.com',
+    clientId: 'ggoXhexV23KZhqQrYJoLa8aYAjwOapVJ',
+    authorizationParams: {
+      redirect_uri: 'http://localhost:4200/prizes',
+    },
+  }
 };
 
 /*

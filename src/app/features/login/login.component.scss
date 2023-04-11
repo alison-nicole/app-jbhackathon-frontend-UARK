@@ -1,3 +1,7 @@
+.hidden {
+    display: none !important;
+}
+
 .content-container {
     min-width: 100vw;
     min-height: 100vh;
@@ -40,6 +44,87 @@
         }
     }
 }
+
+.module {
+    display: grid;
+    grid-template-rows: auto auto;
+    width: 100%;
+
+    .back-container {
+        padding: 0 0.5em;
+
+        .back-button {
+            background-color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    .content {
+        justify-self: center;
+
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        .head {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-row: 1;
+            grid-column: 2;
+            height: 90px;
+            width: 100%;
+            text-align: center;
+        }
+    
+        .title {
+            border-bottom: 0.10em solid black;
+            padding: 0.25em 3em;
+        }
+    }
+}
+
+.single-field {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+
+    input {
+        margin-top: 0.15em;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        border: 0.15em solid black;
+        border-radius: 0.5em;
+        color: black;
+        background-color: transparent;
+
+        &:focus {
+            background-color: #ffffff33;
+            box-shadow: 0px 0px 10px #FFFFFFA8;
+            outline: none;
+        }
+    }
+
+    .form-select-quarter {
+        color: #ffffff !important;
+        cursor: pointer;
+        width: 30%;
+    }
+}
+
+.center {
+    justify-content: center;
+    padding: 2.5em;
+}
+  
 
 .forms-container {
     display: flex;
