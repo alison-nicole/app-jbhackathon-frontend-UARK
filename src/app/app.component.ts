@@ -3,6 +3,7 @@ import { environment } from '../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { routerTransition } from './shared/app.animations';
 import { RegistrationComponent } from './features/common-components/registration/registration.component';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-root',
@@ -20,9 +21,9 @@ export class AppComponent implements OnInit {
   home = false;
   pathname = '';
   title = 'Hackathon';
+  editMode = false; 
 
-
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, public auth: AuthService) {
     this.getScreenSize();
     this.translate.setDefaultLang('en');
     this.translate.use('en');
@@ -34,6 +35,10 @@ export class AppComponent implements OnInit {
         window.location.href = location.href.replace('http', 'https');
       }
     }
+  }
+
+  changeEditMode() {
+    this.editMode = !this.editMode;
   }
 
   @HostListener('window:resize', ['$event'])

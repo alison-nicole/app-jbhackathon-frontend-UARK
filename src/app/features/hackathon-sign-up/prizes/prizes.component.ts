@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrizesComponent implements OnInit {
 
-  noBuilderPageForUrl: boolean = false;
-
   constructor() { }
 
   ngOnInit(): void {
