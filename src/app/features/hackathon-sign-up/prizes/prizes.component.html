@@ -34,12 +34,12 @@
             </div>
             <div class="single-field">
                 <label>Link* </label>
-                <label *ngIf="prizeForm.get('link').invalid && prizeForm.get('link').touched" class="error">Enter a link to the prize</label>
+                <label *ngIf="prizeForm.get('link').invalid && prizeForm.get('link').touched" class="error">Enter a valid link to the prize</label>
                 <input formControlName="link" class="form-control" type="text">
             </div>
             <div class="single-field">
                 <label>Image URL* </label>
-                <label *ngIf="prizeForm.get('imageURL').invalid && prizeForm.get('imageURL').touched" class="error">Enter the prize image URL</label>
+                <label *ngIf="prizeForm.get('imageURL').invalid && prizeForm.get('imageURL').touched" class="error">Enter a valid image URL</label>
                 <input formControlName="imageURL" class="form-control" type="text">
             </div>
             <div class="single-field center">

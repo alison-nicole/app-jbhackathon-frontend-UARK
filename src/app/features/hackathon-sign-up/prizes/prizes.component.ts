@@ -22,15 +22,18 @@ export class PrizesComponent implements OnInit {
     this.prizeForm = this.fb.group({
       'name': new FormControl('', Validators.compose([Validators.required, hasValue])),
       'price': new FormControl('', Validators.compose([Validators.required, Validators.pattern("[0-9]*$")])),
-      'link': new FormControl('', Validators.compose([Validators.required, hasValue])),
+      'link': new FormControl('', Validators.compose([Validators.required, 
+        Validators.pattern("^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$"), hasValue])),
       'imageURL': new FormControl('', Validators.compose([Validators.required, hasValue])),
     });
   }
 
   changeEditMode() {
     this.editMode = !this.editMode;
-    if(this.editMode === false)
+    if(this.editMode === false) {
       document.getElementById('module').classList.add('hidden');
+      this.prizeForm.reset();
+    }
   }
 
   showPrizeForm(): void {
