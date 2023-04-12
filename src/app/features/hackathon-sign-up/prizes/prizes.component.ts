@@ -18,6 +18,7 @@ export class PrizesComponent implements OnInit {
   constructor(readonly fb: FormBuilder, public auth: AuthService, readonly addPrizeService: AddPrizeService) { }
 
   ngOnInit() {
+    this.getPrizes();
     this.editMode = false;
     this.prizeForm = this.fb.group({
       'name': new FormControl('', Validators.compose([Validators.required, hasValue])),
@@ -26,6 +27,14 @@ export class PrizesComponent implements OnInit {
         Validators.pattern("^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$"), hasValue])),
       'imageURL': new FormControl('', Validators.compose([Validators.required, hasValue])),
     });
+  }
+
+  getPrizes() {
+    /*this.addPrizeService.getAllPrizes().subscribe(data => {
+      data.forEach(item => {
+        
+      })
+    })*/
   }
 
   changeEditMode() {

@@ -22,4 +22,11 @@ export class AddPrizeService {
   readonly getAll = 'all';
   readonly apiRoot = '/api/ws_infrastructure_university_hackathon';
 
+  getAllPrizes(): Observable<any> {
+    return this.http.get<any>(`${this.apiRoot}/prizes/${this.getAll}`);
+  }
+
+  postNewPrize(formData): Observable<any> {
+    return this.http.post(`${this.apiRoot}/prizes`, formData, { observe: 'response', responseType: 'text'});
+  }
 }
