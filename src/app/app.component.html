@@ -16,18 +16,6 @@
   <link rel="stylesheet" href="https://use.typekit.net/ivo1aee.css">
 </head>
 
-<div *ngIf="auth.isAuthenticated$ | async;">
-  <div *ngIf="editMode === false; else editorMode" class="edit-button-container">
-    <button (click)="changeEditMode()" class="btn btn-small btn-yellow-elevated">Edit</button>
-  </div>
-  <ng-template #editorMode>
-    <div class="editor-button-container">
-      <button (click)="changeEditMode()" class="btn btn-small btn-gray">Cancel</button>
-      <button class="btn btn-small btn-darkblue">Save</button>
-    </div>
-  </ng-template>
-</div>
-
 <div class="header-container">
   <app-header></app-header> 
 </div>

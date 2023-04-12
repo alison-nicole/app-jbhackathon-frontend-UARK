@@ -9,11 +9,10 @@ import { AuthService } from '@auth0/auth0-angular';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [routerTransition]
+  animations: [routerTransition],
 })
 export class AppComponent implements OnInit {
   readonly signUpComponent!: RegistrationComponent;
-
 
   screenWidth: any;
   isBigScreen: boolean;
@@ -21,8 +20,7 @@ export class AppComponent implements OnInit {
   home = false;
   pathname = '';
   title = 'Hackathon';
-  editMode = false; 
-
+ 
   constructor(private translate: TranslateService, public auth: AuthService) {
     this.getScreenSize();
     this.translate.setDefaultLang('en');
@@ -35,10 +33,6 @@ export class AppComponent implements OnInit {
         window.location.href = location.href.replace('http', 'https');
       }
     }
-  }
-
-  changeEditMode() {
-    this.editMode = !this.editMode;
   }
 
   @HostListener('window:resize', ['$event'])
