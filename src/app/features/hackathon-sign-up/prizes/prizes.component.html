@@ -15,8 +15,11 @@
 </div>
 
 <div class="prize-form-container">
-    <form [formGroup]="prizeForm" class="form">
+    <form (keydown.enter)="$event.preventDefault()" [formGroup]="prizeForm" class="form">
         <div id="module" class="forms-container hidden">
+            <div class="exit-button-container">
+                <button (click)="hidePrizeForm()"class="btn-exit">X</button>
+            </div>
             <div class="head">
                 <div class="title">
                     <h3>Add Prize</h3>

@@ -39,14 +39,17 @@ export class PrizesComponent implements OnInit {
 
   changeEditMode() {
     this.editMode = !this.editMode;
-    if(this.editMode === false) {
-      document.getElementById('module').classList.add('hidden');
-      this.prizeForm.reset();
-    }
+    if(this.editMode === false)
+      this.hidePrizeForm();
   }
 
   showPrizeForm(): void {
     document.getElementById('module').classList.remove('hidden');
+  }
+
+  hidePrizeForm(): void {
+    document.getElementById('module').classList.add('hidden');
+    this.prizeForm.reset();
   }
 
 }
