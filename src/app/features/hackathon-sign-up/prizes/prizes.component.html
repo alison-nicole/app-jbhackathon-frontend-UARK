@@ -1,4 +1,52 @@
-<div class="content-container">
+<div *ngIf="auth.isAuthenticated$ | async;">
+    <div *ngIf="editMode === false; else editorMode" class="edit-button-container">
+      <button (click)="changeEditMode()" class="btn btn-small btn-yellow-elevated">Edit</button>
+    </div>
+    <ng-template #editorMode>
+      <div class="editor-button-container">
+        <button (click)="changeEditMode()" class="btn btn-small btn-gray">Cancel</button>
+        <button (click)="showPrizeForm()" class="btn-add btn-yellow-elevated">+</button>
+
+        <button class="btn btn-small btn-darkblue">Update</button>
+      </div>
+      <div class="add-button-container">
+      </div>
+    </ng-template>
+</div>
+
+<div class="prize-form-container">
+    <form [formGroup]="prizeForm" class="form">
+        <div id="module" class="forms-container hidden">
+            <div class="head">
+                <div class="title">
+                    <h3>Add Prize</h3>
+                </div>
+            </div>
+            <div class="single-field">
+                <label>Name* </label>
+                <label *ngIf="prizeForm.get('name').invalid && prizeForm.get('name').touched" class="error">Enter the prize name</label>
+                <input formControlName="name" class="form-control" type="text">
+            </div>
+            <div class="single-field">
+                <label>Price* </label>
+                <label *ngIf="prizeForm.get('price').invalid && prizeForm.get('price').touched" class="error">Enter the prize cost</label>
+                <input formControlName="price" class="form-control" type="text">
+            </div>
+            <div class="single-field">
+                <label>Link* </label>
+                <label *ngIf="prizeForm.get('link').invalid && prizeForm.get('link').touched" class="error">Enter a link to the prize</label>
+                <input formControlName="link" class="form-control" type="text">
+            </div>
+            <div class="single-field">
+                <label>Image URL* </label>
+                <label *ngIf="prizeForm.get('imageURL').invalid && prizeForm.get('imageURL').touched" class="error">Enter the prize image URL</label>
+                <input formControlName="imageURL" class="form-control" type="text">
+            </div>
+            <div class="single-field center">
+                <button class="btn btn-small btn-yellow">Save</button>
+            </div>
+        </div>
+    </form>
     <div class="hero">
         <div class="group">
           <h1>Prizes</h1>
@@ -7,7 +55,7 @@
     </div>
     <div class="prizes">
         <img class="top-yellow-bar" src="../../../../assets/svg/HomePage_Assets/top-yellow-bar.svg" alt="top yellow bar">
-        <div class="prizes-card">
+        <!---div class="prizes-card">
             <div class="row">
                 <div class="prizes-section">
                     <a target="_blank" href="https://www.meta.com/quest/products/quest-2/?utm_source=gg&utm_medium=pla&utm_campaign=19822518373&utm_term=&utm_content=&utm_ad=&utm_location=1013219&utm_location2=&utm_placement=&utm_device=c&utm_matchtype=&utm_feed=&utm_adposition=&utm_product=899-00451-01&gclid=CjwKCAjw586hBhBrEiwAQYEnHc84fPf16aG8t8ANHZI7pXDnN02v9bu2Lzv8AfSg_48bLQY3v7-mPBoCe1wQAvD_BwE&gclsrc=aw.ds">
@@ -69,7 +117,7 @@
                 </div>
             </div>
         
-        </div> 
+        </div--> 
         <div class="prizes-banner"></div>
     </div>
 </div>
