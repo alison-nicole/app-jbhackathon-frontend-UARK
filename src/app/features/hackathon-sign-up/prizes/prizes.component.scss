@@ -21,6 +21,12 @@
     position: fixed;
     bottom: 0;
 }
+
+.modify-button-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
   
 .editor-button-container {
     z-index: 2;
@@ -34,15 +40,6 @@
     justify-content: space-between;
 }
 
-.add-button-container {
-    z-index: 3;
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-  
 .btn-yellow-elevated {
     transition: 0.1s ease-out;
     background-color: #FFDD00;
@@ -76,6 +73,19 @@
     width: 70px;
 }
 
+.btn-delete {
+  transition: 0.1s ease-out;
+  background-color: #e30b00;
+  border: none;
+  box-shadow: 0 4px #a80b03, 1px 2px 14px #ffbcb9;
+  height: fit-content;
+  padding: 0.25rem 1rem !important;
+  border-radius: 7px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  margin-left: 0.5rem; 
+}
+
 .btn-exit {
   background-color: #ffffff;
   border: none;
@@ -98,14 +108,20 @@
     transform: translateY(4px);
 }
 
+.delete-icon {
+  color: #ffffff;
+  justify-content: center;
+    display: flex;
+}
+
 .prize-form-container {
     position: relative;
     width: 100%;
     height: auto;
     padding: 0 20vw;
     box-sizing: border-box;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    //overflow-x: hidden;
+    //overflow-y: hidden;
 
     .single-field {
       display: flex;

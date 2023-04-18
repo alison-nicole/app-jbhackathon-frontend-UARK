@@ -20,7 +20,7 @@ export class AddPrizeService {
   constructor(readonly http: HttpClient) { }
 
   readonly getAll = 'all';
-  readonly apiRoot = '/api/ws_infrastructure_university_hackathon';
+  readonly apiRoot = '/ws_infrastructure_university_hackathon';
 
   getAllPrizes(): Observable<any> {
     return this.http.get<any>(`${this.apiRoot}/prizes/${this.getAll}`);

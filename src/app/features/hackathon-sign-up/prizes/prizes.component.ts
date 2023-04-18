@@ -43,6 +43,12 @@ export class PrizesComponent implements OnInit {
       this.hidePrizeForm();
   }
 
+  savePrize(): void {
+    this.addPrizeService.postNewPrize(this.prizeForm.value).subscribe(data => {
+
+    });
+  }
+
   showPrizeForm(): void {
     document.getElementById('module').classList.remove('hidden');
   }

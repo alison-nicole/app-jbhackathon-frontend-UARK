@@ -6,11 +6,13 @@
       <div class="editor-button-container">
         <button (click)="changeEditMode()" class="btn btn-small btn-gray">Cancel</button>
         <button (click)="showPrizeForm()" class="btn-add btn-yellow-elevated">+</button>
+        <div class="modify-button-container">
+            <button class="btn-delete"><img class="delete-icon" src="../../../../assets/svg/delete.svg"></button>
+            <button class="btn btn-small btn-darkblue">Modify</button>
+        </div>
+        
+      </div>
 
-        <button class="btn btn-small btn-darkblue">Update</button>
-      </div>
-      <div class="add-button-container">
-      </div>
     </ng-template>
 </div>
 
@@ -46,7 +48,7 @@
                 <input formControlName="imageURL" class="form-control" type="text">
             </div>
             <div class="single-field center">
-                <button class="btn btn-small btn-yellow">Save</button>
+                <button (click)="savePrize()" class="btn btn-small btn-yellow">Save</button>
             </div>
         </div>
     </form>
