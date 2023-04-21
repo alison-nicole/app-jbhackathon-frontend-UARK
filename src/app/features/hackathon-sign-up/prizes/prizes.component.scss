@@ -68,6 +68,7 @@
 .btn-add {
     border-radius: 50%;
     margin: 0.25em;
+    margin-left: 2.5em;
     height: 70px;
     font-size: 32px;
     width: 70px;
@@ -90,6 +91,11 @@
   background-color: #ffffff;
   border: none;
   cursor: pointer;
+}
+
+.btn-delete:enabled:active {
+  box-shadow: 0 0 0 #a80b03;
+  transform: translateY(4px);
 }
   
   

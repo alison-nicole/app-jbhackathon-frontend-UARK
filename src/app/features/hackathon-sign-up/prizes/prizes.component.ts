@@ -21,11 +21,11 @@ export class PrizesComponent implements OnInit {
     this.getPrizes();
     this.editMode = false;
     this.prizeForm = this.fb.group({
-      'name': new FormControl('', Validators.compose([Validators.required, hasValue])),
-      'price': new FormControl('', Validators.compose([Validators.required, Validators.pattern("[0-9]*$")])),
-      'link': new FormControl('', Validators.compose([Validators.required, 
+      'prizeName': new FormControl('', Validators.compose([Validators.required, hasValue])),
+      'prizeMonetaryValue': new FormControl('', Validators.compose([Validators.required, Validators.pattern("[0-9]*$")])),
+      'prizeLink': new FormControl('', Validators.compose([Validators.required, 
         Validators.pattern("^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$"), hasValue])),
-      'imageURL': new FormControl('', Validators.compose([Validators.required, hasValue])),
+      'prizeImageCode': new FormControl('', Validators.compose([Validators.required, hasValue])),
     });
   }
 
@@ -45,9 +45,11 @@ export class PrizesComponent implements OnInit {
 
   savePrize(): void {
     this.addPrizeService.postNewPrize(this.prizeForm.value).subscribe(data => {
-
+       
     });
   }
+
+
 
   showPrizeForm(): void {
     document.getElementById('module').classList.remove('hidden');

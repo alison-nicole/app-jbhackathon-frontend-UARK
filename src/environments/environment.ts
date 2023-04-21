@@ -11,7 +11,7 @@ export const environment = {
     domain: 'dev-6vv0txqs2k1lipuf.us.auth0.com',
     clientId: 'ggoXhexV23KZhqQrYJoLa8aYAjwOapVJ',
     authorizationParams: {
-      redirect_uri: 'http://localhost:8080/prizes',
+      redirect_uri: 'http://localhost:4200/prizes',
     },
   }
 };
