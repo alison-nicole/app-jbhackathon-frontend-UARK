@@ -22,7 +22,7 @@ export class PrizesComponent implements OnInit {
 
   removalOptions = [
     {label: 'Remove a prize', value: 'removePrize'},
-    {label: 'Remove all prizes', value: 'removeAllPrizes'},
+    {label: 'Remove all prizes', value: 'removeAll'},
   ]
 
 
@@ -85,26 +85,24 @@ export class PrizesComponent implements OnInit {
   }
 
   savePrize(): void {
-    this.addPrizeService.postNewPrize(this.prizeForm.value).subscribe(data => {
-       
-    });
+    this.addPrizeService.postNewPrize(this.prizeForm.value).subscribe(data => {});
     this.hideAddPrizeForm();
     this.reload();
   }
 
   modifyPrize(): void {
-    this.addPrizeService.updatePrize(this.prizeForm.value, this.selectedPrizeName).subscribe(data => {
-
-    });
+    this.addPrizeService.updatePrize(this.prizeForm.value, this.selectedPrizeName).subscribe(data => {});
     this.hideModifyPrizeForm();
     this.reload();
 
   }
 
   deletePrize(): void {
-    this.addPrizeService.removePrize(this.selectedPrizeName).subscribe(data => {
-
-    });
+    if(this.selectedRemovalOption == 'removePrize') 
+      this.addPrizeService.removePrize(this.selectedPrizeName).subscribe(data => {});
+    else 
+      this.addPrizeService.removeAllPrizes().subscribe(data => {});
+    
     this.hideDeletePrizeForm();
     this.reload();
   }
@@ -147,7 +145,7 @@ export class PrizesComponent implements OnInit {
 
   hideDeletePrizeForm(): void {
     document.getElementById('delete-module').classList.add('hidden');
-    
+    this.deletePrizeMode = false;
   }
 
   reload(): void {

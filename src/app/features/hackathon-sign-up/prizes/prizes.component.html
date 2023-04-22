@@ -133,7 +133,7 @@
                     </div>
                     <div class="single-field">
                         <label>Select Prize*</label>
-                           <select [disabled]="selectedRemovalOption === null" class="form-select" [(ngModel)]="selectedPrizeName" [ngModelOptions]="{standalone: true}"required>
+                           <select [disabled]="selectedRemovalOption === null || selectedRemovalOption === 'removeAll'" class="form-select" [(ngModel)]="selectedPrizeName" [ngModelOptions]="{standalone: true}"required>
                             <option [ngValue]="null" disabled>Select prize name</option>
                             <option *ngFor="let prize of prizes" [ngValue]="prize.prizeName">
                               {{prize.prizeName}}
