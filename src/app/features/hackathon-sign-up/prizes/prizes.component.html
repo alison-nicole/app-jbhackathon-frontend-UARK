@@ -124,8 +124,8 @@
             <div class="prizes-card">
                 <div class="row">
                     <div class="prizes-section" *ngFor="let prize of prizes | slice:0:prizes?.length/2; let i = index">
-                        <a target="_blank" href={{ prize.prizeLink }}>
-                            <img class="upperheader" src= {{ prize.prizeImageCode}} >
+                        <a target="_blank" [href]="prize.prizeLink">
+                            <img class="upperheader" [src]= "prize.prizeImageCode" >
                             <hr><div class="vl"></div>
                             <p class="subheader">{{ prize.prizeName }}<br><small class="price">${{ prize.prizeMonetaryValue }}</small></p>
                         </a>
@@ -133,8 +133,8 @@
                 </div>
                 <div class="row">
                     <div class="prizes-section" *ngFor="let prize of prizes | slice:prizes?.length/2:prizes?.length; let i = index">
-                        <a target="_blank" href={{ prize.prizeLink }}>
-                            <img class="upperheader" src={{ prize.prizeImageCode}}>
+                        <a target="_blank" [href]="prize.prizeLink">
+                            <img class="upperheader" [src]="prize.prizeImageCode">
                             <hr><div class="vl"></div>
                             <p class="subheader">{{ prize.prizeName }}<br><small class="price">${{ prize.prizeMonetaryValue }}</small></p>
                         </a>
