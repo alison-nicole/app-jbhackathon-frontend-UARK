@@ -20,7 +20,7 @@ export class SignUpService {
   constructor(readonly http: HttpClient) { }
 
   readonly getAll = 'all';
-  readonly apiRoot = '/api/ws_infrastructure_university_hackathon';
+  readonly apiRoot = 'http://localhost:8080/ws_infrastructure_university_hackathon';
 
   getAllTeams(): Observable<any> {
     return this.http.get<any>(`${this.apiRoot}/team/${this.getAll}`);
