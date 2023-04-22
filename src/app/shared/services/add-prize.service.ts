@@ -23,7 +23,7 @@ export class AddPrizeService {
   readonly getPrizeName = 'getPrizeName';
   readonly apiRoot = 'http://localhost:8080/ws_infrastructure_university_hackathon';
   getAllPrizes(): Observable<any> {
-    return this.http.get<any>(`${this.apiRoot}/prizes/${this.getAll}`);
+    return this.http.get<any>(`${this.apiRoot}/${this.getAll}`);
   }
 
   getPrize(prizeName): Observable<any> {
