@@ -31,7 +31,7 @@ export class AddPrizeService {
   }
 
   updatePrize(formData, prizeName): Observable<any> {
-    return this.http.put<any>(`$this.apiRoot}/updatePrize/${prizeName}`, formData);
+    return this.http.put<any>(`${this.apiRoot}/updatePrize/${prizeName}`, formData);
   }
 
   postNewPrize(formData): Observable<any> {
