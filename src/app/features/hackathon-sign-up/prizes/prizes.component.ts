@@ -14,18 +14,28 @@ export class PrizesComponent implements OnInit {
   prizes: Prizes[] = [];
   prizeForm: FormGroup;
   selectedPrizeName;
+  selectedRemovalOption;
   editMode: boolean;
   addPrizeMode: boolean;
   modifyPrizeMode: boolean;
+  deletePrizeMode: boolean;
+
+  removalOptions = [
+    {label: 'Remove a prize', value: 'removePrize'},
+    {label: 'Remove all prizes', value: 'removeAllPrizes'},
+  ]
+
 
   constructor(readonly fb: FormBuilder, public auth: AuthService, readonly addPrizeService: AddPrizeService) { }
 
   ngOnInit() {
     this.getPrizes();
     this.selectedPrizeName = null;
+    this.selectedRemovalOption = null;
     this.editMode = false;
     this.addPrizeMode = false;
     this.modifyPrizeMode = false;
+    this.deletePrizeMode = false; 
     this.prizeForm = this.fb.group({
       'prizeName': new FormControl('', Validators.compose([Validators.required, hasValue])),
       'prizeMonetaryValue': new FormControl('', Validators.compose([Validators.required, Validators.pattern("[0-9]*$")])),
@@ -66,8 +76,12 @@ export class PrizesComponent implements OnInit {
     this.editMode = !this.editMode;
     this.modifyPrizeMode = false;
     this.addPrizeMode = false;
-    if(this.editMode === false)
+    if(this.editMode === false) {
       this.hideAddPrizeForm();
+      this.hideModifyPrizeForm();
+      this.hideDeletePrizeForm();
+    }
+      
   }
 
   savePrize(): void {
@@ -82,8 +96,12 @@ export class PrizesComponent implements OnInit {
     });
   }
 
+  deletePrize(): void {
+
+  }
+
   showAddPrizeForm(): void {
-    if(!this.modifyPrizeMode) {
+    if(!this.modifyPrizeMode && !this.deletePrizeMode) {
       document.getElementById('add-module').classList.remove('hidden');
       this.addPrizeMode = true;
     }
@@ -91,11 +109,17 @@ export class PrizesComponent implements OnInit {
   }
 
   showModifyPrizeForm(): void {
-    if(!this.addPrizeMode) {
+    if(!this.addPrizeMode && !this.deletePrizeMode) {
       document.getElementById('modify-module').classList.remove('hidden');
       this.modifyPrizeMode = true;
     }
+  }
 
+  showDeletePrizeForm(): void {
+    if(!this.addPrizeMode && !this.modifyPrizeMode) {
+      document.getElementById('delete-module').classList.remove('hidden');
+      this.deletePrizeMode = true; 
+    }
   }
 
   hideAddPrizeForm(): void {
@@ -110,6 +134,11 @@ export class PrizesComponent implements OnInit {
     this.modifyPrizeMode = false;
     document.getElementById('modify-prize-first').classList.remove('hidden');
     document.getElementById('modify-prize-second').classList.add('hidden');
+  }
+
+  hideDeletePrizeForm(): void {
+    document.getElementById('delete-module').classList.add('hidden');
+    
   }
 
   next(start: string, end: string) {

@@ -34,6 +34,10 @@ export class AddPrizeService {
     return this.http.put<any>(`${this.apiRoot}/updatePrize/${prizeName}`, formData);
   }
 
+  removePrize(prizeName): Observable<any> {
+    return this.http.delete<any>(`${this.apiRoot}/removePrize/${prizeName}`);
+  }
+
   postNewPrize(formData): Observable<any> {
     return this.http.post(`${this.apiRoot}/prizes`, formData, { observe: 'response', responseType: 'text'});
   }

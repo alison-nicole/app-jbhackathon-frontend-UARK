@@ -7,7 +7,7 @@
         <button (click)="changeEditMode()" class="btn btn-small btn-gray">Cancel</button>
         <button (click)="showAddPrizeForm()" class="btn-add btn-yellow-elevated">+</button>
         <div class="modify-button-container">
-            <button class="btn-delete"><img class="delete-icon" src="../../../../assets/svg/delete.svg"></button>
+            <button (click)="showDeletePrizeForm()" class="btn-delete"><img class="delete-icon" src="../../../../assets/svg/delete.svg"></button>
             <button (click)="showModifyPrizeForm()" class="btn btn-small btn-darkblue">Modify</button>
         </div>
         
@@ -18,7 +18,7 @@
 
 <div class="prize-form-container">
     <div class="container">
-        <form (keydown.enter)="$event.preventDefault()" [formGroup]="prizeForm" class="form" [ngStyle]="{'z-index': addPrizeMode || modifyPrizeMode ? '3': '0'}">
+        <form (keydown.enter)="$event.preventDefault()" [formGroup]="prizeForm" class="form" [ngStyle]="{'z-index': addPrizeMode || modifyPrizeMode || deletePrizeMode ? '3': '0'}">
             <div id="add-module" class="forms-container hidden">
                 <div class="exit-button-container">
                     <button (click)="hideAddPrizeForm()"class="btn-exit">X</button>
@@ -63,7 +63,7 @@
                         <h3>Modify Prize</h3>
                     </div>
                 </div>
-                <div id="modify-prize-first" class="modify-page">
+                <div id="modify-prize-first" class="module-page">
                     <div class="single-field">
                         <label>Select Prize*</label>
                            <select class="form-select" [(ngModel)]="selectedPrizeName" [ngModelOptions]="{standalone: true}"required>
@@ -79,7 +79,7 @@
                 </div>
 
 
-                <div id="modify-prize-second" class="modify-page hidden">
+                <div id="modify-prize-second" class="module-page hidden">
                     <div class="single-field">
                         <label>Name* </label>
                         <label *ngIf="prizeForm.get('prizeName').invalid && prizeForm.get('prizeName').touched" class="error">Enter the prize name</label>
@@ -109,6 +109,43 @@
                 </div>
 
             </div>
+
+
+
+            <div id="delete-module" class="forms-container hidden">
+                <div class="exit-button-container">
+                    <button (click)="hideDeletePrizeForm()"class="btn-exit">X</button>
+                </div>
+                <div class="head">
+                    <div class="title" [style.padding-top]="'1em'">
+                        <h3>Remove Prize</h3>
+                    </div>
+                </div>
+                <div id="delete-prize-first" class="module-page">
+                    <div class="single-field">
+                        <label>Select Removal Option*</label>
+                           <select class="form-select" [(ngModel)]="selectedRemovalOption" [ngModelOptions]="{standalone: true}"required>
+                            <option [ngValue]="null" disabled>Select removal option</option>
+                            <option *ngFor="let remove of removalOptions" [ngValue]="remove.value">
+                              {{remove.label}}
+                            </option>
+                          </select>
+                    </div>
+                    <div class="single-field">
+                        <label>Select Prize*</label>
+                           <select [disabled]="selectedRemovalOption === null" class="form-select" [(ngModel)]="selectedPrizeName" [ngModelOptions]="{standalone: true}"required>
+                            <option [ngValue]="null" disabled>Select prize name</option>
+                            <option *ngFor="let prize of prizes" [ngValue]="prize.prizeName">
+                              {{prize.prizeName}}
+                            </option>
+                          </select>
+                    </div>
+                    <div class="single-field center">
+                        <button (click)="deletePrize()" class="btn btn-small btn-yellow">Remove</button>
+                    </div>
+                </div>
+            </div>
+
         </form>        
     </div>
     

@@ -172,6 +172,14 @@
               box-shadow: 0px 0px 10px #707070;
               outline: none;
           }
+
+          select:disabled {
+            opacity: 0.1;
+          }
+    
+        .select-disabled {
+            opacity: 0.1;
+        }
       }
 
     .form-select {
