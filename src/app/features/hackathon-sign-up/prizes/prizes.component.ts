@@ -88,18 +88,25 @@ export class PrizesComponent implements OnInit {
     this.addPrizeService.postNewPrize(this.prizeForm.value).subscribe(data => {
        
     });
+    this.hideAddPrizeForm();
+    this.reload();
   }
 
   modifyPrize(): void {
     this.addPrizeService.updatePrize(this.prizeForm.value, this.selectedPrizeName).subscribe(data => {
 
     });
+    this.hideModifyPrizeForm();
+    this.reload();
+
   }
 
   deletePrize(): void {
     this.addPrizeService.removePrize(this.selectedPrizeName).subscribe(data => {
 
     });
+    this.hideDeletePrizeForm();
+    this.reload();
   }
 
   showAddPrizeForm(): void {
@@ -141,6 +148,10 @@ export class PrizesComponent implements OnInit {
   hideDeletePrizeForm(): void {
     document.getElementById('delete-module').classList.add('hidden');
     
+  }
+
+  reload(): void {
+    window.location.reload();
   }
 
   next(start: string, end: string) {
