@@ -37,12 +37,12 @@ export class PrizesComponent implements OnInit {
 
   getPrizeByName() {
     this.addPrizeService.getPrize(this.selectedPrizeName).subscribe(data => {
-      data.forEach(item => {
-        this.prizeForm.get('prizeName').setValue(item.prizeName);
-        this.prizeForm.get('prizeMonetaryValue').setValue(item.prizeMonetaryValue);
-        this.prizeForm.get('prizeLink').setValue(item.prizeLink);
-        this.prizeForm.get('prizeImageCode').setValue(item.prizeImageCode);
-      });
+      //data.forEach(item => {
+        this.prizeForm.get('prizeName').setValue(data.prizeName);
+        this.prizeForm.get('prizeMonetaryValue').setValue(data.prizeMonetaryValue);
+        this.prizeForm.get('prizeLink').setValue(data.prizeLink);
+        this.prizeForm.get('prizeImageCode').setValue(data.prizeImageCode);
+      //});
         
     });
   }
