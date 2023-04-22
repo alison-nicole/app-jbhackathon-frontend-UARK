@@ -20,10 +20,18 @@ export class AddPrizeService {
   constructor(readonly http: HttpClient) { }
 
   readonly getAll = 'all';
+  readonly getPrizeName = 'getPrizeName';
   readonly apiRoot = 'http://localhost:8080/ws_infrastructure_university_hackathon';
-
   getAllPrizes(): Observable<any> {
     return this.http.get<any>(`${this.apiRoot}/prizes/${this.getAll}`);
+  }
+
+  getPrize(prizeName): Observable<any> {
+    return this.http.get<any>(`${this.apiRoot}/${this.getPrizeName}/${prizeName}`);
+  }
+
+  updatePrize(formData, prizeName): Observable<any> {
+    return this.http.put<any>(`$this.apiRoot}/updatePrize/${prizeName}`, formData);
   }
 
   postNewPrize(formData): Observable<any> {

@@ -1,6 +1,6 @@
 export interface Prizes {
-    name: string,
-    price: string,
-    link: string,
-    image: string,
+    prizeName: String,
+    prizeMonetaryValue: String,
+    prizeLink: String,
+    prizeImageCode: String,
 }
