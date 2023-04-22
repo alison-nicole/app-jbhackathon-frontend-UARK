@@ -11,15 +11,21 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class PrizesComponent implements OnInit {
 
-  prizes: Prizes[];
+  prizes: Prizes[] = [];
   prizeForm: FormGroup;
+  selectedPrizeName;
   editMode: boolean;
+  addPrizeMode: boolean;
+  modifyPrizeMode: boolean;
 
   constructor(readonly fb: FormBuilder, public auth: AuthService, readonly addPrizeService: AddPrizeService) { }
 
   ngOnInit() {
     this.getPrizes();
+    this.selectedPrizeName = null;
     this.editMode = false;
+    this.addPrizeMode = false;
+    this.modifyPrizeMode = false;
     this.prizeForm = this.fb.group({
       'prizeName': new FormControl('', Validators.compose([Validators.required, hasValue])),
       'prizeMonetaryValue': new FormControl('', Validators.compose([Validators.required, Validators.pattern("[0-9]*$")])),
@@ -30,17 +36,24 @@ export class PrizesComponent implements OnInit {
   }
 
   getPrizes() {
-    /*this.addPrizeService.getAllPrizes().subscribe(data => {
+    this.addPrizeService.getAllPrizes().subscribe(data => {
       data.forEach(item => {
-        
-      })
-    })*/
+        this.prizes.push({
+          prizeName: item.prizeName,
+          prizeMonetaryValue: item.prizeMonetaryValue,
+          prizeLink: item.prizeLink,
+          prizeImageCode: item.prizeImageCode,
+        });
+      });
+    })
   }
 
   changeEditMode() {
     this.editMode = !this.editMode;
+    this.modifyPrizeMode = false;
+    this.addPrizeMode = false;
     if(this.editMode === false)
-      this.hidePrizeForm();
+      this.hideAddPrizeForm();
   }
 
   savePrize(): void {
@@ -49,15 +62,50 @@ export class PrizesComponent implements OnInit {
     });
   }
 
+  modifyPrize(): void {
+    this.addPrizeService.updatePrize(this.prizeForm.value, this.selectedPrizeName).subscribe(data => {
 
-
-  showPrizeForm(): void {
-    document.getElementById('module').classList.remove('hidden');
+    });
   }
 
-  hidePrizeForm(): void {
-    document.getElementById('module').classList.add('hidden');
+  showAddPrizeForm(): void {
+    if(!this.modifyPrizeMode) {
+      document.getElementById('add-module').classList.remove('hidden');
+      this.addPrizeMode = true;
+    }
+
+  }
+
+  showModifyPrizeForm(): void {
+    if(!this.addPrizeMode) {
+      document.getElementById('modify-module').classList.remove('hidden');
+      this.modifyPrizeMode = true;
+    }
+
+  }
+
+  hideAddPrizeForm(): void {
+    document.getElementById('add-module').classList.add('hidden');
     this.prizeForm.reset();
+    this.addPrizeMode = false;
+  }
+
+  hideModifyPrizeForm(): void {
+    document.getElementById('modify-module').classList.add('hidden');
+    this.prizeForm.reset();
+    this.modifyPrizeMode = false;
+    document.getElementById('modify-prize-first').classList.remove('hidden');
+    document.getElementById('modify-prize-second').classList.add('hidden');
+  }
+
+  next(start: string, end: string) {
+    document.getElementById(start).classList.toggle('hidden');
+    document.getElementById(end).classList.toggle('hidden');
+  }
+
+  back(start: string, end: string) {
+    document.getElementById(start).classList.toggle('hidden');
+    document.getElementById(end).classList.toggle('hidden');
   }
 
 }

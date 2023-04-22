@@ -5,10 +5,10 @@
     <ng-template #editorMode>
       <div class="editor-button-container">
         <button (click)="changeEditMode()" class="btn btn-small btn-gray">Cancel</button>
-        <button (click)="showPrizeForm()" class="btn-add btn-yellow-elevated">+</button>
+        <button (click)="showAddPrizeForm()" class="btn-add btn-yellow-elevated">+</button>
         <div class="modify-button-container">
             <button class="btn-delete"><img class="delete-icon" src="../../../../assets/svg/delete.svg"></button>
-            <button class="btn btn-small btn-darkblue">Modify</button>
+            <button (click)="showModifyPrizeForm()" class="btn btn-small btn-darkblue">Modify</button>
         </div>
         
       </div>
@@ -17,41 +17,101 @@
 </div>
 
 <div class="prize-form-container">
-    <form (keydown.enter)="$event.preventDefault()" [formGroup]="prizeForm" class="form">
-        <div id="module" class="forms-container hidden">
-            <div class="exit-button-container">
-                <button (click)="hidePrizeForm()"class="btn-exit">X</button>
-            </div>
-            <div class="head">
-                <div class="title">
-                    <h3>Add Prize</h3>
+    <div class="container">
+        <form (keydown.enter)="$event.preventDefault()" [formGroup]="prizeForm" class="form" [ngStyle]="{'z-index': addPrizeMode || modifyPrizeMode ? '3': '0'}">
+            <div id="add-module" class="forms-container hidden">
+                <div class="exit-button-container">
+                    <button (click)="hideAddPrizeForm()"class="btn-exit">X</button>
+                </div>
+                <div class="head">
+                    <div class="title">
+                        <h3>Add Prize</h3>
+                    </div>
+                </div>
+                <div class="single-field">
+                    <label>Name* </label>
+                    <label *ngIf="prizeForm.get('prizeName').invalid && prizeForm.get('prizeName').touched" class="error">Enter the prize name</label>
+                    <input formControlName="prizeName" class="form-control" type="text">
+                </div>
+                <div class="single-field">
+                    <label>Price* </label>
+                    <label *ngIf="prizeForm.get('prizeMonetaryValue').invalid && prizeForm.get('prizeMonetaryValue').touched" class="error">Enter the prize cost</label>
+                    <input formControlName="prizeMonetaryValue" class="form-control" type="text">
+                </div>
+                <div class="single-field">
+                    <label>Link* </label>
+                    <label *ngIf="prizeForm.get('prizeLink').invalid && prizeForm.get('prizeLink').touched" class="error">Enter a valid link</label>
+                    <input formControlName="prizeLink" class="form-control" type="text">
+                </div>
+                <div class="single-field">
+                    <label>Image URL* </label>
+                    <label *ngIf="prizeForm.get('prizeImageCode').invalid && prizeForm.get('prizeImageCode').touched" class="error">Enter a valid image URL</label>
+                    <input formControlName="prizeImageCode" class="form-control" type="text">
+                </div>
+                <div class="single-field center">
+                    <button [disabled]="prizeForm.get('prizeName').invalid || prizeForm.get('prizeLink').invalid || prizeForm.get('prizeMonetaryValue').invalid || prizeForm.get('prizeImageCode').invalid" (click)="savePrize()" class="btn btn-small btn-yellow">Submit</button>
                 </div>
             </div>
-            <div class="single-field">
-                <label>Name* </label>
-                <label *ngIf="prizeForm.get('prizeName').invalid && prizeForm.get('prizeName').touched" class="error">Enter the prize name</label>
-                <input formControlName="prizeName" class="form-control" type="text">
+
+
+            <div id="modify-module" class="forms-container hidden">
+                <div class="exit-button-container">
+                    <button (click)="hideModifyPrizeForm()"class="btn-exit">X</button>
+                </div>
+                <div class="head">
+                    <div class="title" [style.padding-top]="'1em'">
+                        <h3>Modify Prize</h3>
+                    </div>
+                </div>
+                <div id="modify-prize-first" class="modify-page">
+                    <div class="single-field">
+                        <label>Select Prize*</label>
+                           <select class="form-select" [(ngModel)]="selectedPrizeName" required>
+                            <option [ngValue]="null" disabled>Select prize name</option>
+                            <option *ngFor="let prize of prizes" [ngValue]="prize.prizeName">
+                              {{prize.prizeName}}
+                            </option>
+                          </select>
+                    </div>
+                    <div class="single-field center">
+                        <button (click)="next('modify-prize-first', 'modify-prize-second');" class="btn btn-small btn-yellow">Continue</button>
+                    </div>
+                </div>
+
+
+                <div id="modify-prize-second" class="modify-page hidden">
+                    <div class="single-field">
+                        <label>Name* </label>
+                        <label *ngIf="prizeForm.get('prizeName').invalid && prizeForm.get('prizeName').touched" class="error">Enter the prize name</label>
+                        <input formControlName="prizeName" class="form-control" type="text">
+                    </div>
+                    <div class="single-field">
+                        <label>Price* </label>
+                        <label *ngIf="prizeForm.get('prizeMonetaryValue').invalid && prizeForm.get('prizeMonetaryValue').touched" class="error">Enter the prize cost</label>
+                        <input formControlName="prizeMonetaryValue" class="form-control" type="text">
+                    </div>
+                    <div class="single-field">
+                        <label>Link* </label>
+                        <label *ngIf="prizeForm.get('prizeLink').invalid && prizeForm.get('prizeLink').touched" class="error">Enter a valid link</label>
+                        <input formControlName="prizeLink" class="form-control" type="text">
+                    </div>
+                    <div class="single-field">
+                        <label>Image URL* </label>
+                        <label *ngIf="prizeForm.get('prizeImageCode').invalid && prizeForm.get('prizeImageCode').touched" class="error">Enter a valid image URL</label>
+                        <input formControlName="prizeImageCode" class="form-control" type="text">
+                    </div>
+                    <div class="single-field center">
+                        <div class="back-button-container">
+                            <button (click)="back('modify-prize-second', 'modify-prize-first')" class="btn btn-small btn-gray" [style.box-shadow]="'0 4px 0 #808080'">Back</button>
+                        </div>
+                        <button (click)="modifyPrize()" class="btn btn-small btn-yellow">Save</button>
+                    </div>
+                </div>
+
             </div>
-            <div class="single-field">
-                <label>Price* </label>
-                <label *ngIf="prizeForm.get('prizeMonetaryValue').invalid && prizeForm.get('prizeMonetaryValue').touched" class="error">Enter the prize cost</label>
-                <input formControlName="prizeMonetaryValue" class="form-control" type="text">
-            </div>
-            <div class="single-field">
-                <label>Link* </label>
-                <label *ngIf="prizeForm.get('prizeLink').invalid && prizeForm.get('prizeLink').touched" class="error">Enter a valid link to the prize</label>
-                <input formControlName="prizeLink" class="form-control" type="text">
-            </div>
-            <div class="single-field">
-                <label>Image URL* </label>
-                <label *ngIf="prizeForm.get('prizeImageCode').invalid && prizeForm.get('prizeImageCode').touched" class="error">Enter a valid image URL</label>
-                <input formControlName="prizeImageCode" class="form-control" type="text">
-            </div>
-            <div class="single-field center">
-                <button (click)="savePrize()" class="btn btn-small btn-yellow">Save</button>
-            </div>
-        </div>
-    </form>
+        </form>        
+    </div>
+    
     <div class="hero">
         <div class="group">
           <h1>Prizes</h1>
@@ -60,7 +120,29 @@
     </div>
     <div class="prizes">
         <img class="top-yellow-bar" src="../../../../assets/svg/HomePage_Assets/top-yellow-bar.svg" alt="top yellow bar">
-        <!---div class="prizes-card">
+        <div *ngIf="prizes.length !== 0">
+            <div class="prizes-card">
+                <div class="row">
+                    <div class="prizes-section" *ngFor="let prize of prizes | slice:0:prizes?.length/2; let i = index">
+                        <a target="_blank" href="{{ prize.prizeLink }}">
+                            <img class="upperheader" src="{{ prize.prizeImageCode}}">
+                            <hr><div class="vl"></div>
+                            <p class="subheader">{{ prize.prizeName }}<br><small class="price">${{ prize.prizeMonetaryValue }}</small></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="prizes-section" *ngFor="let prize of prizes | slice:prizes?.length/2:prizes?.length; let i = index">
+                        <a target="_blank" href="{{ prize.prizeLink }}">
+                            <img class="upperheader" src="{{ prize.prizeImageCode}}">
+                            <hr><div class="vl"></div>
+                            <p class="subheader">{{ prize.prizeName }}<br><small class="price">${{ prize.prizeMonetaryValue }}</small></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--div class="prizes-card">
             <div class="row">
                 <div class="prizes-section">
                     <a target="_blank" href="https://www.meta.com/quest/products/quest-2/?utm_source=gg&utm_medium=pla&utm_campaign=19822518373&utm_term=&utm_content=&utm_ad=&utm_location=1013219&utm_location2=&utm_placement=&utm_device=c&utm_matchtype=&utm_feed=&utm_adposition=&utm_product=899-00451-01&gclid=CjwKCAjw586hBhBrEiwAQYEnHc84fPf16aG8t8ANHZI7pXDnN02v9bu2Lzv8AfSg_48bLQY3v7-mPBoCe1wQAvD_BwE&gclsrc=aw.ds">
