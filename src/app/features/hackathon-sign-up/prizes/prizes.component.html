@@ -74,7 +74,7 @@
                           </select>
                     </div>
                     <div class="single-field center">
-                        <button (click)="next('modify-prize-first', 'modify-prize-second');" class="btn btn-small btn-yellow">Continue</button>
+                        <button (click)="getPrizeByName(); next('modify-prize-first', 'modify-prize-second');" class="btn btn-small btn-yellow">Continue</button>
                     </div>
                 </div>
 
@@ -125,7 +125,7 @@
                 <div class="row">
                     <div class="prizes-section" *ngFor="let prize of prizes | slice:0:prizes?.length/2; let i = index">
                         <a target="_blank" [href]="prize.prizeLink">
-                            <img class="upperheader" [src]= "prize.prizeImageCode" >
+                            <img class="upperheader" [src]="prize.prizeImageCode">
                             <hr><div class="vl"></div>
                             <p class="subheader">{{ prize.prizeName }}<br><small class="price">${{ prize.prizeMonetaryValue }}</small></p>
                         </a>

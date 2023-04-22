@@ -35,6 +35,18 @@ export class PrizesComponent implements OnInit {
     });
   }
 
+  getPrizeByName() {
+    this.addPrizeService.getPrize(this.selectedPrizeName).subscribe(data => {
+      data.forEach(item => {
+        this.prizeForm.get('prizeName').setValue(item.prizeName);
+        this.prizeForm.get('prizeMonetaryValue').setValue(item.prizeMonetaryValue);
+        this.prizeForm.get('prizeLink').setValue(item.prizeLink);
+        this.prizeForm.get('prizeImageCode').setValue(item.prizeImageCode);
+      });
+        
+    });
+  }
+
   getPrizes() {
     this.addPrizeService.getAllPrizes().subscribe(data => {
       data.forEach(item => {
@@ -45,7 +57,7 @@ export class PrizesComponent implements OnInit {
           prizeImageCode: item.prizeImageCode,
         });
       });
-    })
+    });
   }
 
   changeEditMode() {
