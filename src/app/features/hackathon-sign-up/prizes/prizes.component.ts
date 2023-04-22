@@ -38,10 +38,12 @@ export class PrizesComponent implements OnInit {
   getPrizeByName() {
     this.addPrizeService.getPrize(this.selectedPrizeName).subscribe(data => {
       //data.forEach(item => {
-        this.prizeForm.get('prizeName').setValue(data.prizeName);
+        this.prizeForm.patchValue({'prizeName': data.prizeName});
+        console.log(data.prizeName);
+        this.prizeForm.patchValue({'prizeMonentaryValue': data.prizeMonetaryValue});
+        this.prizeForm.patchValue({'prizeLink': data.prizeLink});
         this.prizeForm.get('prizeMonetaryValue').setValue(data.prizeMonetaryValue);
-        this.prizeForm.get('prizeLink').setValue(data.prizeLink);
-        this.prizeForm.get('prizeImageCode').setValue(data.prizeImageCode);
+
       //});
         
     });
