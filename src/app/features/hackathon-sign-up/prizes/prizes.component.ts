@@ -97,7 +97,9 @@ export class PrizesComponent implements OnInit {
   }
 
   deletePrize(): void {
+    this.addPrizeService.removePrize(this.selectedPrizeName).subscribe(data => {
 
+    });
   }
 
   showAddPrizeForm(): void {
