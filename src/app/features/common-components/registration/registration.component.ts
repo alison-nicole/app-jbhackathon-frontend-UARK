@@ -33,6 +33,11 @@ export interface Class {
   viewValue: string;
 }
 
+export interface TShirtSize {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -44,6 +49,7 @@ export class RegistrationComponent implements OnInit {
 
   participationCheckBox = false;
   isGraduate = false;
+  selectedClass: string;
 
   isLookingForTeam = false;
   displayTeamHeader = false;
@@ -58,7 +64,7 @@ export class RegistrationComponent implements OnInit {
   createdTeamCode: number;
   teamModule: string;
   
-  devType: DevType[] = [
+  developerType: DevType[] = [
     {value: 'front-end', viewValue: 'Front-End Developer'},
     {value: 'back-end', viewValue: 'Back-End Developer'},
     {value: 'full-stack', viewValue: 'Full-Stack Developer'},
@@ -71,6 +77,14 @@ export class RegistrationComponent implements OnInit {
     {value: 'junior', viewValue: 'Junior'},
     {value: 'senior', viewValue: 'Senior'},
     {value: 'gradStudent', viewValue: 'Graduate Student'},
+  ]
+
+  tShirtSizes: TShirtSize[] = [
+    {value: 'S', viewValue: 'S'},
+    {value: 'M', viewValue: 'M'},
+    {value: 'L', viewValue: 'L'},
+    {value: 'XL', viewValue: 'XL'},
+    {value: 'XXL', viewValue: 'XXL'},
   ]
 
   techStack: TechStack[] = [
@@ -97,26 +111,34 @@ export class RegistrationComponent implements OnInit {
     this.isGraduate = false;
     this.participationCheckBox = false;
     this.isLookingForTeam = false;
+    this.selectedClass = "";
+    this.createdTeam = false;
 
     this.signUpForm = this.fb.group({
-      'teamName': new FormControl('', Validators.compose([Validators.maxLength(25), Validators.minLength(6), hasValue])),
       'firstName': new FormControl('', Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(37), hasValue])),
       'lastName': new FormControl('', Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(37), hasValue])),
       'schoolEmailAddress': new FormControl('', Validators.compose([Validators.required, Validators.email, Validators.maxLength(50), schoolEmail])),
+      'classSeniority': new FormControl(null, Validators.compose([Validators.required])),
+      'devType': new FormControl(null, Validators.compose([Validators.required])),
       'phoneNumber': new FormControl('', Validators.compose([Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$"), Validators.minLength(1),Validators.maxLength(10)])),
-      'developerType': new FormControl(null, Validators.compose([Validators.required])),
-      'class': new FormControl(null, Validators.compose([Validators.required])),
-      'isGradStudent': new FormControl(this.isGraduate),
-      'accommodations': new FormControl('', Validators.maxLength(1000)),
       'techStack': this.fb.array([], Validators.compose([Validators.required, Validators.minLength(1), validateFormArray])),
+      'isGradStudent': new FormControl(this.isGraduate),
+      'teamName': new FormControl('', Validators.compose([Validators.maxLength(25), Validators.minLength(6), hasValue])),
+      'teamOpen': new FormControl(this.createdTeam),
+      'teamColorCode': new FormControl('', hasValue),
+      'teamIconCode': new FormControl('', hasValue),
+      'accommodations': new FormControl('', Validators.maxLength(1000)),
+      'major': new FormControl('', Validators.compose([Validators.required, Validators.minLength(1), hasValue])),
+      'universityName': new FormControl('', Validators.compose([Validators.required, Validators.minLength(1), hasValue])),
+      'graduateYear': new FormControl('', Validators.compose([Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(1), Validators.maxLength(4)])),
+      'discordName': new FormControl('', Validators.compose([Validators.required, Validators.minLength(1), hasValue])),
+      'tShirtSize': new FormControl(null, Validators.compose([Validators.required])),
       'otherLang': new FormControl({ value: '', disabled: true }, Validators.compose([Validators.maxLength(250)])),
       'prevParticipation': new FormGroup({
         participation: new FormControl(this.participationCheckBox),
         years: new FormControl({ value: 0, disabled: true })
       }),
-      'teamIconCode': new FormControl('', hasValue),
-      'teamColorCode': new FormControl('', hasValue),
-      'teamCode': new FormControl('')
+
     });
   }
 
@@ -163,6 +185,11 @@ export class RegistrationComponent implements OnInit {
     this.signUpForm.get('teamColorCode').setValue(team['teamColorCode']);
   }
 
+  changeCreatedTeamValue() {
+    this.createdTeam = !this.createdTeam;
+    this.signUpForm.get('teamOpen').setValue(this.createdTeam);
+  }
+
   checkTeamSize(team: any) {
     this.signUpService.getNumberOfTeamMembers(team['teamID']).subscribe(data => {
       if(data < 6) {
@@ -206,9 +233,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   changeGradVal() {
-    const value = this.signUpForm.get('class').value.value;
-    
-    if(value != null && value.includes('gradStudent')) {
+    if(this.selectedClass != null && this.selectedClass.includes('Graduate')) {
       this.isGraduate = !this.isGraduate;
       this.signUpForm.get('isGradStudent').setValue(this.isGraduate);
     } else {
