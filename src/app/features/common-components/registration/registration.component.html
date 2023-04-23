@@ -15,6 +15,21 @@
           <label *ngIf="signUpForm.get('lastName').invalid && signUpForm.get('lastName').touched" class="error">Enter your last name</label>
           <input formControlName="lastName" class="form-control" type="text">
         </div>
+        <div class="single-field">
+          <label>University Name*</label>
+          <label *ngIf="signUpForm.get('universityName').invalid && signUpForm.get('universityName').touched" class="error">Enter your university name</label>
+          <input formControlName="universityName" class="form-control" type="text">
+        </div>
+        <div class="half-field">
+          <label>Major*</label>
+          <label *ngIf="signUpForm.get('major').invalid && signUpForm.get('major').touched" class="error">Enter your major</label>
+          <input formControlName="major" class="form-control" type="text">
+        </div>
+        <div class="half-field">
+          <label>Graduation Year*</label>
+          <label *ngIf="signUpForm.get('graduateYear').invalid && signUpForm.get('graduateYear').touched" class="error">Enter your graduation year</label>
+          <input formControlName="graduateYear" class="form-control" type="text">
+        </div>
         <div class="half-field">
           <label>School Email*</label>
           <label *ngIf="signUpForm.get('schoolEmailAddress').invalid && signUpForm.get('schoolEmailAddress').touched" class="error">Enter a valid school email</label>
@@ -26,23 +41,39 @@
           <label *ngIf="signUpForm.get('phoneNumber').invalid && signUpForm.get('phoneNumber').touched" class="error">Enter a valid phone number</label>
           <input formControlName="phoneNumber" class="form-control" type="text">
         </div>
+
         <div class="half-field">
           <label>Developer Type*</label>
-          <label *ngIf="signUpForm.get('developerType').invalid && signUpForm.get('developerType').touched" class="error">Select a type</label>
-             <select class="form-select" formControlName="developerType" required>
+          <label *ngIf="signUpForm.get('devType').invalid && signUpForm.get('devType').touched" class="error">Select a type</label>
+             <select class="form-select" formControlName="devType" required>
               <option [ngValue]="null" disabled>Select a developer type</option>
-              <option *ngFor="let type of devType" [ngValue]="type">
+              <option *ngFor="let type of developerType" [ngValue]="type.viewValue">
                 {{type.viewValue}}
               </option>
             </select>
         </div>
         <div class="half-field">
           <label>Class*</label>
-          <label *ngIf="signUpForm.get('class').invalid && signUpForm.get('class').touched" class="error">Select a class</label>
-          <select class="form-select" formControlName="class" required (change)="changeGradVal()">
-            <option [ngValue]="null" disabled>Select a class</option>
-            <option *ngFor="let class of classLevel" [ngValue]="class">
+          <label *ngIf="signUpForm.get('classSeniority').invalid && signUpForm.get('classSeniority').touched" class="error">Select a class</label>
+          <select [(ngModel)]="selectedClass" class="form-select" formControlName="classSeniority" required (change)="changeGradVal()">
+            <option value="" disabled selected>Select a class</option>
+            <option *ngFor="let class of classLevel" [ngValue]="class.viewValue">
               {{class.viewValue}}
+            </option>
+          </select>
+        </div>
+        <div class="half-field">
+          <label>Discord Name*</label>
+          <label *ngIf="signUpForm.get('discordName').invalid && signUpForm.get('discordName').touched" class="error">Enter your discord name</label>
+          <input formControlName="discordName" class="form-control" type="text">
+        </div>
+        <div class="half-field">
+          <label>T-shirt Size*</label>
+          <label *ngIf="signUpForm.get('tshirtSize').invalid && signUpForm.get('tshirtSize').touched" class="error">Select a size</label>
+          <select class="form-select" formControlName="tshirtSize" required>
+            <option [ngValue]="null" disabled>Select a size</option>
+            <option *ngFor="let size of tShirtSizes" [ngValue]="size.value">
+              {{size.viewValue}}
             </option>
           </select>
         </div>
@@ -94,7 +125,7 @@
         </div>
       </div>
       <div class="buttons">
-        <button [disabled]="signUpForm.get('firstName').invalid || signUpForm.get('lastName').invalid || signUpForm.get('schoolEmailAddress').invalid || signUpForm.get('phoneNumber').invalid || signUpForm.get('developerType').invalid || signUpForm.get('class').invalid || signUpForm.get('techStack').invalid "class="next btn btn-yellow" (click)="next('module1', 'module2')">Continue</button>
+        <button [disabled]="signUpForm.get('firstName').invalid || signUpForm.get('lastName').invalid || signUpForm.get('schoolEmailAddress').invalid || signUpForm.get('phoneNumber').invalid || signUpForm.get('devType').invalid || signUpForm.get('classSeniority').invalid || signUpForm.get('techStack').invalid || signUpForm.get('universityName').invalid || signUpForm.get('major').invalid || signUpForm.get('graduateYear').invalid || signUpForm.get('discordName').invalid || signUpForm.get('tshirtSize').invalid" class="next btn btn-yellow" (click)="next('module1', 'module2')">Continue</button>
       </div>
     </div>
     <div id="module2" class="module hidden two">
@@ -106,7 +137,7 @@
           <button class="btn btn-grey icon-btn" (click)="next('module2', 'module4');  this.teamModule = 'module2';">
             <p> Pair me with a random team </p>
           </button>
-          <button class="btn btn-grey icon-btn" (click)="next('module2', 'module3-2'); createdTeam = true;">
+          <button class="btn btn-grey icon-btn" (click)="next('module2', 'module3-2');">
             <p> I want to create a team </p>
           </button>
         </div>
@@ -142,8 +173,8 @@
         </div>
       </div>
       <div class="buttons">
-        <button class="btn btn-grey" (click)="back('module3-2', 'module2'); signUpForm.get('teamName').setValue('')">Back</button>
-        <button [disabled]="(signUpForm.get('teamName').invalid) || (signUpForm.get('teamIconCode').invalid) || (signUpForm.get('teamColorCode').invalid)" class=" btn btn-yellow" (click)="next('module3-2', 'module4'); this.teamModule = 'module3-2';">Continue</button>
+        <button class="btn btn-grey" (click)="back('module3-2', 'module2'); signUpForm.get('teamName').setValue('');  changeCreatedTeamValue()">Back</button>
+        <button [disabled]="(signUpForm.get('teamName').invalid) || (signUpForm.get('teamIconCode').invalid) || (signUpForm.get('teamColorCode').invalid)" class=" btn btn-yellow" (click)="next('module3-2', 'module4');  changeCreatedTeamValue(); this.teamModule = 'module3-2';">Continue</button>
       </div>
     </div>
     <div id="module4" class="module hidden four">
@@ -160,6 +191,18 @@
             <p class="data"> {{ signUpForm.get("firstName").value }} {{ signUpForm.get("lastName").value }} </p>
           </div>
           <div class="info-group">
+            <p class="category">University</p>
+            <p class="data"> {{ signUpForm.get("universityName").value }} </p>
+          </div>
+          <div class="info-group">
+            <p class="category">Major</p>
+            <p class="data"> {{ signUpForm.get("major").value }} </p>
+          </div>
+          <div class="info-group">
+            <p class="category">Graduation Year</p>
+            <p class="data"> {{ signUpForm.get("graduateYear").value }} </p>
+          </div>
+          <div class="info-group">
             <p class="category">Email</p>
             <p class="data"> {{ signUpForm.get("schoolEmailAddress").value }} </p>
           </div>
@@ -170,12 +213,20 @@
 
           <div class="info-group">
             <p class="category">Developer Type</p>
-            <p class="data">{{ signUpForm.get("developerType").value?.viewValue}}</p>
+            <p class="data">{{ signUpForm.get("devType").value}}</p>
           </div>
 
           <div class="info-group">
             <p class="category"> Class </p>
-            <p class="data">{{ signUpForm.get("class").value?.viewValue}}</p>
+            <p class="data">{{ signUpForm.get("classSeniority").value}}</p>
+          </div>
+          <div class="info-group">
+            <p class="category">Discord Name</p>
+            <p class="data"> {{ signUpForm.get("discordName").value }} </p>
+          </div>
+          <div class="info-group">
+            <p class="category">T-shirt Size</p>
+            <p class="data"> {{ signUpForm.get("tshirtSize").value }} </p>
           </div>
           <div class="info-group">
             <p class="category">Tech Stack</p>

@@ -251,6 +251,17 @@
         }
     }
 
+    input.ng-touched.ng-invalid, select.ng-touched.ng-invalid {
+        border: 0.15em solid #e30b00;
+        box-shadow: 0px 0px 10px #ffbcb9;
+
+        &:focus {
+            background-color: #ffffff33;
+            box-shadow: 0px 0px 10px #FFFFFFA8;
+            outline: none;
+        }
+    }
+
     input:disabled {
         opacity: 0.7;
     }

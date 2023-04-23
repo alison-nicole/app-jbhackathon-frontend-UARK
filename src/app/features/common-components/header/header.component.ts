@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router, Event, NavigationEnd } from '@angular/router';
 import { lessThanEqualToValidatorExtension } from '@rxweb/reactive-form-validators/validators-extension';
 import { SignUpService } from 'src/app/shared/services/sign-up.service';
-import { AuthService } from 'src/app/shared/services/auth.service';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   displayLogin: boolean = true; 
   displayLoginButton: boolean = true;
 
-  constructor(private router: Router, public signUpService: SignUpService, public authService: AuthService) {}
+  constructor(private router: Router, public signUpService: SignUpService, public auth: AuthService) {}
 
   ngOnInit() {
     this.router.events.subscribe((event) => {

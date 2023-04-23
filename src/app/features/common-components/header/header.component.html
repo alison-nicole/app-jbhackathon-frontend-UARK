@@ -1,6 +1,11 @@
 <div *ngIf="displayLogin" class="master-container" [style.position]="displayBanner ? 'relative' : 'absolute'">
   <div class="button-container">
-    <button *ngIf="displayLoginButton" (click)="routeTo('/login');" class="btn btn-small btn-yellow">Login</button>
+    <div *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+      <button (click)="auth.logout()" class="btn btn-small btn-yellow">Log out</button>
+    </div>
+    <ng-template #loggedOut>
+      <button *ngIf="displayLoginButton" (click)="routeTo('/login');" class="btn btn-small btn-yellow">Login</button>
+    </ng-template>
   </div>
   <div class="header-container">
     <div (click)="routeTo('/home');" class="brand-container">
