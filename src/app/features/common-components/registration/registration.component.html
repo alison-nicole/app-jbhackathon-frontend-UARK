@@ -69,8 +69,8 @@
         </div>
         <div class="half-field">
           <label>T-shirt Size*</label>
-          <label *ngIf="signUpForm.get('tShirtSize').invalid && signUpForm.get('tShirtSize').touched" class="error">Select a size</label>
-          <select class="form-select" formControlName="tShirtSize" required>
+          <label *ngIf="signUpForm.get('tshirtSize').invalid && signUpForm.get('tshirtSize').touched" class="error">Select a size</label>
+          <select class="form-select" formControlName="tshirtSize" required>
             <option [ngValue]="null" disabled>Select a size</option>
             <option *ngFor="let size of tShirtSizes" [ngValue]="size.value">
               {{size.viewValue}}
@@ -125,7 +125,7 @@
         </div>
       </div>
       <div class="buttons">
-        <button [disabled]="signUpForm.get('firstName').invalid || signUpForm.get('lastName').invalid || signUpForm.get('schoolEmailAddress').invalid || signUpForm.get('phoneNumber').invalid || signUpForm.get('devType').invalid || signUpForm.get('classSeniority').invalid || signUpForm.get('techStack').invalid || signUpForm.get('universityName').invalid || signUpForm.get('major').invalid || signUpForm.get('graduateYear').invalid || signUpForm.get('discordName').invalid || signUpForm.get('tShirtSize').invalid" class="next btn btn-yellow" (click)="next('module1', 'module2')">Continue</button>
+        <button [disabled]="signUpForm.get('firstName').invalid || signUpForm.get('lastName').invalid || signUpForm.get('schoolEmailAddress').invalid || signUpForm.get('phoneNumber').invalid || signUpForm.get('devType').invalid || signUpForm.get('classSeniority').invalid || signUpForm.get('techStack').invalid || signUpForm.get('universityName').invalid || signUpForm.get('major').invalid || signUpForm.get('graduateYear').invalid || signUpForm.get('discordName').invalid || signUpForm.get('tshirtSize').invalid" class="next btn btn-yellow" (click)="next('module1', 'module2')">Continue</button>
       </div>
     </div>
     <div id="module2" class="module hidden two">
@@ -226,7 +226,7 @@
           </div>
           <div class="info-group">
             <p class="category">T-shirt Size</p>
-            <p class="data"> {{ signUpForm.get("tShirtSize").value }} </p>
+            <p class="data"> {{ signUpForm.get("tshirtSize").value }} </p>
           </div>
           <div class="info-group">
             <p class="category">Tech Stack</p>

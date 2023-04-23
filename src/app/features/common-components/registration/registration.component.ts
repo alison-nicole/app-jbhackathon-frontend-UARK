@@ -132,7 +132,7 @@ export class RegistrationComponent implements OnInit {
       'universityName': new FormControl('', Validators.compose([Validators.required, Validators.minLength(1), hasValue])),
       'graduateYear': new FormControl('', Validators.compose([Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(1), Validators.maxLength(4)])),
       'discordName': new FormControl('', Validators.compose([Validators.required, Validators.minLength(1), hasValue])),
-      'tShirtSize': new FormControl(null, Validators.compose([Validators.required])),
+      'tshirtSize': new FormControl(null, Validators.compose([Validators.required])),
       'otherLang': new FormControl({ value: '', disabled: true }, Validators.compose([Validators.maxLength(250)])),
       'prevParticipation': new FormGroup({
         participation: new FormControl(this.participationCheckBox),
