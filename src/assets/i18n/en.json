@@ -262,11 +262,11 @@
         },
         "external_API_requests":{
             "title": "External API Requests",
-            "links": "<li> <a class=\"link\" href =\"https://docs.xano.com/working-with-data/functions/external-api-request  \" target = _blank> What are External API Requests?</a></li><li> <a class=\"link\" href =\"https://github.com/topics/external-api  \" target = _blank>Github Resources </a></li>"
+            "links": "<li> <a class=\"link\" href =\"https://docs.xano.com/working-with-data/functions/external-api-request  \" target = _blank> What are External API Requests?</a></li><li> <a class=\"link\" href =\"https://www.geeksforgeeks.org/how-to-call-or-consume-external-api-in-spring-boot/  \" target = _blank>External API Requests Tutorial </a></li>"
         },
         "security_configuration":{
             "title": " Security Configurations",
-            "links": "<li> <a class=\"link\" href=\"https://www.sciencedirect.com/topics/computer-science/configuration-security \" target=_blank> What are Security Configurations? </a></li><li> <a class=\"link\" href =\" \" target = _blank> Github Repository</a></li>"
+            "links": "<li> <a class=\"link\" href=\"https://www.itgovernance.co.uk/secure-configuration \" target=_blank> What are Security Configurations? </a></li><li> <a class=\"link\" href =\"https://spring.io/guides/gs/securing-web/ \" target = _blank>Security Configurations Tutorial</a></li>"
         },
         "cloud_AWS":{
             "title":"Running on Cloud — AWS",
